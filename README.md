@@ -1,9 +1,10 @@
 # GroceryGenie
  GroceryGenie is a smart grocery list which intends to streamline your shopping experience and give you streamlined shopping experience.
-## Live demo Coming soon!
+## Live demo
+- Coming soon!
 
 
-![alt text](<GroceryGenie logo-1.png>)
+![](/Images/GroceryGenie%20logo.png)
 
 ## Table of Contents
 * [General Info](#general-information)
