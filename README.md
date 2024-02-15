@@ -1,5 +1,5 @@
 # GroceryGenie
- GroceryGenie is a smart grocery list which intends to streamline your shopping experience and give you streamlined shopping experience.
+ GroceryGenie is a smart grocery list which intends to streamline your shopping experience. Our end goal is to provide you with a shopping list that will remember the items you frequently buy as well as provide recipes suggestions from the items in your cart.
 ## Live demo
 - Coming soon!
 
@@ -23,8 +23,6 @@
 ## General Information
 
 - Team members: Danny, Salem, Ray, Brandon, Gerardo.
-
-- GroceryGenie is a smart grocery list which intends to streamline your shopping experience and give you streamlined shopping experience.
 
 - GroceryGenie is specifically aimed at removing the monotony of adding the same items back to your shopping list.
 
@@ -70,15 +68,9 @@
 Project is: _in progress_
 
 
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
 
 ## Contact
-Created by
+Contact the team at: hmi12@txstate.edu
 
 
 <!-- Optional -->
