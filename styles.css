@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+#itemInput {
+    width: 70%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+#addItemButton {
+    padding: 10px;
+    width: 28%;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#addItemButton:hover {
+    background-color: #4cae4c;
+}
+
+#shoppingList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#shoppingList li {
+    display: flex;
+    align-items: center; /* This ensures vertical centering of checkbox and text */
+    background-color: #eee;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Can't get this to work */
+#clearListButton {
+    padding: 10px;
+    width: 28%;
+    background-color: #d9534f; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; 
+}
+
+#clearListButton:hover {
+    background-color: #c9302c;
+}
+
+#shoppingList li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
