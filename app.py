@@ -1,17 +1,22 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 
+#USE 'admin' AS USERNAME
+#USE 'password' AS PASSWORD
+
 app = Flask(__name__)
+# Secret key needed?
+app.secret_key = os.urandom(24)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    #return render_template('index.html')
     
-    # Logic once the landing page has been changed to the login
-    #if 'user_id' in session:
-        #return 'Logged in successfully!'
-    #lse:
-        #return redirect(url_for('login'))
+    if 'user_id' in session:
+        return render_template('index.html')  # Render home page if user is logged in
+    else:
+        return redirect(url_for('login'))  # Redirect to login page if not logged in
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
