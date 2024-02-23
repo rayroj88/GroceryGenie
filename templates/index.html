@@ -13,12 +13,13 @@
     <div class="container">
         <h1>My Shopping List</h1>
         <input type="text" id="itemInput" placeholder="Add new item...">
-        <button id="addItemButton">Add Item</button>
-        <button id="clearListButton">Clear List</button> <!-- Clear List button -->
+        <button id="addItemButton" onclick="addItem()">Add Item</button>
+        <button id="clearListButton" onclick="clearList()">Clear List</button> <!-- Clear List button -->
         <ul id="shoppingList">
             <!-- List items with checkboxes will be added here -->
         </ul>
     </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
 
