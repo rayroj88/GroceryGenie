@@ -3,6 +3,8 @@ import os
 from datetime import datetime
 from extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from routes.auth import auth_blueprint
+from routes.logout import logout_blueprint
 
 #USE 'admin' AS USERNAME
 #USE 'password' AS PASSWORD
@@ -24,7 +26,10 @@ with app.app_context():
 # Import models after db is defined
 from models import User, ShoppingList, Item
 
-# Homepage currently index.html
+app.register_blueprint(auth_blueprint)
+app.register_blueprint(logout_blueprint)
+
+# Homepage currently index.html but sent to login if not logged in
 @app.route('/')
 def home():
     #return render_template('index.html')
@@ -32,35 +37,7 @@ def home():
     if 'user_id' in session:
         return render_template('index.html')  # Render home page if user is logged in
     else:
-        return redirect(url_for('login'))  # Redirect to login page if not logged in
-
-# Login page
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        
-        if username == "admin" and password == "password":
-            session['user_id'] = "admin"  # You can decide what to store in the session
-            return redirect(url_for('home'))  # Assuming 'home' is the function name of your home page route
-        
-        # Query the database for the user
-        user = User.query.filter_by(username=username).first()
-        
-        # If user exists and password is correct
-        if user and check_password_hash(user.password_hash, password):
-            session['user_id'] = user.user_id  # Store the user's ID in the session
-            return redirect(url_for('home'))  # Redirect to the home page or dashboard
-        else:
-            return 'Invalid credentials'
-    return render_template('login.html')
-
-# Logout route
-@app.route('/logout')
-def logout():
-    session.pop('user_id', None)
-    return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
 
 # Register page
 @app.route('/register', methods=['GET', 'POST'])
