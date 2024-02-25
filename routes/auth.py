@@ -5,6 +5,8 @@ from models import User
 
 auth_blueprint = Blueprint('auth', __name__)
 
+
+# NEED TO ADD REGISTER FUNCTIONALITY
 # Login page
 @auth_blueprint.route('/login', methods=['GET', 'POST'])
 def login():
