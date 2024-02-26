@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account - GroceryGenie</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="display: block; margin: auto; padding-top: 50px; width: 200px;">
+    <div style="margin: auto; width: fit-content; padding-top: 20px;">
+        <form action="/register" method="post" onsubmit="return checkPasswords();">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <button onclick="location.href='/login'" style="margin-top: 20px;">Back to Login</button>
+    </div>
+    <script>
+        function checkPasswords() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
+
