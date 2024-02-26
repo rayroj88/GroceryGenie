@@ -5,6 +5,29 @@ body {
     padding: 0;
 }
 
+
+.banner {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+
 .container {
     width: 80%;
     margin: auto;
