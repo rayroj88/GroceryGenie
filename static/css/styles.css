@@ -32,6 +32,15 @@ h1 {
     cursor: pointer;
 }
 
+#downloadListButton {
+    padding: 10px;
+    width: 28%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 #addItemButton:hover {
     background-color: #4cae4c;
 }
