@@ -9,7 +9,7 @@ from models import User
 register_blueprint = Blueprint('register', __name__)
 
 # Register page
-@register_blueprint.route('/login', methods=['GET', 'POST'])
+@register_blueprint.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
         username = request.form['username']
@@ -28,3 +28,6 @@ def register():
         except Exception as e:
             db.session.rollback()
             return "Error: " + str(e)
+    
+    else:
+        return render_template('create_account.html')
