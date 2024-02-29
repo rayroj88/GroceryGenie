@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="/static/css/styles.css">
+
 </head>
+
 <body style="text-align: center; margin: 0; padding-top: 10px;">
-    <div style="margin: auto; width: 200px;">
+    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
     </div>
     <div class="container" style="margin: 0 auto; width: 100%; max-width: 600px; padding-top: 20px;">
@@ -30,6 +38,34 @@
             }
         });
     </script>
+
+    
+        <header class="header">
+            <a href="#" class="logo">GroceryGenie</a>
+    
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">About</a>                
+                <a href="#">Contact</a>
+            </nav>
+    
+        </header>
+
+    
+    <footer>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+            </div>
+        </div>
+        
+    </footer>
+
 </body>
 </html>
 

@@ -25,9 +25,10 @@
         </nav>
 
     </header>
-
-    <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="display: block; margin: auto; padding-top: 50px; width: 200px;">
-    <div style="margin: auto; width: fit-content; padding-top: 20px;">
+    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
+        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
+    </div>
+    <div style="margin: 50px auto; width: fit-content;">
         <form action="/login" method="post">
             <input type="text" name="username" placeholder="Username" required class="frm" style="margin-bottom: 10px;"> 
             <input type="password" name="password" placeholder="Password" required class="frm" style="margin-bottom: 10px;"> 
