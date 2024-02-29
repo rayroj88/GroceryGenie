@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Login - GroceryGenie</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
+    <link rel="stylesheet" href="/static/css/styles.css">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -25,16 +25,18 @@
         </nav>
 
     </header>
-
-    <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="display: block; margin: auto; padding-top: 50px; width: 200px;">
-    <div style="margin: auto; width: fit-content; padding-top: 20px;">
-        <form action="/login" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <button onclick="location.href='/register'" style="margin-top: 20px;">Create Account</button>
+    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
+        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
     </div>
+    <div style="margin: 50px auto; width: fit-content;">
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Username" required class="frm" style="margin-bottom: 10px;"> 
+            <input type="password" name="password" placeholder="Password" required class="frm" style="margin-bottom: 10px;"> 
+            <button type="submit" class="btn">Login</button> 
+        </form>
+        <button onclick="location.href='/register'" class="btn" style="margin-top: 20px;">Create Account</button> 
+    </div>
+    
 
 
     <footer>
