@@ -23,6 +23,17 @@ body {
     border-radius: 5px;
 }
 
+.frm {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #c9d1c9;
+    color: rgb(4, 4, 4);
+    border: none;
+    cursor: auto;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 .btn:hover {
     background-color: #4cae4c;
 }
