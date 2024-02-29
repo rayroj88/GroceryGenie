@@ -56,9 +56,13 @@ ul li a{
     text-decoration: none;
     transition: 0.4s;
 }
+
 ul li a:hover{
-    color: white;
+    color: black;
     padding-left: 2px;
+    font-weight: bold;
+    transition: color 0.2s ease; /* Decreased duration to 0.2s */
+
 }
 .links a{
     display: inline-block;
@@ -72,8 +76,13 @@ ul li a:hover{
     border-radius: 50%;
     transition: 0.4s;
 }
+.links a:hover {
+    outline: 2px solid black; 
+    transition: color 0.2s ease; /* Decreased duration to 0.2s */
+
+}
 
 .links a:hover{
-    color: grey;
+    color: black;
     background-color: white;
 }
