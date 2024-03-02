@@ -13,6 +13,24 @@ function addItem() {
         const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
         categoryList.appendChild(li);
 
+        fetch('/add_item', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ item_text: newItem })
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Item added successfully');
+            } else {
+                console.error('Failed to add item');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
         document.getElementById("itemInput").value = ""; // Clear the input field
     }
 }
