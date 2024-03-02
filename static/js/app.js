@@ -1,7 +1,9 @@
 function addItem() {
     const newItem = document.getElementById("itemInput").value.trim();
+    const selectedTags = [...document.getElementById("dietaryTags").selectedOptions].map(option => option.value);
     if (newItem !== "") {
         const categoryFound = categorizeItem(newItem);
+
 
         ensureCategoryExists(categoryFound); // Ensure the category exists
 
@@ -13,7 +15,10 @@ function addItem() {
         const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
         categoryList.appendChild(li);
 
+        li.dataset.tags = selectedTags; // Store the tags as data attributes
+
         document.getElementById("itemInput").value = ""; // Clear the input field
+        document.getElementById("dietaryTags").selectedIndex = -1; // Reset the dietary tags dropdown
     }
 }
 
@@ -39,6 +44,7 @@ function categorizeItem(itemName) {
     // Define a mapping of keywords to categories
     const categoryKeywords = {
         "Dairy & Eggs": ["milk", "cheese", "yogurt", "butter", "eggs", "cream", "plant-based milk"],
+        "Plant-Based Milks": ["plant-based milk", "almond milk", "soy milk", "oat milk"],
         "Produce": ["apple", "banana", "orange", "berry", "carrot", "lettuce", "tomato", "broccoli", "onion", "potato"],
         "Meat & Seafood": ["beef", "chicken", "pork", "turkey", "fish", "shrimp", "lobster", "crab"],
         "Bakery": ["bread", "roll", "bagel", "pastry", "cake", "pie"],
@@ -60,8 +66,18 @@ function categorizeItem(itemName) {
         "Floral & Garden": ["fresh flower", "potted plant", "garden tool", "seed", "soil"]
     };
 
+    // Exception list for dairy-free products
+    const dairyFreeKeywords = ["almond milk", "soy milk", "oat milk"];
+
     // Convert the item name to lowercase for case-insensitive comparison
     const lowerItemName = itemName.toLowerCase();
+
+     // Check if the item is a dairy-free product
+     for (const keyword of dairyFreeKeywords) {
+        if (lowerItemName.includes(keyword)) {
+            return "Plant-Based Milks"; // Return 'Plant-Based Milks' category if a keyword matches
+        }
+    }
 
     // Iterate over the categories to find a match
     for (const [category, keywords] of Object.entries(categoryKeywords)) {
@@ -80,6 +96,26 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+}
+
+
+// This new function should be added after your existing functions
+function filterItems() {
+    var filter = document.getElementById("dietaryTags").value;
+    // Logic to filter items based on the selected dietary restriction
+    // This will depend on how you're storing and displaying items
+    // You may need to loop through items and check their dietary tags
+    // For example:
+    var items = document.querySelectorAll('.shoppingList li');
+    items.forEach(function(item) {
+        // Assuming each item has a data attribute like 'data-dietary-tags'
+        var itemTags = item.getAttribute('data-dietary-tags');
+        if (filter === 'all' || itemTags.includes(filter)) {
+            item.style.display = ''; // Show item
+        } else {
+            item.style.display = 'none'; // Hide item
+        }
+    });
 }
 
 function downloadList() {
@@ -112,3 +148,10 @@ function downloadList() {
     document.body.removeChild(link); // Clean up and remove the link
     
 }
+
+document.getElementById("itemInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default action to stop submitting form
+        addItem();
+    }
+});
