@@ -20,6 +20,7 @@ function addItem() {
             },
             body: JSON.stringify({ item_text: newItem })
         })
+        console.log(item_text)
         .then(response => {
             if (response.ok) {
                 console.log('Item added successfully');

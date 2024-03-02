@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
+from routes.add_item import additem_blueprint
 
 
 #USE 'admin' AS USERNAME
@@ -26,6 +27,7 @@ with app.app_context():
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(logout_blueprint)
 app.register_blueprint(register_blueprint)
+app.register_blueprint(additem_blueprint)
 
 
 # Homepage currently index.html but sent to login if not logged in
