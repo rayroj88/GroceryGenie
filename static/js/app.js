@@ -1,37 +1,41 @@
 function addItem() {
-    const newItem = document.getElementById("itemInput").value.trim();
-    if (newItem !== "") {
-        const categoryFound = categorizeItem(newItem);
+    try {
+        const newItem = document.getElementById("itemInput").value.trim();
+        if (newItem !== "") {
+            const categoryFound = categorizeItem(newItem);
 
-        ensureCategoryExists(categoryFound); // Ensure the category exists
+            ensureCategoryExists(categoryFound); // Ensure the category exists
 
-        const li = document.createElement("li");
-        li.textContent = newItem;
+            const li = document.createElement("li");
+            li.textContent = newItem;
 
-        const categoryId = categoryFound.replace(/\s+/g, '');
+            const categoryId = categoryFound.replace(/\s+/g, '');
 
-        const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
-        categoryList.appendChild(li);
+            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
+            categoryList.appendChild(li);
 
-        fetch('/add_item', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ item_text: newItem })
-        })
-        console.log(item_text)
-        .then(response => {
-            if (response.ok) {
-                console.log('Item added successfully');
-            } else {
-                console.error('Failed to add item');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-
+            fetch('/add_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item_text: newItem })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Item added successfully');
+                } else {
+                    console.error('Failed to add item');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    } catch (error) {
+        console.error('Error adding item:', error);
+    } finally {
+        // This will execute regardless of the try/catch outcome
         document.getElementById("itemInput").value = ""; // Clear the input field
     }
 }
