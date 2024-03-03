@@ -6,10 +6,11 @@
     <title>Shopping List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
+    <link rel="stylesheet" href="/static/css/styles.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     
-    <link rel="stylesheet" href="/static/css/styles.css">
+    
 
 </head>
 
@@ -52,20 +53,23 @@
         </header>
 
     
-    <footer>
-        <div class="footer-col">
-            <h4>Follow Us</h4>
-            <div class="links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-
+        <footer>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="links">
+                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    
+                </div>
+                
             </div>
-        </div>
-        
-    </footer>
-
-</body>
-</html>
+            
+            <div style="margin: 20px auto 0; width: 90px;">
+                <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
+            </div>
+        </footer>
+    </body>
+    </html>
 
