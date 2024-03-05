@@ -124,7 +124,7 @@ Contact the team at: hmi12@txstate.edu
 
 # Sprint 2 next steps: 
 
-- Fully implement the shopping list with the databse rather than javascript.
+- Fully implement the shopping list with the database rather than javascript.
 
 - Polish css for even styling across all pages.
 
@@ -143,10 +143,14 @@ Contact the team at: hmi12@txstate.edu
 
 - We communicated and helped eachother we difficulties relating to both the project and gitkraken etc.
 
+- We got a demo-ready application running that looks nice and functions.
 ### What can each teamember do better:
 - Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
+
 - Gerardo: I need to get better at using Gitkraken. Also need to finish my tasks quicker so i can work on bugs.
 - Brandon: I need to get better at using Jira to link tasks to commits etc. 
+
+- Ray: I could have prioritized my work better to avoid finishing tasks on the last 2 days of the sprint. Next time I will space out my tasks more evenly.
 
 ### What might be impeding us from performing better:
 - Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
@@ -154,3 +158,5 @@ Contact the team at: hmi12@txstate.edu
 - Better idea of how the UI needs to look.
 
 - More knowledge of how the database will interact with our app and how to implement the more advanced features planned for our project.
+
+- We need to communicate better as a team to know what our end product will look like.
