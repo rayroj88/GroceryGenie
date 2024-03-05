@@ -90,6 +90,17 @@ Contact the team at: hmi12@txstate.edu
 
 - SCRUM-51: Integrate create account backend with front end service. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-51?atlOrigin=eyJpIjoiNTM0YjQ3YzlhYTI2NGNlYmE4ZmE1ODFiYWI4NDBmZWQiLCJwIjoiaiJ9. COMMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d406910a09bd95230214f27e2e815df34d8dd245. 
 
+## Gerardo UBY1
+-SCRUM-68: Research Dietary Categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-68?atlOrigin=eyJpIjoiMDkzMTIyYTBhNWVjNDg5OGE1ZWU0M2RiZmQ2MjgzZWIiLCJwIjoiaiJ9 COMMITS:Didnt commit the research list
+
+-SCRUM-69: Update Product Database with Tags. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-69?atlOrigin=eyJpIjoiMjg4MTAzZmMzYzU3NDY2MGJlODc2ZjkxYzQxNzU1OTciLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/8257b844230e75f2cc87efad6f39d600ccb73a4a
+
+-SCRUM-70: Implement Dietary Filter UI. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-70?atlOrigin=eyJpIjoiYjhiMzljZTVjNTIwNDNkM2IwNjk0YjUxMDkwNTZlNTUiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/8d6b5ba499d95681e51153b4b680187f9334df4d
+
+-SCRUM-71: Implement Filter Logic in Backend ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-71?atlOrigin=eyJpIjoiZWE2ZjhiNDFkMzk1NDBhYjk1ZGNjYzJiNTc5NzI1ODAiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f003b36b4dd11604ba9290acd61218712fd9d15e
+
+-SCRUM-91: Add requirements.txt for project dependencies ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-91?atlOrigin=eyJpIjoiMzk2ODkwNzM3ZTYxNGI4YTgwMzhkNmFiMzk3YWZhYjQiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7a4c209f8efc39bef45940d76d315afddc225e44
+
 # Sprint 2 next steps: 
 
 - Fully implement the shopping list with the databse rather than javascript.
@@ -113,6 +124,7 @@ Contact the team at: hmi12@txstate.edu
 
 ### What can each teamember do better:
 - Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
+- Gerardo: I need to get better at using Gitkraken. Also need to finish my tasks quicker so i can work on bugs.
 
 ### What might be impeding us from performing better:
 - Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
