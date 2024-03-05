@@ -122,11 +122,8 @@ Contact the team at: hmi12@txstate.edu
 
 -SCRUM-82: Design a create user page to store user profiles, purchase history, and product information. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-82 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/2aa27febe5f419b1e900fd3bfb8fddfb7f84c082 
 
-added to the readme and the retrospective
-
-
 ### Salem Rqn3:
-- SCRUM-66: create a banner to be prominently displayed on the homepage of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-66 COMMITS: 
+- SCRUM-66: create a banner to be prominently displayed on the homepage of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-66 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
 
 - Scrum-67: Establish consistent color and font formating guidlines to create the visual apeal LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-67  COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a45824416ec6cd0ba0c74ea38602fec212dcbea7
 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
@@ -164,6 +161,8 @@ https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40
 - Brandon: I need to get better at using Jira to link tasks to commits etc. 
 
 - Ray: I could have prioritized my work better to avoid finishing tasks on the last 2 days of the sprint. Next time I will space out my tasks more evenly.
+
+- salem: I have to learn jira better and bitbucket and also learn how to use gitckracken better
 
 ### What might be impeding us from performing better:
 - Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
