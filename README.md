@@ -91,7 +91,7 @@ Contact the team at: hmi12@txstate.edu
 - SCRUM-51: Integrate create account backend with front end service. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-51?atlOrigin=eyJpIjoiNTM0YjQ3YzlhYTI2NGNlYmE4ZmE1ODFiYWI4NDBmZWQiLCJwIjoiaiJ9. COMMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d406910a09bd95230214f27e2e815df34d8dd245. 
 
 ## Gerardo UBY1
--SCRUM-68: Research Dietary Categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-68?atlOrigin=eyJpIjoiMDkzMTIyYTBhNWVjNDg5OGE1ZWU0M2RiZmQ2MjgzZWIiLCJwIjoiaiJ9 COMMITS:Didnt commit the research list
+-SCRUM-68: Research Dietary Categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-68?atlOrigin=eyJpIjoiMDkzMTIyYTBhNWVjNDg5OGE1ZWU0M2RiZmQ2MjgzZWIiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/6d860b1f882656b5a4412258151d55019fedb0e0
 
 -SCRUM-69: Update Product Database with Tags. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-69?atlOrigin=eyJpIjoiMjg4MTAzZmMzYzU3NDY2MGJlODc2ZjkxYzQxNzU1OTciLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/8257b844230e75f2cc87efad6f39d600ccb73a4a
 
