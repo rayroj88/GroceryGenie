@@ -122,6 +122,19 @@ Contact the team at: hmi12@txstate.edu
 
 -SCRUM-82: Design a create user page to store user profiles, purchase history, and product information. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-82 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/2aa27febe5f419b1e900fd3bfb8fddfb7f84c082 
 
+added to the readme and the retrospective
+
+
+### Salem Rqn3:
+- SCRUM-66: create a banner to be prominently displayed on the homepage of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-66 COMMITS: 
+
+- Scrum-67: Establish consistent color and font formating guidlines to create the visual apeal LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-67  COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a45824416ec6cd0ba0c74ea38602fec212dcbea7
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
+
+- Scrum-64: create a consise footer description to be placed at the bottom of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-64 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e3d4d12ae9b78d461edde0d145651572f154182b
+
+- Scrum-63: Use hover effects or subtle animations to provide visual feedback when users interact with buttons or links. LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-63 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
+
 # Sprint 2 next steps: 
 
 - Fully implement the shopping list with the database rather than javascript.
