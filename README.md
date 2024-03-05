@@ -90,7 +90,6 @@ Contact the team at: hmi12@txstate.edu
 
 - SCRUM-51: Integrate create account backend with front end service. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-51?atlOrigin=eyJpIjoiNTM0YjQ3YzlhYTI2NGNlYmE4ZmE1ODFiYWI4NDBmZWQiLCJwIjoiaiJ9. COMMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d406910a09bd95230214f27e2e815df34d8dd245. 
 
-<<<<<<< Updated upstream
 ## Gerardo UBY1
 -SCRUM-68: Research Dietary Categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-68?atlOrigin=eyJpIjoiMDkzMTIyYTBhNWVjNDg5OGE1ZWU0M2RiZmQ2MjgzZWIiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/6d860b1f882656b5a4412258151d55019fedb0e0
 
@@ -101,7 +100,7 @@ Contact the team at: hmi12@txstate.edu
 -SCRUM-71: Implement Filter Logic in Backend ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-71?atlOrigin=eyJpIjoiZWE2ZjhiNDFkMzk1NDBhYjk1ZGNjYzJiNTc5NzI1ODAiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f003b36b4dd11604ba9290acd61218712fd9d15e
 
 -SCRUM-91: Add requirements.txt for project dependencies ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-91?atlOrigin=eyJpIjoiMzk2ODkwNzM3ZTYxNGI4YTgwMzhkNmFiMzk3YWZhYjQiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7a4c209f8efc39bef45940d76d315afddc225e44
-=======
+
 ### Ray Rojas xvc3:
 
 - SCRUM 28: Implement Frontend Functionality with JavaScript. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-28?atlOrigin=eyJpIjoiNGRjMTBhZjM2ZTBmNGQ2OWE2MWVmOWQ4OWYzYzlhOGMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/cc6b2cb0e22609146c7a31cfce510d928d5ca0d2.
@@ -112,7 +111,6 @@ Contact the team at: hmi12@txstate.edu
 
 - SCRUM 30: Create a front end fetch command to add items to database. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-30?atlOrigin=eyJpIjoiZTY2NWZhNjcxNzdmNGUyMmEzZGM5MjI5ZThiMTQ4ZmMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f03149638dd77627583becb15d7d5b4f5ae627d9. https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f1368d1bac19e14b433deca7e6ab8f6cb60e6b3b.
 
->>>>>>> Stashed changes
 
 # Sprint 2 next steps: 
 
