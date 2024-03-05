@@ -111,6 +111,16 @@ Contact the team at: hmi12@txstate.edu
 
 - SCRUM 30: Create a front end fetch command to add items to database. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-30?atlOrigin=eyJpIjoiZTY2NWZhNjcxNzdmNGUyMmEzZGM5MjI5ZThiMTQ4ZmMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f03149638dd77627583becb15d7d5b4f5ae627d9. https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f1368d1bac19e14b433deca7e6ab8f6cb60e6b3b.
 
+## Brandon Sehr bds156
+-SCRUM-86: Enhance front page layout and create a create login page/button ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-86 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/1d0ec5cba9a79b3e66154269791dfbdeb6f633e9 
+
+-SCRUM-88: Define Categorization Logic: Implement a function or module that maps item names or descriptions to categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-88 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/fe32f3532c5ff48874a6022546443b7433660777
+
+-SCRUM-87: Update Data Model: Modify the database schema or data structure to include a category attribute for each item. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-87 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/adf67d42f012a795a4694e36ccd8817450d8eda2
+
+-SCRUM-89: Modify Item Addition Process: Update the process or function for adding new items to include automatic categorization. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-89 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/fe32f3532c5ff48874a6022546443b7433660777
+
+-SCRUM-82: Design a create user page to store user profiles, purchase history, and product information. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-82 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/2aa27febe5f419b1e900fd3bfb8fddfb7f84c082 
 
 # Sprint 2 next steps: 
 
