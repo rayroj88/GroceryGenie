@@ -1,10 +1,13 @@
 # GroceryGenie
  GroceryGenie is a smart grocery list which intends to streamline your shopping experience. Our end goal is to provide you with a shopping list that will remember the items you frequently buy as well as provide recipe suggestions from the items in your cart.
+
 ## Live demo
 - Coming soon!
 
 
 ![](/Images/GroceryGenie%20logo.png)
+
+## Contributions for sprint 1 at the bottom of README
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -72,9 +75,48 @@ Project is: _in progress_
 ## Contact
 Contact the team at: hmi12@txstate.edu
 
+# Sprint 1 contributions:
 
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
+### Danny hmi12:
+- SCRUM-49: Design Basic Page Layout: Using HTML and CSS, design a basic layout for the shopping list display page. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-49?atlOrigin=eyJpIjoiOGM5OTMxNjA3OWJhNDMzNDg2YzU1NmEyNGUyMjBlYmYiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/cdc28942a803e8395b36511d18c47f1d0e3d56f6 (README COMMITS) https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/102d526e751c523eb4aab9ed425175cbc4f34da5 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/983ed8bdf9e5d25bec159d851be661e957e2ae73
 
-<!-- You don't have to include all sections - just the one's relevant to your project -->
+- SCRUM-47: Configure Flask Application Structure: Set up a basic Flask application structure with an app directory, templates, and static files. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-47?atlOrigin=eyJpIjoiMTAxZTQyMTUyMWNlNDU0YmJiNWNkOGJmMDAzNzEyNzkiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/98f4486cd32883aa4f2861f562d857ba993a051f
+
+- SCRUM-53: Database Schema Design: Design the SQLite database schema for storing user data and shopping list items. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-53?atlOrigin=eyJpIjoiY2IzODZhMDdkMTY5NGE2Y2JiMTFjZDNjMDJhYzQ2NWMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/c95011495233b4fc0370e551603ea1d7a95ebe40 
+
+- SCRUM-55: Implement Database Integration: Implement database functionality with flask routes for login logout and register functionality. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-55?atlOrigin=eyJpIjoiMmY4ZGQ5ZDFhMWM5NDYxYTkyYzBjMTEyM2I2OWQwMDMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d3009527c43dc77ed97888d60e0c1a112046bc91. 
+
+- SCRUM-58: implement flask backend for create account. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-58?atlOrigin=eyJpIjoiY2IxMDVlMTc3OGU2NDkwNjk5ZDMwMjU1MDRlMjMxNTYiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/88e4cd3d0b9e46954fd180d4b8ea09ef96a6f008. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/bef99d9aa473eff2359c36a0d11845dce3afb2e3
+
+- SCRUM-51: Integrate create account backend with front end service. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-51?atlOrigin=eyJpIjoiNTM0YjQ3YzlhYTI2NGNlYmE4ZmE1ODFiYWI4NDBmZWQiLCJwIjoiaiJ9. COMMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d406910a09bd95230214f27e2e815df34d8dd245. 
+
+# Sprint 2 next steps: 
+
+- Fully implement the shopping list with the databse rather than javascript.
+
+- Polish css for even styling across all pages.
+
+- Finish button functionality on the header and footer.
+
+- Implement deitary information functionality.
+
+- Add feature to suggest items based on previous user activity.
+
+# Retrospective: Changelings
+
+### What went well:
+- We achieved the goal of building the core functionality for the app.
+
+- We did work pretty evenly throughout the sprint resulting in a good looking burnup chart.
+
+- We communicated and helped eachother we difficulties relating to both the project and gitkraken etc.
+
+### What can each teamember do better:
+- Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
+
+### What might be impeding us from performing better:
+- Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
+
+- Better idea of how the UI needs to look.
+
+- More knowledge of how the database will interact with our app and how to implement the more advanced features planned for our project.
