@@ -1,5 +1,6 @@
 # GroceryGenie
  GroceryGenie is a smart grocery list which intends to streamline your shopping experience. Our end goal is to provide you with a shopping list that will remember the items you frequently buy as well as provide recipe suggestions from the items in your cart.
+
 ## Live demo
 - Coming soon!
 
@@ -100,3 +101,22 @@ Contact the team at: hmi12@txstate.edu
 - Implement deitary information functionality.
 
 - Add feature to suggest items based on previous user activity.
+
+# Retrospective: Changelings
+
+### What went well:
+- We achieved the goal of building the core functionality for the app.
+
+- We did work pretty evenly throughout the sprint resulting in a good looking burnup chart.
+
+- We communicated and helped eachother we difficulties relating to both the project and gitkraken etc.
+
+### What can each teamember do better:
+- Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
+
+### What might be impeding us from performing better:
+- Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
+
+- Better idea of how the UI needs to look.
+
+- More knowledge of how the database will interact with our app and how to implement the more advanced features planned for our project.
