@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import os
 from extensions import db
 from flask_migrate import Migrate  # Import Flask-Migrate here
@@ -43,6 +43,13 @@ def home():
         return render_template('index.html')  # Render home page if user is logged in
     else:
         return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
+
+@app.route('/filter_items/<category>', methods=['GET'])
+def filter_items(category):
+    filtered_items = Item.query.filter_by(category=category).all()
+    items_data = [{"name": item.name, "category": item.category} for item in filtered_items]
+    return jsonify(items_data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
