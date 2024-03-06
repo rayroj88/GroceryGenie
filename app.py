@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 from extensions import db
+from flask_migrate import Migrate  # Import Flask-Migrate here
 from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
@@ -20,6 +21,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_list.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+
+# Initialize Flask-Migrate 
+migrate = Migrate(app, db)  # Add this line to set up Flask-Migrate
 # Create all tables in db
 with app.app_context():
     db.create_all()
