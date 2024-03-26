@@ -16,9 +16,7 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            const list_counter = user.list_counter //Stopped Here
-
-            fetch('/add_item/${list_counter}', {
+            fetch('/add_item', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

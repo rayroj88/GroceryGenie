@@ -24,7 +24,6 @@ def login():
         # If user exists and password is correct
         if user and check_password_hash(user.password_hash, password):
             session['user_id'] = user.user_id  # Store the user's ID in the session
-            session['list_counter'] = user.list_counter  # Store the user's list counter in the session
             return redirect(url_for('home'))  # Redirect to the home page or dashboard
         else:
             return 'Invalid credentials'
