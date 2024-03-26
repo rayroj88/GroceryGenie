@@ -21,7 +21,6 @@ class Item(db.Model):
     name = db.Column(db.Text, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
     checked = db.Column(db.Boolean, nullable=False)
-    category = db.Column(db.Text, nullable=False)  # Add this line for category
     date_added = db.Column(db.DateTime, nullable=False)
     dietary_tags = db.Column(db.Text, nullable=True)  # Flexible text column, can be empty
     shopping_list = db.relationship('ShoppingList', backref=db.backref('items', lazy=True))

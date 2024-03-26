@@ -19,14 +19,7 @@ function addItem() {
             const li = document.createElement("li");
             li.textContent = newItem;
 
-<<<<<<< HEAD
             const categoryId = categoryFound.replace(/\s+/g, '');
-=======
-         // Add this line to include dietary restriction tags as a data attribute
-        li.setAttribute('data-dietary-restrictions', selectedTags.join(','))
-
-        const categoryId = categoryFound.replace(/\s+/g, '');
->>>>>>> SCRUM71-ImplementFilterLogicinBackend
 
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
@@ -61,17 +54,6 @@ function addItem() {
         document.getElementById("itemInput").value = ""; // Clear the input field
         document.getElementById("dietaryTags").selectedIndex = -1; // Reset the dietary tags dropdown
     }
-}
-function addFilteredItem(name, category) {
-    ensureCategoryExists(category); // Ensure the category exists
-
-    const li = document.createElement("li");
-    li.textContent = name;
-
-    const categoryId = category.replace(/\s+/g, '');
-
-    const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
-    categoryList.appendChild(li);
 }
 
 
@@ -304,22 +286,20 @@ function clearList() {
 function filterItems() {
     var filter = document.getElementById("dietaryTags").value;
     // Logic to filter items based on the selected dietary restriction
-   const items = document.querySelectorAll('.shoppingList li');
+    // This will depend on how you're storing and displaying items
     // You may need to loop through items and check their dietary tags
-    items.forEach(item => {
-        const itemTags = item.getAttribute('data-dietary-restrictions').split(',');
-     // If 'all' is selected or the item's tags include the selected filter, show the item
-     if (filter === 'all' || itemTags.includes(filter)) {
-        item.style.display = ''; // Show the item
-
-    } else {
-        item.style.display = 'none'; //Hide the item
-    }
-});
+    // For example:
+    var items = document.querySelectorAll('.shoppingList li');
+    items.forEach(function(item) {
+        // Assuming each item has a data attribute like 'data-dietary-tags'
+        var itemTags = item.getAttribute('data-dietary-tags');
+        if (filter === 'all' || itemTags.includes(filter)) {
+            item.style.display = ''; // Show item
+        } else {
+            item.style.display = 'none'; // Hide item
+        }
+    });
 }
-
-    
-
 
 function downloadList() {
     var listContent = "";
