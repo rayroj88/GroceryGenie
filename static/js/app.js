@@ -1,38 +1,24 @@
+
+
 function addItem() {
-<<<<<<< HEAD
     try {
         const newItem = document.getElementById("itemInput").value.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem);
 
             ensureCategoryExists(categoryFound); // Ensure the category exists
-=======
-    const newItem = document.getElementById("itemInput").value.trim();
-    const selectedTags = [...document.getElementById("dietaryTags").selectedOptions].map(option => option.value);
-    if (newItem !== "") {
-        const categoryFound = categorizeItem(newItem);
-
-
-        ensureCategoryExists(categoryFound); // Ensure the category exists
->>>>>>> SCRUM70/ImplementDietaryFilterUI
 
             const li = document.createElement("li");
             li.textContent = newItem;
 
-<<<<<<< HEAD
             const categoryId = categoryFound.replace(/\s+/g, '');
-=======
-         // Add this line to include dietary restriction tags as a data attribute
-        li.setAttribute('data-dietary-restrictions', selectedTags.join(','))
-
-        const categoryId = categoryFound.replace(/\s+/g, '');
->>>>>>> SCRUM71-ImplementFilterLogicinBackend
 
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-<<<<<<< HEAD
-            fetch('/add_item', {
+            const list_counter = user.list_counter //Stopped Here
+
+            fetch('/add_item/${list_counter}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,10 +40,6 @@ function addItem() {
         console.error('Error adding item:', error);
     } finally {
         // This will execute regardless of the try/catch outcome
-=======
-        li.dataset.tags = selectedTags; // Store the tags as data attributes
-
->>>>>>> SCRUM70/ImplementDietaryFilterUI
         document.getElementById("itemInput").value = ""; // Clear the input field
         document.getElementById("dietaryTags").selectedIndex = -1; // Reset the dietary tags dropdown
     }
@@ -95,7 +77,6 @@ function ensureCategoryExists(category) {
 function categorizeItem(itemName) {
     // Define a mapping of keywords to categories
     const categoryKeywords = {
-<<<<<<< HEAD
         "Dairy & Eggs": [
             "milk", "cheese", "yogurt", "butter", "eggs", 
             "cream", "plant-based milk", "sour cream", "cottage cheese", 
@@ -242,29 +223,6 @@ function categorizeItem(itemName) {
             "succulents", "orchids", "rose bush", "lawn mower", "leaf blower",
             "garden decor", "outdoor lighting", "compost bin", "bird feeder", "insecticide"
       ]
-=======
-        "Dairy & Eggs": ["milk", "cheese", "yogurt", "butter", "eggs", "cream", "plant-based milk"],
-        "Plant-Based Milks": ["plant-based milk", "almond milk", "soy milk", "oat milk"],
-        "Produce": ["apple", "banana", "orange", "berry", "carrot", "lettuce", "tomato", "broccoli", "onion", "potato"],
-        "Meat & Seafood": ["beef", "chicken", "pork", "turkey", "fish", "shrimp", "lobster", "crab"],
-        "Bakery": ["bread", "roll", "bagel", "pastry", "cake", "pie"],
-        "Frozen Foods": ["ice cream", "frozen vegetable", "frozen dinner", "pizza", "frozen fruit", "frozen dessert"],
-        "Pantry Staples": ["cereal", "pasta", "rice", "bean", "nut", "spice", "oil", "flour", "sugar", "baking supply"],
-        "Snacks": ["chip", "cookie", "cracker", "candy", "chocolate", "popcorn", "granola bar"],
-        "Drinks": ["soda", "juice", "water", "sports drink", "coffee", "tea", "alcoholic beverage"],
-        "Household & Cleaning": ["laundry detergent", "dish soap", "cleaner", "paper towel", "toilet paper", "trash bag"],
-        "Health & Beauty": ["shampoo", "conditioner", "soap", "toothpaste", "razor", "lotion", "over-the-counter medicine"],
-        "Baby Products": ["diaper", "baby wipe", "baby food", "formula", "baby shampoo"],
-        "Pet Supplies": ["dog food", "cat food", "litter", "treat", "toy"],
-        "Canned & Jarred Goods": ["soup", "vegetable", "fruit", "peanut butter", "jelly", "condiment"],
-        "International Foods": ["asian food", "hispanic food", "european food", "indian food", "international spice"],
-        "Deli & Prepared Foods": ["deli meat", "cheese", "prepared salad", "rotisserie chicken", "sandwich", "sushi"],
-        "Baking Goods": ["flour", "sugar", "baking powder", "baking soda", "yeast", "chocolate chip"],
-        "Spices & Seasonings": ["salt", "pepper", "garlic powder", "paprika", "cinnamon", "spice mix"],
-        "Alcoholic Beverages": ["beer", "wine", "spirit", "mixer"],
-        "Pharmacy": ["prescription medication", "first aid supply", "vitamin", "supplement"],
-        "Floral & Garden": ["fresh flower", "potted plant", "garden tool", "seed", "soil"]
->>>>>>> SCRUM70/ImplementDietaryFilterUI
     };
 
     // Exception list for dairy-free products
@@ -317,9 +275,6 @@ function filterItems() {
     }
 });
 }
-
-    
-
 
 function downloadList() {
     var listContent = "";

@@ -20,7 +20,7 @@ def register():
         # Hash the password before storing it
         hashed_password = generate_password_hash(password)
         
-        new_user = User(username=username, email=email, password_hash=hashed_password, date_created=datetime.now())
+        new_user = User(username=username, email=email, password_hash=hashed_password, date_created=datetime.now(), list_counter=0)
         
         db.session.add(new_user)
         try:
