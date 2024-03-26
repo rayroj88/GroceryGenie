@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
-    
-
 </head>
-
-<body style="text-align: center; margin: 0; padding-top: 10px;">
-    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
-        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
+<body>
+    <div class="header">
+        <a href="#" class="logo">GroceryGenie</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>                
+            <a href="#">Contact</a>
+        </nav>
     </div>
-    <div class="container" style="margin: 0 auto; width: 100%; max-width: 600px; padding-top: 20px;">
-        <h1 style="margin-top: 10px; margin-bottom: 20px;">My Shopping List</h1>
-        <input type="text" id="itemInput" name="item_text" placeholder="Add new item..." style="margin-top: 20px;">
+    <div style="text-align: center; margin-top: 80px;"> <!-- Increased margin-top for logo alignment -->
+        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
+    </div>
+    <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
+        <h1>My Shopping List</h1>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <div style="margin-right: 10px;">
+                <label for="categorizationType" style="margin-bottom: 5px;">Categorization Type:</label>
+                <select id="categorizationType">
+                    <option value="Walmart">Walmart</option>
+                    <option value="HEB">HEB</option>
+                </select>
+            </div>
+            <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+        </div>
         <button id="addItemButton" onclick="addItem()">Add Item</button>
         <button id="clearListButton" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" onclick="downloadList()">Download List</button>
@@ -40,36 +52,19 @@
         });
     </script>
 
-    
-        <header class="header">
-            <a href="#" class="logo">GroceryGenie</a>
-    
-            <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">About</a>                
-                <a href="#">Contact</a>
-            </nav>
-    
-        </header>
-
-    
-        <footer>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="links">
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-    
-                </div>
-                
+    <footer>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="links">
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
             </div>
-            
-            <div style="margin: 20px auto 0; width: 90px;">
-                <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
-            </div>
-        </footer>
-    </body>
-    </html>
-
+        </div>
+        <div style="margin: 20px auto 0; width: 90px;">
+            <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
+        </div>
+    </footer>
+</body>
+</html>
