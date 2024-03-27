@@ -39,19 +39,7 @@ function addItem() {
     } finally {
         // This will execute regardless of the try/catch outcome
         document.getElementById("itemInput").value = ""; // Clear the input field
-        document.getElementById("dietaryTags").selectedIndex = -1; // Reset the dietary tags dropdown
     }
-}
-function addFilteredItem(name, category) {
-    ensureCategoryExists(category); // Ensure the category exists
-
-    const li = document.createElement("li");
-    li.textContent = name;
-
-    const categoryId = category.replace(/\s+/g, '');
-
-    const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
-    categoryList.appendChild(li);
 }
 
 
@@ -223,18 +211,8 @@ function categorizeItem(itemName) {
       ]
     };
 
-    // Exception list for dairy-free products
-    const dairyFreeKeywords = ["almond milk", "soy milk", "oat milk"];
-
     // Convert the item name to lowercase for case-insensitive comparison
     const lowerItemName = itemName.toLowerCase();
-
-     // Check if the item is a dairy-free product
-     for (const keyword of dairyFreeKeywords) {
-        if (lowerItemName.includes(keyword)) {
-            return "Plant-Based Milks"; // Return 'Plant-Based Milks' category if a keyword matches
-        }
-    }
 
     // Iterate over the categories to find a match
     for (const [category, keywords] of Object.entries(categoryKeywords)) {
@@ -255,6 +233,7 @@ function clearList() {
     }
 }
 
+<<<<<<< HEAD
 
 // This new function should be added after your existing functions
 function filterItems() {
@@ -274,6 +253,8 @@ function filterItems() {
 });
 }
 
+=======
+>>>>>>> origin/main
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
@@ -304,10 +285,3 @@ function downloadList() {
     document.body.removeChild(link); // Clean up and remove the link
     
 }
-
-document.getElementById("itemInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Prevent the default action to stop submitting form
-        addItem();
-    }
-});

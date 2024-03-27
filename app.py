@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session
 import os
 from extensions import db
-from flask_migrate import Migrate  # Import Flask-Migrate here
 from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
@@ -21,9 +20,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_list.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
-
-# Initialize Flask-Migrate 
-migrate = Migrate(app, db)  # Add this line to set up Flask-Migrate
 # Create all tables in db
 with app.app_context():
     db.create_all()
@@ -43,13 +39,6 @@ def home():
         return render_template('index.html')  # Render home page if user is logged in
     else:
         return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
-
-@app.route('/filter_items/<category>', methods=['GET'])
-def filter_items(category):
-    filtered_items = Item.query.filter_by(category=category).all()
-    items_data = [{"name": item.name, "category": item.category} for item in filtered_items]
-    return jsonify(items_data)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
