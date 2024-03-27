@@ -1,3 +1,5 @@
+
+
 function addItem() {
     try {
         const newItem = document.getElementById("itemInput").value.trim();
@@ -231,6 +233,28 @@ function clearList() {
     }
 }
 
+<<<<<<< HEAD
+
+// This new function should be added after your existing functions
+function filterItems() {
+    var filter = document.getElementById("dietaryTags").value;
+    // Logic to filter items based on the selected dietary restriction
+   const items = document.querySelectorAll('.shoppingList li');
+    // You may need to loop through items and check their dietary tags
+    items.forEach(item => {
+        const itemTags = item.getAttribute('data-dietary-restrictions').split(',');
+     // If 'all' is selected or the item's tags include the selected filter, show the item
+     if (filter === 'all' || itemTags.includes(filter)) {
+        item.style.display = ''; // Show the item
+
+    } else {
+        item.style.display = 'none'; //Hide the item
+    }
+});
+}
+
+=======
+>>>>>>> origin/main
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
