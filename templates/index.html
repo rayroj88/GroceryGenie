@@ -34,12 +34,14 @@
 
     <div class="side-window">
         <h2>Add Recipe</h2>
+        <p>Add the name of your recipe below and we'll add the neccesary ingredients to your list! Please wait a moment for processing.</p> <!-- Explanation text -->
         <form id="recipeForm">
             <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
-            <textarea id="recipeIngredients" name="recipe_ingredients" rows="10" placeholder="List ingredients..."></textarea>
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
+        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... Please wait.</div> <!-- Hidden message placeholder -->
     </div>
+    
     
     
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
