@@ -37,6 +37,7 @@
         </div>
     </div>
     
+<<<<<<< HEAD
 
     <div class="side-window">
         <h2>Add Recipe</h2>
@@ -50,6 +51,18 @@
     
     
     
+=======
+    <div class="side-window">
+        <h2>Add Recipe</h2>
+        <form id="recipeForm">
+            <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
+            <textarea id="recipeIngredients" name="recipe_ingredients" rows="10" placeholder="List ingredients..."></textarea>
+            <button type="button" onclick="submitRecipe()">Submit Recipe</button>
+        </form>
+    </div>
+    
+    
+>>>>>>> e3ecbd4 (added an always on side window for recipe)
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
         // Event listener for adding an item when the Enter key is pressed
