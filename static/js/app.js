@@ -296,6 +296,7 @@ function clearList() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function submitRecipe() {
     const recipeName = document.getElementById("recipeName").value;
     fetch('/process_recipe', {
@@ -323,6 +324,8 @@ function submitRecipe() {
     .catch(error => console.error('Error:', error));
 }
 
+=======
+>>>>>>> 3a83b6b (Added button to toggle recipe adder)
 document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
     var sideWindow = document.querySelector(".side-window");
     if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
@@ -332,8 +335,11 @@ document.getElementById("toggleSideWindowBtn").addEventListener("click", functio
     }
 });
 
+<<<<<<< HEAD
 =======
 >>>>>>> 5d77aa4 (removed faulty code again)
+=======
+>>>>>>> 3a83b6b (Added button to toggle recipe adder)
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
