@@ -295,6 +295,7 @@ function clearList() {
     items = [];
 }
 
+<<<<<<< HEAD
 function submitRecipe() {
     const recipeName = document.getElementById("recipeName").value;
     fetch('/process_recipe', {
@@ -331,6 +332,8 @@ document.getElementById("toggleSideWindowBtn").addEventListener("click", functio
     }
 });
 
+=======
+>>>>>>> 5d77aa4 (removed faulty code again)
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
