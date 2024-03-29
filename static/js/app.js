@@ -233,6 +233,15 @@ function clearList() {
     }
 }
 
+document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
+    var sideWindow = document.querySelector(".side-window");
+    if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
+        sideWindow.style.display = "block"; // Show the side window
+    } else {
+        sideWindow.style.display = "none"; // Hide the side window
+    }
+});
+
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");

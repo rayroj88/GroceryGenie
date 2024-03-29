@@ -23,6 +23,15 @@ body {
     border-radius: 5px;
 }
 
+.form-button {
+    padding: 10px;
+    width: 28%; /* Adjust this value as necessary to fit all buttons */
+    background-color: #5cb85c; /* Example color, adjust as needed */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 .frm {
     padding: 10px 20px;
     margin: 0 10px;
@@ -57,7 +66,9 @@ body {
     padding-top: 20px;
     background-color: #f1f1f1; /* Sidebar background color */
     z-index: 1000; /* Ensure sidebar is on top of other content */
+    display: none;
 }
+
 .side-window form {
     margin: 20px;
     display: flex;
@@ -82,6 +93,7 @@ h1 {
     margin-top: 20px;
     border: 1px solid #ddd;
 }
+
 
 #addItemButton {
     padding: 10px;
@@ -136,5 +148,17 @@ h1 {
 
 #shoppingList li input[type="checkbox"] {
     margin-right: 10px;
+}
+
+#toggleSideWindowBtn {
+    padding: 10px;
+    background-color: #3498db; /* Choose a color that fits your design */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleSideWindowBtn:hover {
+    background-color: #2980b9; /* Slightly darker shade on hover */
 }
 
