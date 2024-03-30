@@ -7,13 +7,21 @@ from routes.logout import logout_blueprint
 from routes.register import register_blueprint
 from routes.add_item import add_item_bp
 from dotenv import load_dotenv
+<<<<<<< HEAD
 from openai import OpenAI
+=======
+import openai
+>>>>>>> acce994 (got api key set up and working on api call)
 
 load_dotenv()
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+=======
+openai.api_key = os.getenv('OPENAI_API_KEY')
+>>>>>>> acce994 (got api key set up and working on api call)
 # Secret key needed?
 app.secret_key = os.urandom(24)
 
@@ -46,6 +54,7 @@ def process_recipe():
     data = request.get_json()
     recipe_name = data['recipe_name']
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. Make assumptions about what ingredients need to be used and ensure every item you list is in the exact format specified and do not provide optional ingredients. List ingredients as you would see on a recipe card. For example: Flour: 2 cups Sugar: 1 cup and so on..."
     user_message = f"What are the ingredients needed for {recipe_name}?"
@@ -71,9 +80,15 @@ def process_recipe():
         return jsonify({"error": "Failed to process the recipe"}), 500
 
 =======
+=======
+    
+    prompt = f"Give me the required ingredients to make a recipe for {recipe_name}. " \
+        "List ingredients as you would see on a recipe card. For example:\n" \
+        "- Flour: 2 cups\n" \
+        "- Sugar: 1 cup\n" \
+        f"Provide a list like this for {recipe_name}"
+>>>>>>> acce994 (got api key set up and working on api call)
 
-    # Placeholder for OpenAI API call and response parsing
-    # Example: parsed_ingredients = ['Ingredient 1', 'Ingredient 2', ...]
 
     # For demonstration, echo back the received recipe name
     parsed_ingredients = [f"Received: {recipe_name}"]
