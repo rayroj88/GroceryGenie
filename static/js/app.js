@@ -278,6 +278,25 @@ function submitRecipe() {
     .catch(error => console.error('Error:', error));
 }
 
+function submitRecipe() {
+    const recipeName = document.getElementById("recipeName").value;
+    fetch('/process_recipe', {
+        method: 'POST',
+        body: JSON.stringify({ recipe_name: recipeName }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // `data` is the parsed_data from Flask
+        console.log(data); // Debugging
+        // Call your addItem function with each ingredient
+        data.forEach(ingredient => addItem(ingredient));
+    })
+    .catch(error => console.error('Error:', error));
+}
+
 document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
     var sideWindow = document.querySelector(".side-window");
     if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
