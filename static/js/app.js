@@ -42,6 +42,46 @@ function addItem() {
     }
 }
 
+function addItemFromAPI(itemName) {
+    try {
+        const newItem = itemName.trim();
+        if (newItem !== "") {
+            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
+
+            ensureCategoryExists(categoryFound); // Ensure the category exists
+
+            const li = document.createElement("li");
+            li.textContent = newItem;
+
+            const categoryId = categoryFound.replace(/\s+/g, '');
+
+            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
+            categoryList.appendChild(li);
+
+            // You might or might not need this fetch request depending on your application's requirements
+            fetch('/add_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item_text: newItem })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Item added successfully');
+                } else {
+                    console.error('Failed to add item');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    } catch (error) {
+        console.error('Error adding item:', error);
+    }
+}
+
 
 function ensureCategoryExists(category) {
     let categoryId = category.replace(/\s+/g, '');
@@ -231,6 +271,25 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+}
+
+function submitRecipe() {
+    const recipeName = document.getElementById("recipeName").value;
+    fetch('/process_recipe', {
+        method: 'POST',
+        body: JSON.stringify({ recipe_name: recipeName }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // `data` is the parsed_data from Flask
+        console.log(data); // Debugging
+        // Call your addItem function with each ingredient
+        data.forEach(ingredient => addItemFromAPI(ingredient));
+    })
+    .catch(error => console.error('Error:', error));
 }
 
 document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
