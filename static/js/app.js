@@ -333,8 +333,12 @@ function submitRecipe() {
         // `data` is the parsed_data from Flask
         console.log(data); // Debugging
         // Call your addItem function with each ingredient
+<<<<<<< HEAD
         data.forEach(ingredient => addItem(ingredient));
 >>>>>>> 4b44a47 (added javascript for recipe handling)
+=======
+        data.forEach(ingredient => addItemFromAPI(ingredient));
+>>>>>>> 62d1787 (added a seperate add item js to handle api response)
     })
     .catch(error => console.error('Error:', error));
 }

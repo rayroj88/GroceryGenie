@@ -75,7 +75,7 @@ def process_recipe():
     # Placeholder for OpenAI API call and response parsing
     # Example: parsed_ingredients = ['Ingredient 1', 'Ingredient 2', ...]
 
-    # For demonstration, let's just echo back the received recipe name
+    # For demonstration, echo back the received recipe name
     parsed_ingredients = [f"Received: {recipe_name}"]
 
     return jsonify(parsed_ingredients)
