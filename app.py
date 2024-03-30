@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session
 import os
 from extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -33,12 +33,24 @@ app.register_blueprint(add_item_bp)
 # Homepage currently index.html but sent to login if not logged in
 @app.route('/')
 def home():
-    #return render_template('index.html')
     
     if 'user_id' in session:
         return render_template('index.html')  # Render home page if user is logged in
     else:
         return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
+
+@app.route('/process_recipe', methods=['POST'])
+def process_recipe():
+    data = request.get_json()
+    recipe_name = data['recipe_name']
+
+    # Placeholder for OpenAI API call and response parsing
+    # Example: parsed_ingredients = ['Ingredient 1', 'Ingredient 2', ...]
+
+    # For demonstration, let's just echo back the received recipe name
+    parsed_ingredients = [f"Received: {recipe_name}"]
+
+    return jsonify(parsed_ingredients)
 
 if __name__ == '__main__':
     app.run(debug=True)
