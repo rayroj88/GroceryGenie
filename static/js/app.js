@@ -307,6 +307,7 @@ function submitRecipe() {
         body: JSON.stringify({ recipe_name: recipeName }),
         headers: {
 <<<<<<< HEAD
+<<<<<<< HEAD
             'Content-Type': 'application/json',
         },
     })
@@ -339,6 +340,21 @@ function submitRecipe() {
 =======
         data.forEach(ingredient => addItemFromAPI(ingredient));
 >>>>>>> 62d1787 (added a seperate add item js to handle api response)
+=======
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // For debugging
+        // Assuming `data.ingredients` is a string with each ingredient separated by a comma
+        if (data.ingredients && typeof data.ingredients === 'string') {
+            const ingredients = data.ingredients.split(','); // Split the string into an array
+            ingredients.forEach(ingredient => {
+                addItemFromAPI(ingredient.trim()); // Ensure whitespace is removed
+            });
+        }
+>>>>>>> 3ae6032 (script adds raw string of ingredients to list)
     })
     .catch(error => console.error('Error:', error));
 }
