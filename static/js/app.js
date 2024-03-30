@@ -275,12 +275,16 @@ function clearList() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4b44a47 (added javascript for recipe handling)
 function submitRecipe() {
     const recipeName = document.getElementById("recipeName").value;
     fetch('/process_recipe', {
         method: 'POST',
         body: JSON.stringify({ recipe_name: recipeName }),
         headers: {
+<<<<<<< HEAD
             'Content-Type': 'application/json',
         },
     })
@@ -297,12 +301,26 @@ function submitRecipe() {
             
             console.log('No ingredients found or incorrect format received');
         }
+=======
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // `data` is the parsed_data from Flask
+        console.log(data); // Debugging
+        // Call your addItem function with each ingredient
+        data.forEach(ingredient => addItem(ingredient));
+>>>>>>> 4b44a47 (added javascript for recipe handling)
     })
     .catch(error => console.error('Error:', error));
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 3a83b6b (Added button to toggle recipe adder)
+=======
+>>>>>>> 4b44a47 (added javascript for recipe handling)
 document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
     var sideWindow = document.querySelector(".side-window");
     if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
