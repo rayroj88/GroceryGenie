@@ -6,12 +6,14 @@ from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
 from routes.add_item import add_item_bp
+from dotenv import load_dotenv
+import openai
 
-
-#USE 'admin' AS USERNAME
-#USE 'password' AS PASSWORD
+load_dotenv()
 
 app = Flask(__name__)
+
+openai.api_key = os.getenv('OPENAI_API_KEY')
 # Secret key needed?
 app.secret_key = os.urandom(24)
 
@@ -43,9 +45,13 @@ def home():
 def process_recipe():
     data = request.get_json()
     recipe_name = data['recipe_name']
+    
+    prompt = f"Give me the required ingredients to make a recipe for {recipe_name}. " \
+        "List ingredients as you would see on a recipe card. For example:\n" \
+        "- Flour: 2 cups\n" \
+        "- Sugar: 1 cup\n" \
+        f"Provide a list like this for {recipe_name}"
 
-    # Placeholder for OpenAI API call and response parsing
-    # Example: parsed_ingredients = ['Ingredient 1', 'Ingredient 2', ...]
 
     # For demonstration, echo back the received recipe name
     parsed_ingredients = [f"Received: {recipe_name}"]
