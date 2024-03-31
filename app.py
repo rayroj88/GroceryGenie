@@ -6,12 +6,14 @@ from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
 from routes.add_item import add_item_bp
+from dotenv import load_dotenv
+from openai import OpenAI
 
-
-#USE 'admin' AS USERNAME
-#USE 'password' AS PASSWORD
+load_dotenv()
 
 app = Flask(__name__)
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 # Secret key needed?
 app.secret_key = os.urandom(24)
 
@@ -43,14 +45,29 @@ def home():
 def process_recipe():
     data = request.get_json()
     recipe_name = data['recipe_name']
+    
+    system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. List ingredients as you would see on a recipe card. For example: Flour: 2 cups. Sugar: 1 cup. and so on..."
+    user_message = f"What are the ingredients needed for {recipe_name}?"
 
-    # Placeholder for OpenAI API call and response parsing
-    # Example: parsed_ingredients = ['Ingredient 1', 'Ingredient 2', ...]
 
-    # For demonstration, echo back the received recipe name
-    parsed_ingredients = [f"Received: {recipe_name}"]
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",  # Updated to a common chat model name for example
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message}
+            ]
+        )
+        if response.choices:
+            ingredients_list = response.choices[0].message.content.strip()
+        else:
+            ingredients_list = "No ingredients found."
+        
+        return jsonify({"ingredients": ingredients_list})
+    except Exception as e:
+        print(f"Error calling OpenAI API: {e}")
+        return jsonify({"error": "Failed to process the recipe"}), 500
 
-    return jsonify(parsed_ingredients)
 
 if __name__ == '__main__':
     app.run(debug=True)
