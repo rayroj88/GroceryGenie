@@ -1,15 +1,28 @@
-from flask import Blueprint, request, redirect, session
-from models import User, Item
-from extensions import db
+from flask import Blueprint, request, jsonify
+import sqlite3
 
-additem_blueprint = Blueprint('add_item', __name__)
+add_item_bp = Blueprint('add_item_bp', __name__)
 
-@additem_blueprint.route('/add_item', methods=['POST'])
+# SQLite database setup
+def create_table():
+    conn = sqlite3.connect('shopping_list.db')
+    c = conn.cursor()
+    c.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY AUTOINCREMENT, item_text TEXT)''')
+    conn.commit()
+    conn.close()
+
+@add_item_bp.route('/add_item', methods=['POST'])
 def add_item():
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        item_text = request.form['item_text']
-        new_item = Item(text=item_text, user_id=user.id)
-        db.session.add(new_item)
-        db.session.commit()
-    return redirect('/')
+    create_table()  # Ensure table exists
+    data = request.get_json()
+    item_text = data.get('item_text')
+
+    if item_text:
+        conn = sqlite3.connect('shopping_list.db')
+        c = conn.cursor()
+        c.execute("INSERT INTO items (item_text) VALUES (?)", (item_text,))
+        conn.commit()
+        conn.close()
+        return jsonify({'message': 'Item added successfully'}), 200
+    else:
+        return jsonify({'error': 'Invalid request'}), 400

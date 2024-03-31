@@ -33,14 +33,29 @@
             </div>
             <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
         </div>
-        <button id="addItemButton" onclick="addItem()">Add Item</button>
-        <button id="clearListButton" onclick="clearList()">Clear List</button>
-        <button id="downloadListButton" onclick="downloadList()">Download List</button>
-        
+        <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+        <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
+        <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
+        <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
+         
         <div id="categoriesContainer" style="margin-top: 20px;">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
+    
+
+    <div class="side-window">
+        <h2>Add Recipe</h2>
+        <h3>Add the name of your recipe below and we'll add the neccesary ingredients to your list! Please wait a moment for processing.</h3> <!-- Explanation text -->
+        <form id="recipeForm">
+            <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
+            <button type="button" onclick="submitRecipe()">Submit Recipe</button>
+        </form>
+        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div> <!-- Hidden message placeholder -->
+    </div>
+    
+    
+    
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
         // Event listener for adding an item when the Enter key is pressed

@@ -1,3 +1,5 @@
+
+
 function addItem() {
     try {
         const newItem = document.getElementById("itemInput").value.trim();
@@ -37,6 +39,46 @@ function addItem() {
     } finally {
         // This will execute regardless of the try/catch outcome
         document.getElementById("itemInput").value = ""; // Clear the input field
+    }
+}
+
+function addItemFromAPI(itemName) {
+    try {
+        const newItem = itemName.trim();
+        if (newItem !== "") {
+            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
+
+            ensureCategoryExists(categoryFound); // Ensure the category exists
+
+            const li = document.createElement("li");
+            li.textContent = newItem;
+
+            const categoryId = categoryFound.replace(/\s+/g, '');
+
+            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
+            categoryList.appendChild(li);
+
+            // You might or might not need this fetch request depending on your application's requirements
+            fetch('/add_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item_text: newItem })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Item added successfully');
+                } else {
+                    console.error('Failed to add item');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    } catch (error) {
+        console.error('Error adding item:', error);
     }
 }
 
@@ -230,6 +272,42 @@ function clearList() {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
 }
+
+function submitRecipe() {
+    const recipeName = document.getElementById("recipeName").value;
+    fetch('/process_recipe', {
+        method: 'POST',
+        body: JSON.stringify({ recipe_name: recipeName }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // For debugging
+        // Check if 'ingredients' is an array and not empty
+        if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
+            // Iterate over the array of ingredients
+            data.ingredients.forEach(ingredient => {
+                // Assuming 'addItemFromAPI' can handle individual ingredients
+                addItemFromAPI(ingredient.trim()); // Pass each ingredient to your function
+            });
+        } else {
+            // Handle cases where 'ingredients' is not an array or is empty
+            console.log('No ingredients found or incorrect format received');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
+    var sideWindow = document.querySelector(".side-window");
+    if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
+        sideWindow.style.display = "block"; // Show the side window
+    } else {
+        sideWindow.style.display = "none"; // Hide the side window
+    }
+});
 
 function downloadList() {
     var listContent = "";

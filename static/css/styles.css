@@ -23,6 +23,15 @@ body {
     border-radius: 5px;
 }
 
+.form-button {
+    padding: 10px;
+    width: 28%; /* Adjust this value as necessary to fit all buttons */
+    background-color: #5cb85c; /* Example color, adjust as needed */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 .frm {
     padding: 10px 20px;
     margin: 0 10px;
@@ -47,6 +56,48 @@ body {
     margin-top: 20px;
 }
 
+.side-window {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: #ffffff; /* A lighter shade for a cleaner look */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    z-index: 1000;
+    display: none;
+    transition: right 0.3s; /* Smooth transition for opening and closing */
+}
+
+.side-window form {
+    margin-top: 20px; /* Additional top margin for the explanation text */
+    display: flex;
+    flex-direction: column;
+}
+
+.side-window input[type="text"], .side-window textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.side-window button {
+    padding: 10px;
+    background-color: #4CAF50; /* A more vibrant green */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth background transition on hover */
+}
+
+.side-window button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
 h1 {
     color: #333;
     text-align: center;
@@ -58,6 +109,7 @@ h1 {
     margin-top: 20px;
     border: 1px solid #ddd;
 }
+
 
 #addItemButton {
     padding: 10px;
@@ -112,5 +164,17 @@ h1 {
 
 #shoppingList li input[type="checkbox"] {
     margin-right: 10px;
+}
+
+#toggleSideWindowBtn {
+    padding: 10px;
+    background-color: #3498db; /* Choose a color that fits your design */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleSideWindowBtn:hover {
+    background-color: #2980b9; /* Slightly darker shade on hover */
 }
 

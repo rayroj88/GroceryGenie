@@ -101,40 +101,9 @@ Contact the team at: hmi12@txstate.edu
 
 -SCRUM-91: Add requirements.txt for project dependencies ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-91?atlOrigin=eyJpIjoiMzk2ODkwNzM3ZTYxNGI4YTgwMzhkNmFiMzk3YWZhYjQiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7a4c209f8efc39bef45940d76d315afddc225e44
 
-### Ray Rojas xvc3:
-
-- SCRUM 28: Implement Frontend Functionality with JavaScript. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-28?atlOrigin=eyJpIjoiNGRjMTBhZjM2ZTBmNGQ2OWE2MWVmOWQ4OWYzYzlhOGMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/cc6b2cb0e22609146c7a31cfce510d928d5ca0d2.
-
-- SCRUM 27: Implement Local Storage for Shopping List. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-27?atlOrigin=eyJpIjoiMmYxOWQyNjBkMGUzNDY0M2FjMjVmOWFkMDg0MGJkYzIiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/6bc68b2201e11ff802ffb9bb4a4e901d99c57595.
-
-- SCRUM 29: Create a route to save items to the database. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-29?atlOrigin=eyJpIjoiOGNmMzU0MGE0NWQ4NGYzYmE0ZWRkNWVjODU5YzEzYzAiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ec9af0dbf4a015074d657520ea8a444864318092. 
-
-- SCRUM 30: Create a front end fetch command to add items to database. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-30?atlOrigin=eyJpIjoiZTY2NWZhNjcxNzdmNGUyMmEzZGM5MjI5ZThiMTQ4ZmMiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f03149638dd77627583becb15d7d5b4f5ae627d9. https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f1368d1bac19e14b433deca7e6ab8f6cb60e6b3b.
-
-## Brandon Sehr bds156
--SCRUM-86: Enhance front page layout and create a create login page/button ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-86 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/1d0ec5cba9a79b3e66154269791dfbdeb6f633e9 
-
--SCRUM-88: Define Categorization Logic: Implement a function or module that maps item names or descriptions to categories. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-88 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/fe32f3532c5ff48874a6022546443b7433660777
-
--SCRUM-87: Update Data Model: Modify the database schema or data structure to include a category attribute for each item. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-87 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/adf67d42f012a795a4694e36ccd8817450d8eda2
-
--SCRUM-89: Modify Item Addition Process: Update the process or function for adding new items to include automatic categorization. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-89 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/fe32f3532c5ff48874a6022546443b7433660777
-
--SCRUM-82: Design a create user page to store user profiles, purchase history, and product information. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-82 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/2aa27febe5f419b1e900fd3bfb8fddfb7f84c082 
-
-### Salem Rqn3:
-- SCRUM-66: create a banner to be prominently displayed on the homepage of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-66 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
-
-- Scrum-67: Establish consistent color and font formating guidlines to create the visual apeal LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-67  COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a45824416ec6cd0ba0c74ea38602fec212dcbea7
-https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
-
-- Scrum-64: create a consise footer description to be placed at the bottom of the website LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-64 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e3d4d12ae9b78d461edde0d145651572f154182b
-
-- Scrum-63: Use hover effects or subtle animations to provide visual feedback when users interact with buttons or links. LINK: https://cs3398s24changelings.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-63 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40eeca8638febe600758860e8c
-
 # Sprint 2 next steps: 
 
-- Fully implement the shopping list with the database rather than javascript.
+- Fully implement the shopping list with the databse rather than javascript.
 
 - Polish css for even styling across all pages.
 
@@ -153,16 +122,9 @@ https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40
 
 - We communicated and helped eachother we difficulties relating to both the project and gitkraken etc.
 
-- We got a demo-ready application running that looks nice and functions.
 ### What can each teamember do better:
 - Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
-
 - Gerardo: I need to get better at using Gitkraken. Also need to finish my tasks quicker so i can work on bugs.
-- Brandon: I need to get better at using Jira to link tasks to commits etc. 
-
-- Ray: I could have prioritized my work better to avoid finishing tasks on the last 2 days of the sprint. Next time I will space out my tasks more evenly.
-
-- salem: I have to learn jira better and bitbucket and also learn how to use gitckracken better
 
 ### What might be impeding us from performing better:
 - Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
@@ -170,5 +132,3 @@ https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ee9434df1ab45b40
 - Better idea of how the UI needs to look.
 
 - More knowledge of how the database will interact with our app and how to implement the more advanced features planned for our project.
-
-- We need to communicate better as a team to know what our end product will look like.
