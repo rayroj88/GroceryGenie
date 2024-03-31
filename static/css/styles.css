@@ -54,6 +54,8 @@ body {
     overflow: hidden;
     margin: 0 auto; /* Keeps horizontal centering */
     margin-top: 20px;
+    max-height: 1000px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 .side-window {
@@ -108,6 +110,8 @@ h1 {
     padding: 10px;
     margin-top: 20px;
     border: 1px solid #ddd;
+    max-height: 500px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 
@@ -136,6 +140,7 @@ h1 {
 #shoppingList {
     list-style-type: none;
     padding: 0;
+    
 }
 
 #shoppingList li {
@@ -145,6 +150,7 @@ h1 {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
+    
 }
 
 
@@ -164,6 +170,8 @@ h1 {
 
 #shoppingList li input[type="checkbox"] {
     margin-right: 10px;
+    max-height: 500px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 #toggleSideWindowBtn {
