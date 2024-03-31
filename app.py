@@ -59,7 +59,8 @@ def process_recipe():
             ]
         )
         if response.choices:
-            ingredients_list = response.choices[0].message.content.strip()
+            # Given each item on new line
+            ingredients_list = response.choices[0].message.content.strip().split('\n')
         else:
             ingredients_list = "No ingredients found."
         
