@@ -306,6 +306,7 @@ function submitRecipe() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data); // For debugging
         
         if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
             // Iterate over the array of ingredients
