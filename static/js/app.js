@@ -284,16 +284,15 @@ function submitRecipe() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // For debugging
-        // Check if 'ingredients' is an array and not empty
+        
         if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
             // Iterate over the array of ingredients
             data.ingredients.forEach(ingredient => {
-                // Assuming 'addItemFromAPI' can handle individual ingredients
-                addItemFromAPI(ingredient.trim()); // Pass each ingredient to your function
+                
+                addItemFromAPI(ingredient.trim()); 
             });
         } else {
-            // Handle cases where 'ingredients' is not an array or is empty
+            
             console.log('No ingredients found or incorrect format received');
         }
     })
