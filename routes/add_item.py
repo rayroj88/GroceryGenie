@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 import sqlite3
 import json
 from datetime import datetime
+from datetime import datetime
 
 add_item_bp = Blueprint('add_item_bp', __name__)
 
@@ -17,17 +18,20 @@ def create_table():
 def add_item():
     create_table()  # Ensure table exists
     data = request.get_json()
-    
+
     if isinstance(data, list):
         conn = sqlite3.connect('shopping_list.db')
         c = conn.cursor()
 
-        # Convert list data to JSON string
-        list_data = json.dumps(data)
-        
-        # Insert the list data and timestamp into the lists table
+        # Insert a new list with the current timestamp
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        c.execute("INSERT INTO lists (list_data, created_at) VALUES (?, ?)", (list_data, current_time))
+        c.execute("INSERT INTO lists (created_at) VALUES (?)", (current_time,))
+        list_id = c.lastrowid  # Get the ID of the newly inserted list
+        
+        # Insert each item into the items table with the list ID
+        for item_text in data:
+            if isinstance(item_text, str):
+                c.execute("INSERT INTO items (list_id, item_text) VALUES (?, ?)", (list_id, item_text))
 
         conn.commit()
         conn.close()
