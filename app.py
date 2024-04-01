@@ -46,7 +46,7 @@ def process_recipe():
     data = request.get_json()
     recipe_name = data['recipe_name']
     
-    system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. List ingredients as you would see on a recipe card. For example: Flour: 2 cups. Sugar: 1 cup. and so on..."
+    system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. Make assumptions about what ingredients need to be used and ensure every item you list is in the exact format specified and do not provide optional ingredients. List ingredients as you would see on a recipe card. For example: Flour: 2 cups Sugar: 1 cup and so on..."
     user_message = f"What are the ingredients needed for {recipe_name}?"
 
 
@@ -59,7 +59,8 @@ def process_recipe():
             ]
         )
         if response.choices:
-            ingredients_list = response.choices[0].message.content.strip()
+            # Given each item on new line
+            ingredients_list = response.choices[0].message.content.strip().split('\n')
         else:
             ingredients_list = "No ingredients found."
         

@@ -284,13 +284,16 @@ function submitRecipe() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // For debugging
-        // Assuming `data.ingredients` is a string with each ingredient separated by a comma
-        if (data.ingredients && typeof data.ingredients === 'string') {
-            const ingredients = data.ingredients.split(','); // Split the string into an array
-            ingredients.forEach(ingredient => {
-                addItemFromAPI(ingredient.trim()); // Ensure whitespace is removed
+        
+        if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
+            // Iterate over the array of ingredients
+            data.ingredients.forEach(ingredient => {
+                
+                addItemFromAPI(ingredient.trim()); 
             });
+        } else {
+            
+            console.log('No ingredients found or incorrect format received');
         }
     })
     .catch(error => console.error('Error:', error));
