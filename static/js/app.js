@@ -100,7 +100,7 @@ function ensureCategoryExists(category) {
     }
 }
 
-function categorizeItem(itemName) {
+/*function categorizeItem(itemName) {
     // Define a mapping of keywords to categories
     const categoryKeywords = {
         "Dairy & Eggs": [
@@ -117,7 +117,7 @@ function categorizeItem(itemName) {
             "jalapeno peppers", "kale", "lemons", "mangoes", 
             "nectarines", "oranges", "peaches", "quinces", 
             "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion"
+            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup", "mustard"
           ],
         "Meats & Seafood": [
             "beef", "chicken", "duck", "eggs", "fish", 
@@ -198,7 +198,7 @@ function categorizeItem(itemName) {
             "fruit cocktail", "tuna", "salmon", "chicken", "beef stew",
             "olives", "pickles", "jam", "jelly", "peanut butter",
             "honey", "salsa", "pasta sauce", "coconut milk", "artichoke hearts",
-            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree"
+            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree" , "tomato sauce" , "tomato paste"
       ],
         "International Foods": [
             "asian food", "hispanic food", "european food", "indian food", "international spice",
@@ -226,7 +226,7 @@ function categorizeItem(itemName) {
             "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
             "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
             "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
-            "cardamom", "star anise", "Italian seasoning"
+            "cardamom", "star anise", "italian seasoning"
       ],
         "Alcoholic Beverages": [
             "beer", "wine", "spirit", "mixer",
@@ -263,7 +263,7 @@ function categorizeItem(itemName) {
         }
     }
     return "Other"; // Default category if no match is found
-}
+}*/
 
 
 function clearList() {

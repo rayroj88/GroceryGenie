@@ -8,6 +8,7 @@ from routes.register import register_blueprint
 from routes.add_item import add_item_bp
 from dotenv import load_dotenv
 from openai import OpenAI
+import openai
 
 load_dotenv()
 
@@ -68,6 +69,33 @@ def process_recipe():
     except Exception as e:
         print(f"Error calling OpenAI API: {e}")
         return jsonify({"error": "Failed to process the recipe"}), 500
+
+
+def categorize_groceries(item):
+    prompt = f"Categorize this grocery item: {item}"
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",  # Use an appropriate chat model
+            messages=[
+                {"role": "system", "content": "You are a smart assistant. Categorize grocery items."},
+                {"role": "user", "content": prompt}
+            ]
+        )
+        # Parsing the response assuming the response structure matches the new API
+        category = response['choices'][0]['message']['content'].strip()
+        return category
+    except Exception as e:
+        print(f"Error calling OpenAI API: {e}")
+        return "Error in categorizing grocery item."
+
+
+
+@app.route('/categorize_item', methods=['POST'])
+def categorize_item():
+    data = request.json
+    item = data['item']
+    category = categorize_groceries(item)
+    return jsonify({"item": item, "category": category})
 
 
 if __name__ == '__main__':
