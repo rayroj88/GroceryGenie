@@ -1,7 +1,6 @@
-
+let items = []
 
 function addItem() {
-    try {
         const newItem = document.getElementById("itemInput").value.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem);
@@ -16,30 +15,10 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            items.push(newItem);
+
+            const itemsJson = JSON.stringify(items);
         }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    } finally {
-        // This will execute regardless of the try/catch outcome
-        document.getElementById("itemInput").value = ""; // Clear the input field
-    }
 }
 
 function addItemFromAPI(itemName) {
