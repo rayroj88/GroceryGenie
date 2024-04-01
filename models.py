@@ -6,7 +6,6 @@ class User(db.Model):
     email = db.Column(db.Text, unique=True, nullable=False)
     password_hash = db.Column(db.Text, nullable=False)
     date_created = db.Column(db.DateTime, nullable=False)
-    list_counter = db.Column(db.Integer, default = 0, nullable=False)
 
 class ShoppingList(db.Model):
     list_id = db.Column(db.Integer, primary_key=True)
