@@ -392,3 +392,16 @@ function saveList() {
         console.error('Error:', error);
     });
 }
+
+function displaySavedHistory() {
+    $.ajax({
+        url: '/get_saved_lists',
+        type: 'GET',
+        success: function(response) {
+            displaySavedLists(response.saved_lists);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching saved lists:', error);
+        }
+    });
+}
