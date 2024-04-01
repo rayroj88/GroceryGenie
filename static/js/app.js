@@ -1,7 +1,6 @@
-
+items = []
 
 function addItem() {
-    try {
         const newItem = document.getElementById("itemInput").value.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem);
@@ -16,30 +15,9 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            items.push(newItem);
+            document.getElementById("itemInput").value = "";
         }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    } finally {
-        // This will execute regardless of the try/catch outcome
-        document.getElementById("itemInput").value = ""; // Clear the input field
-    }
 }
 
 function addItemFromAPI(itemName) {
@@ -311,6 +289,7 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+    items = [];
 }
 
 function submitRecipe() {
@@ -378,4 +357,29 @@ function downloadList() {
     link.click();
     document.body.removeChild(link); // Clean up and remove the link
     
+}
+
+function saveList() {
+    // Convert the items array to a JSON string
+    const itemsJson = JSON.stringify(items);
+
+    // Send the JSON string to the server
+    fetch('/save_items', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: itemsJson
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Items saved successfully');
+            // Optionally, perform any further action after saving items
+        } else {
+            console.error('Failed to save items');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
