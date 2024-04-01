@@ -1,3 +1,4 @@
+//Array to store lists
 let items = []
 
 function addItem() {
@@ -15,9 +16,8 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
+            //Push items into array
             items.push(newItem);
-
-            const itemsJson = JSON.stringify(items);
         }
 }
 
@@ -250,6 +250,9 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+
+    //empty items array
+    items = [];
 }
 
 <<<<<<< HEAD
@@ -363,4 +366,29 @@ function downloadList() {
     link.click();
     document.body.removeChild(link); // Clean up and remove the link
     
+}
+
+function saveList() {
+    // Convert the items array to a JSON string
+    const itemsJson = JSON.stringify(items);
+
+    // Send the JSON string to the server
+    fetch('/add_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: itemsJson
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Items saved successfully');
+            // Optionally, perform any further action after saving items
+        } else {
+            console.error('Failed to save items');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
