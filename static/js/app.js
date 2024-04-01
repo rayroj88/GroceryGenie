@@ -1,7 +1,7 @@
-//Array to store lists
-let items = []
+
 
 function addItem() {
+    try {
         const newItem = document.getElementById("itemInput").value.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem);
@@ -16,9 +16,30 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            //Push items into array
-            items.push(newItem);
+            fetch('/add_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item_text: newItem })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Item added successfully');
+                } else {
+                    console.error('Failed to add item');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
+    } catch (error) {
+        console.error('Error adding item:', error);
+    } finally {
+        // This will execute regardless of the try/catch outcome
+        document.getElementById("itemInput").value = ""; // Clear the input field
+    }
 }
 
 function addItemFromAPI(itemName) {
@@ -250,24 +271,14 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
-
-    //empty items array
-    items = [];
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4b44a47 (added javascript for recipe handling)
 function submitRecipe() {
     const recipeName = document.getElementById("recipeName").value;
     fetch('/process_recipe', {
         method: 'POST',
         body: JSON.stringify({ recipe_name: recipeName }),
         headers: {
-<<<<<<< HEAD
-<<<<<<< HEAD
             'Content-Type': 'application/json',
         },
     })
@@ -284,45 +295,10 @@ function submitRecipe() {
             
             console.log('No ingredients found or incorrect format received');
         }
-=======
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        // `data` is the parsed_data from Flask
-        console.log(data); // Debugging
-        // Call your addItem function with each ingredient
-<<<<<<< HEAD
-        data.forEach(ingredient => addItem(ingredient));
->>>>>>> 4b44a47 (added javascript for recipe handling)
-=======
-        data.forEach(ingredient => addItemFromAPI(ingredient));
->>>>>>> 62d1787 (added a seperate add item js to handle api response)
-=======
-            'Content-Type': 'application/json',
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data); // For debugging
-        // Assuming `data.ingredients` is a string with each ingredient separated by a comma
-        if (data.ingredients && typeof data.ingredients === 'string') {
-            const ingredients = data.ingredients.split(','); // Split the string into an array
-            ingredients.forEach(ingredient => {
-                addItemFromAPI(ingredient.trim()); // Ensure whitespace is removed
-            });
-        }
->>>>>>> 3ae6032 (script adds raw string of ingredients to list)
     })
     .catch(error => console.error('Error:', error));
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 3a83b6b (Added button to toggle recipe adder)
-=======
->>>>>>> 4b44a47 (added javascript for recipe handling)
 document.getElementById("toggleSideWindowBtn").addEventListener("click", function() {
     var sideWindow = document.querySelector(".side-window");
     if (sideWindow.style.display === "none" || sideWindow.style.display === "") {
@@ -332,11 +308,6 @@ document.getElementById("toggleSideWindowBtn").addEventListener("click", functio
     }
 });
 
-<<<<<<< HEAD
-=======
->>>>>>> 5d77aa4 (removed faulty code again)
-=======
->>>>>>> 3a83b6b (Added button to toggle recipe adder)
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
@@ -366,42 +337,4 @@ function downloadList() {
     link.click();
     document.body.removeChild(link); // Clean up and remove the link
     
-}
-
-function saveList() {
-    // Convert the items array to a JSON string
-    const itemsJson = JSON.stringify(items);
-
-    // Send the JSON string to the server
-    fetch('/add_item', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: itemsJson
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('Items saved successfully');
-            // Optionally, perform any further action after saving items
-        } else {
-            console.error('Failed to save items');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
-function displaySavedHistory() {
-    $.ajax({
-        url: '/get_saved_lists',
-        type: 'GET',
-        success: function(response) {
-            displaySavedLists(response.saved_lists);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching saved lists:', error);
-        }
-    });
 }
