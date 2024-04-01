@@ -109,7 +109,7 @@ function categorizeItem(itemName) {
             "cream cheese", "mozzarella", "cheddar", "gouda", 
             "brie", "camembert", "feta", "ricotta", "parmesan", 
             "ghee", "kefir", "buttermilk", "half and half", 
-            "provolone", "swiss cheese", "blue cheese"
+            "provolone", "swiss cheese", "blue cheese", "egg"
           ],
         "Produce": [
             "apples", "bananas", "carrots", "dates", "eggplant", 
@@ -117,7 +117,7 @@ function categorizeItem(itemName) {
             "jalapeno peppers", "kale", "lemons", "mangoes", 
             "nectarines", "oranges", "peaches", "quinces", 
             "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini"
+            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion"
           ],
         "Meats & Seafood": [
             "beef", "chicken", "duck", "eggs", "fish", 
@@ -226,7 +226,7 @@ function categorizeItem(itemName) {
             "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
             "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
             "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
-            "cardamom", "star anise"
+            "cardamom", "star anise", "Italian seasoning"
       ],
         "Alcoholic Beverages": [
             "beer", "wine", "spirit", "mixer",
