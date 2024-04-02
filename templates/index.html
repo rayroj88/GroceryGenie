@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 
 </head>
@@ -21,32 +21,21 @@
     <div class="container" style="margin: 0 auto; width: 100%; max-width: 600px; padding-top: 20px;">
         <h1 style="margin-top: 10px; margin-bottom: 20px;">My Shopping List</h1>
         <input type="text" id="itemInput" name="item_text" placeholder="Add new item..." style="margin-top: 20px;">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3a83b6b (Added button to toggle recipe adder)
         <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-        <button id="savedLists" class="form-button" onclick="displaySavedHistory">Saved Lists</button>
+        <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-<<<<<<< HEAD
-=======
         <button id="addItemButton" onclick="addItem()">Add Item</button>
         <button id="clearListButton" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" onclick="downloadList()">Download List</button>
->>>>>>> 5d77aa4 (removed faulty code again)
-=======
->>>>>>> 3a83b6b (Added button to toggle recipe adder)
          
         <div id="categoriesContainer" style="margin-top: 20px;">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
     <div class="side-window">
         <h2>Add Recipe</h2>
@@ -59,11 +48,8 @@
     </div>
     
     
-    
-=======
-=======
 
->>>>>>> 3a83b6b (Added button to toggle recipe adder)
+
     <div class="side-window">
         <h2>Add Recipe</h2>
         <form id="recipeForm">
@@ -74,7 +60,6 @@
     </div>
     
     
->>>>>>> e3ecbd4 (added an always on side window for recipe)
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
         // Event listener for adding an item when the Enter key is pressed
