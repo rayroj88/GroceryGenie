@@ -1,4 +1,5 @@
-items = []
+//Array to store lists
+let items = []
 
 function addItem() {
         const newItem = document.getElementById("itemInput").value.trim();
@@ -15,9 +16,49 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
+            //Push items into array
             items.push(newItem);
-            document.getElementById("itemInput").value = "";
         }
+}
+
+function addItemFromAPI(itemName) {
+    try {
+        const newItem = itemName.trim();
+        if (newItem !== "") {
+            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
+
+            ensureCategoryExists(categoryFound); // Ensure the category exists
+
+            const li = document.createElement("li");
+            li.textContent = newItem;
+
+            const categoryId = categoryFound.replace(/\s+/g, '');
+
+            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
+            categoryList.appendChild(li);
+
+            // You might or might not need this fetch request depending on your application's requirements
+            fetch('/add_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ item_text: newItem })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Item added successfully');
+                } else {
+                    console.error('Failed to add item');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    } catch (error) {
+        console.error('Error adding item:', error);
+    }
 }
 
 function addItemFromAPI(itemName) {
@@ -249,6 +290,8 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+
+    //empty items array
     items = [];
 }
 
@@ -323,7 +366,7 @@ function saveList() {
     const itemsJson = JSON.stringify(items);
 
     // Send the JSON string to the server
-    fetch('/save_items', {
+    fetch('/add_item', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
