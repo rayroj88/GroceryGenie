@@ -18,6 +18,7 @@ function addItem() {
 
             //Push items into array
             items.push(newItem);
+            document.getElementById("itemInput").value = "";
         }
 }
 
@@ -393,6 +394,7 @@ function displaySavedHistory() {
             url: '/get_saved_lists',
             type: 'GET',
             success: function(response) {
+                console.log(response);
                 // Clear existing options from the dropdown
                 $('#savedListsDropdown').empty();
                 
