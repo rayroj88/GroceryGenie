@@ -2,41 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - GroceryGenie</title>
+    <title>About - GroceryGenie</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
-
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
 </head>
-
 <body>
     <header class="header">
         <a href="#" class="logo">GroceryGenie</a>
-
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-
             <a href="#">Contact</a>
         </nav>
-
     </header>
-    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
-        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
-    </div>
-    <div style="margin: 50px auto; width: fit-content;">
-        <form action="/login" method="post">
-            <input type="text" name="username" placeholder="Username" required class="frm" style="margin-bottom: 10px;"> 
-            <input type="password" name="password" placeholder="Password" required class="frm" style="margin-bottom: 10px;"> 
-            <button type="submit" class="btn">Login</button> 
-        </form>
-        <button onclick="location.href='/register'" class="btn" style="margin-top: 20px;">Create Account</button> 
-    </div>
-    
 
+    <div style="margin: 50px auto; width: fit-content;">
+        <h1>About Us</h1>
+        <p>
+            GroceryGenie is your one-stop solution for all your grocery shopping needs. 
+            Our mission is to make grocery shopping convenient, efficient, and enjoyable for everyone.
+        </p>
+        <p>
+            We strive to provide the best grocery shopping list, excellent customer service, and 
+            seamless shopping experience to our users.
+        </p>
+    </div>
 
     <footer>
         <div class="footer-col">
@@ -46,9 +37,7 @@
                 <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-
             </div>
-            
         </div>
         
         <div style="margin: 20px auto 0; width: 90px;">
@@ -57,4 +46,3 @@
     </footer>
 </body>
 </html>
-
