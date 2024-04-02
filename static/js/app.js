@@ -391,6 +391,7 @@ function displaySavedHistory() {
             url: '/get_saved_lists',
             type: 'GET',
             success: function(response) {
+                console.log(response);
                 // Clear existing options from the dropdown
                 $('#savedListsDropdown').empty();
                 

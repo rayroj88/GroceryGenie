@@ -57,47 +57,6 @@ body {
 }
 
 .side-window {
-<<<<<<< HEAD
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    overflow-x: hidden;
-    padding: 20px;
-    background-color: #ffffff; /* A lighter shade for a cleaner look */
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    z-index: 1000;
-    display: none;
-    transition: right 0.3s; /* Smooth transition for opening and closing */
-}
-
-.side-window form {
-    margin-top: 20px; /* Additional top margin for the explanation text */
-    display: flex;
-    flex-direction: column;
-}
-
-.side-window input[type="text"], .side-window textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 4px; /* Rounded corners */
-}
-
-.side-window button {
-    padding: 10px;
-    background-color: #4CAF50; /* A more vibrant green */
-    color: white;
-    border: none;
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer;
-    transition: background-color 0.2s; /* Smooth background transition on hover */
-}
-
-.side-window button:hover {
-    background-color: #45a049; /* Darker shade on hover */
-=======
     position: fixed; /* Fixed sidebar (stay in place on scroll) */
     right: 0;
     top: 0;
@@ -121,7 +80,6 @@ body {
 }
 .side-window button {
     cursor: pointer;
->>>>>>> e3ecbd4 (added an always on side window for recipe)
 }
 
 h1 {
@@ -173,6 +131,9 @@ h1 {
     border: 1px solid #ddd;
 }
 
+#savedListButton {
+    color:purple
+}
 
 #clearListButton {
     padding: 10px;

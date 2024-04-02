@@ -11,6 +11,10 @@ def create_table():
     conn = sqlite3.connect('shopping_list.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS lists (id INTEGER PRIMARY KEY AUTOINCREMENT, list_data TEXT, created_at TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS saved_lists (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                list_data TEXT
+             )''')
     conn.commit()
     conn.close()
 
