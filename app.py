@@ -41,7 +41,6 @@ def home():
     else:
         return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
 
-<<<<<<< HEAD
 @app.route('/process_recipe', methods=['POST'])
 def process_recipe():
     data = request.get_json()
@@ -70,13 +69,17 @@ def process_recipe():
         print(f"Error calling OpenAI API: {e}")
         return jsonify({"error": "Failed to process the recipe"}), 500
 
-=======
 
 # About page
 @app.route('/about')
 def about():
     return render_template('about.html')
->>>>>>> SCRUM-119-implement-the-route-of-the-lin
+
+# Contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
