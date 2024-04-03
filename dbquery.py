@@ -1,32 +1,30 @@
 import sqlite3
 
-# Connect to the database
-conn = sqlite3.connect('shopping_list.db')
+def query_lists():
+    # Connect to the SQLite database
+    conn = sqlite3.connect('shopping_list.db')
+    c = conn.cursor()
 
-# Create a cursor object
-cursor = conn.cursor()
+    # Query the lists table to retrieve the saved lists
+    c.execute("SELECT * FROM lists")
+    lists = c.fetchall()
 
-# Create the items table if it doesn't exist
-cursor.execute('''CREATE TABLE IF NOT EXISTS items (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    item_text TEXT
-                )''')
+    # Print out the contents of each list
+    for list_data in lists:
+        list_id, list_data_json, created_at = list_data
+        print(f"List ID: {list_id}")
+        print(f"Created At: {created_at}")
+        
+        # Convert the JSON string back to a Python list
+        list_items = eval(list_data_json)
+        print("List Items:")
+        for item in list_items:
+            print(item)
+        
+        print()  # Print an empty line for better readability
 
-# Commit the transaction
-conn.commit()
+    # Close the database connection
+    conn.close()
 
-# Execute a query to fetch items from the table
-cursor.execute("SELECT * FROM items")
-
-# Fetch the results
-rows = cursor.fetchall()
-
-if len(rows) == 0:
-    print("The items table is empty.")
-else:
-    # Print the contents of the items table
-    for row in rows:
-        print(row)
-
-# Close the connection
-conn.close()
+# Call the function to query and print the lists
+query_lists()

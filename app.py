@@ -75,5 +75,16 @@ def process_recipe():
         return jsonify({"error": "Failed to process the recipe"}), 500
 
 
+# About page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+# Contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
