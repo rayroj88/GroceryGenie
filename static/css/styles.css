@@ -107,10 +107,14 @@ h1 {
 #downloadListButton {
     padding: 10px;
     width: 28%;
-    background-color: #000000;
+    background-color: #f696de;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+#downloadListButton:hover {
+    background-color: #ed62e4;
 }
 
 #addItemButton:hover {
@@ -131,8 +135,20 @@ h1 {
     border: 1px solid #ddd;
 }
 
-#savedListButton {
-    color:purple
+#saveListButton {
+    background-color:purple
+}
+
+#saveListButton:hover {
+    background-color: #560181;
+}
+
+#savedListsButton {
+    background-color:orange
+}
+
+#savedListsButton:hover {
+    background-color: #bd710d;
 }
 
 #clearListButton {

@@ -25,7 +25,7 @@
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-        <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
+        <button id="savedListsButton" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
          
         <div id="categoriesContainer" style="margin-top: 20px;">
@@ -68,6 +68,72 @@
         });
     </script>
 
+<h1>Saved Lists</h1>
+<div id="listDates"></div> <!-- Container to hold the list dates -->
+<ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
+
+<script>
+    async function fetchLists() {
+        try {
+            const response = await fetch('/get_saved_lists');
+            if (!response.ok) {
+                throw new Error('Failed to fetch lists');
+            }
+            const lists = await response.json();
+            return lists;
+        } catch (error) {
+            console.error('Error fetching lists:', error);
+            return [];
+        }
+    }
+
+    async function displayListDates() {
+        const lists = await fetchLists();
+
+        const listDatesContainer = document.getElementById('listDates');
+        listDatesContainer.innerHTML = ''; // Clear previous content
+
+        lists.forEach(list => {
+            const listDate = new Date(list.created_at);
+            const formattedDate = listDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+            // Create a clickable list date
+            const listDateElement = document.createElement('div');
+            listDateElement.textContent = formattedDate;
+            listDateElement.style.cursor = 'pointer';
+            listDateElement.addEventListener('click', async () => {
+                console.log('list id', list.id);
+                // Fetch the list items
+                const response = await fetch('/fetch_list_items', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ listId: list.id }) // Send list ID to identify the list
+                });
+                if (!response.ok) {
+                    console.error('Failed to fetch list items');
+                    return;
+                }
+                const items = await response.json();
+                
+                // Clear previous grocery list items
+                const groceryList = document.getElementById('groceryList');
+                groceryList.innerHTML = '';
+
+                // Add each item to the grocery list
+                items.forEach(item => {
+                    add_item(item); // Assuming add_item function exists and adds an item to the grocery list
+                });
+            });
+
+            listDatesContainer.appendChild(listDateElement);
+        });
+    }
+
+    // Call the function to display list dates when the page loads
+    displayListDates();
+</script>
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>

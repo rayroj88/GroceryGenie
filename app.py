@@ -5,7 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
-from routes.get_saved_lists import saved_lists_bp
+from routes.get_saved_lists import saved_lists_bp, fetch_list_bp
+from routes.save_list import save_list_bp
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -36,7 +37,9 @@ with app.app_context():
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(logout_blueprint)
 app.register_blueprint(register_blueprint)
+app.register_blueprint(save_list_bp)
 app.register_blueprint(saved_lists_bp)
+app.register_blueprint(fetch_list_bp)
 
 
 # Homepage currently index.html but sent to login if not logged in
