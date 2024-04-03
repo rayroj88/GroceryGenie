@@ -1,7 +1,7 @@
-
+//Array to store lists
+let items = []
 
 function addItem() {
-    try {
         const newItem = document.getElementById("itemInput").value.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem);
@@ -16,6 +16,28 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
+            //Push items into array
+            items.push(newItem);
+        }
+}
+
+function addItemFromAPI(itemName) {
+    try {
+        const newItem = itemName.trim();
+        if (newItem !== "") {
+            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
+
+            ensureCategoryExists(categoryFound); // Ensure the category exists
+
+            const li = document.createElement("li");
+            li.textContent = newItem;
+
+            const categoryId = categoryFound.replace(/\s+/g, '');
+
+            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
+            categoryList.appendChild(li);
+
+            // You might or might not need this fetch request depending on your application's requirements
             fetch('/add_item', {
                 method: 'POST',
                 headers: {
@@ -36,9 +58,6 @@ function addItem() {
         }
     } catch (error) {
         console.error('Error adding item:', error);
-    } finally {
-        // This will execute regardless of the try/catch outcome
-        document.getElementById("itemInput").value = ""; // Clear the input field
     }
 }
 
@@ -271,6 +290,9 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
+
+    //empty items array
+    items = [];
 }
 
 function submitRecipe() {
@@ -284,16 +306,15 @@ function submitRecipe() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // For debugging
-        // Check if 'ingredients' is an array and not empty
+        
         if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
             // Iterate over the array of ingredients
             data.ingredients.forEach(ingredient => {
-                // Assuming 'addItemFromAPI' can handle individual ingredients
-                addItemFromAPI(ingredient.trim()); // Pass each ingredient to your function
+                
+                addItemFromAPI(ingredient.trim()); 
             });
         } else {
-            // Handle cases where 'ingredients' is not an array or is empty
+            
             console.log('No ingredients found or incorrect format received');
         }
     })
@@ -338,4 +359,29 @@ function downloadList() {
     link.click();
     document.body.removeChild(link); // Clean up and remove the link
     
+}
+
+function saveList() {
+    // Convert the items array to a JSON string
+    const itemsJson = JSON.stringify(items);
+
+    // Send the JSON string to the server
+    fetch('/add_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: itemsJson
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Items saved successfully');
+            // Optionally, perform any further action after saving items
+        } else {
+            console.error('Failed to save items');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
