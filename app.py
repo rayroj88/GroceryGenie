@@ -8,6 +8,9 @@ from routes.register import register_blueprint
 from routes.add_item import add_item_bp
 from dotenv import load_dotenv
 from openai import OpenAI
+from flask_migrate import Migrate
+
+from models import db, User, ShoppingList, Item, DietaryRestriction
 
 load_dotenv()
 
@@ -22,6 +25,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_list.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+# Initialize Flask-Migrate right after db.init_app(app)
+migrate = Migrate(app, db)
 # Create all tables in db
 with app.app_context():
     db.create_all()

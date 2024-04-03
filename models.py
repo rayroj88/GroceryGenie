@@ -1,4 +1,10 @@
 from extensions import db 
+ 
+         # Association table for Items and DietaryRestrictions
+item_dietary_restriction = db.Table('item_dietary_restriction',
+    db.Column('item_id', db.Integer, db.ForeignKey('item.item_id'), primary_key=True),
+    db.Column('restriction_id', db.Integer, db.ForeignKey('dietary_restriction.id'), primary_key=True)
+     ) 
 
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -23,3 +29,12 @@ class Item(db.Model):
     checked = db.Column(db.Boolean, nullable=False)
     date_added = db.Column(db.DateTime, nullable=False)
     shopping_list = db.relationship('ShoppingList', backref=db.backref('items', lazy=True))
+    restrictions = db.relationship('DietaryRestriction', secondary=item_dietary_restriction, lazy='subquery',
+                                   backref=db.backref('items', lazy=True))
+   
+class DietaryRestriction(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(50), nullable=False)
+        description = db.Column(db.Text)
+
+    
