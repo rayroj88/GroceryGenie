@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - GroceryGenie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">GroceryGenie</a>
+        <nav class="navbar">
+            <a href="/login">Home</a>
+            <a href="/about">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div style="margin: 50px auto; width: fit-content;">
+        <h1>Contact Page</h1>
+        <p>
+        </p>
+        
+    </div>
+
+    <footer>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="links">
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div style="margin: 20px auto 0; width: 90px;">
+            <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
+        </div>
+    </footer>
+</body>
+</html>
