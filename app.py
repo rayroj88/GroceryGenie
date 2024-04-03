@@ -40,5 +40,11 @@ def home():
     else:
         return redirect(url_for('auth.login'))  # Redirect to login page if not logged in
 
+
+# About page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
