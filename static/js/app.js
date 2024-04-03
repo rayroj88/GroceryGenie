@@ -364,7 +364,7 @@ function saveList() {
     const itemsJson = JSON.stringify(items);
 
     // Send the JSON string to the server
-    fetch('/save_list', {
+    fetch('/save_items', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -374,6 +374,7 @@ function saveList() {
     .then(response => {
         if (response.ok) {
             console.log('Items saved successfully');
+            // Optionally, perform any further action after saving items
         } else {
             console.error('Failed to save items');
         }
@@ -383,17 +384,30 @@ function saveList() {
     });
 }
 
-async function displaySavedHistory() {
+function displaySavedHistory() {
     try {
-        const response = await fetch('/get_saved_lists');
-        if (!response.ok) {
-            throw new Error('Failed to fetch lists');
-        }
-        const lists = await response.json();
-        console.log('Fetched lists:', lists);
-        return lists;
+        // Send an AJAX request to fetch the saved lists
+        $.ajax({
+            url: '/get_saved_lists',
+            type: 'GET',
+            success: function(response) {
+                console.log(response);
+                // Clear existing options from the dropdown
+                $('#savedListsDropdown').empty();
+                
+                // Add an option for each saved list to the dropdown
+                response.saved_lists.forEach(function(savedList) {
+                    $('#savedListsDropdown').append($('<option>', {
+                        value: savedList.id,
+                        text: savedList.created_at
+                    }));
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching saved lists:', error);
+            }
+        });
     } catch (error) {
-        console.error('Error fetching lists:', error);
-        return [];
+        console.error('Error displaying saved history:', error);
     }
 }
