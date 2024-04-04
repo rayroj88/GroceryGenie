@@ -25,7 +25,6 @@
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-        <button id="savedListsButton" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
          
         <div id="categoriesContainer" style="margin-top: 20px;">
@@ -69,7 +68,7 @@
     </script>
 
 <h1>Saved Lists</h1>
-<div id="listDates"> <!-- Container to hold the list dates -->
+<div id="listDates"></div> <!-- Container to hold the list dates -->
 <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
 
 <script>
@@ -123,7 +122,8 @@
 
                 // Add each item to the grocery list
                 items.forEach(item => {
-                    addItemFromAPI(item); // Assuming add_item function exists and adds an item to the grocery list
+                    console.log(item);
+                    addItemFromAPI(item);
                 });
             });
 
@@ -134,7 +134,6 @@
     // Call the function to display list dates when the page loads
     displayListDates();
 </script>
-</div>
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>
