@@ -364,7 +364,7 @@ function saveList() {
     const itemsJson = JSON.stringify(items);
 
     // Send the JSON string to the server
-    fetch('/save_items', {
+    fetch('/save_list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
