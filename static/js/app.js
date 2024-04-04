@@ -360,12 +360,12 @@ function downloadList() {
     
 }
 
+
 function saveList() {
     // Convert the items array to a JSON string
     const itemsJson = JSON.stringify(items);
 
     // Send the JSON string to the server
-    fetch('/save_list', {
     fetch('/save_list', {
         method: 'POST',
         headers: {
