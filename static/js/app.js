@@ -360,6 +360,7 @@ function downloadList() {
     
 }
 
+
 function saveList() {
     // Convert the items array to a JSON string
     const itemsJson = JSON.stringify(items);
