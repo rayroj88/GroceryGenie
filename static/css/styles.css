@@ -153,6 +153,9 @@ h1 {
     
 }
 
+#savedListButton {
+    color:purple
+}
 
 #clearListButton {
     padding: 10px;

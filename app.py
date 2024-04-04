@@ -5,16 +5,34 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
-from routes.add_item import add_item_bp
+from routes.save_list import save_list_bp
+from routes.get_saved_lists import saved_lists_bp
 from dotenv import load_dotenv
 from openai import OpenAI
 import openai
+from flask_migrate import Migrate
+
+from models import db, User, ShoppingList, Item, DietaryRestriction
+
+
 
 load_dotenv()
 
 app = Flask(__name__)
 
+
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+OpenAI.api_key = os.getenv('OPENAI_API_KEY')
+
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+OpenAI.api_key = os.getenv('OPENAI_API_KEY')
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+
 # Secret key needed?
 app.secret_key = os.urandom(24)
 
@@ -23,6 +41,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_list.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
+# Initialize Flask-Migrate right after db.init_app(app)
+migrate = Migrate(app, db)
 # Create all tables in db
 with app.app_context():
     db.create_all()
@@ -30,7 +50,8 @@ with app.app_context():
 app.register_blueprint(auth_blueprint)
 app.register_blueprint(logout_blueprint)
 app.register_blueprint(register_blueprint)
-app.register_blueprint(add_item_bp)
+app.register_blueprint(save_list_bp)
+app.register_blueprint(saved_lists_bp)
 
 
 # Homepage currently index.html but sent to login if not logged in
@@ -45,8 +66,8 @@ def home():
 @app.route('/process_recipe', methods=['POST'])
 def process_recipe():
     data = request.get_json()
-    recipe_name = data['recipe_name']
-    
+    recipe_name = data['recipe_name'] 
+    recipe_name = data['recipe_name'] 
     system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. Make assumptions about what ingredients need to be used and ensure every item you list is in the exact format specified and do not provide optional ingredients. List ingredients as you would see on a recipe card. For example: Flour: 2 cups Sugar: 1 cup and so on..."
     user_message = f"What are the ingredients needed for {recipe_name}?"
 
@@ -70,6 +91,7 @@ def process_recipe():
         print(f"Error calling OpenAI API: {e}")
         return jsonify({"error": "Failed to process the recipe"}), 500
 
+    return jsonify(parsed_ingredients)
 
 def categorize_groceries(item):
     prompt = f"Categorize this grocery item: {item}"

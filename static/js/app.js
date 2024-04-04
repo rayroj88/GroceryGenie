@@ -1,5 +1,4 @@
-//Array to store lists
-let items = []
+items = []
 
 function addItem() {
         const newItem = document.getElementById("itemInput").value.trim();
@@ -16,8 +15,9 @@ function addItem() {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            //Push items into array
             items.push(newItem);
+            document.getElementById("itemInput").value = "";
+            document.getElementById("itemInput").value = "";
         }
 }
 
@@ -290,8 +290,6 @@ function clearList() {
     while (categoriesContainer.firstChild) {
         categoriesContainer.removeChild(categoriesContainer.firstChild);
     }
-
-    //empty items array
     items = [];
 }
 
@@ -306,6 +304,7 @@ function submitRecipe() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log(data); // For debugging
         
         if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
             // Iterate over the array of ingredients
@@ -361,12 +360,13 @@ function downloadList() {
     
 }
 
+
 function saveList() {
     // Convert the items array to a JSON string
     const itemsJson = JSON.stringify(items);
 
     // Send the JSON string to the server
-    fetch('/add_item', {
+    fetch('/save_list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -376,7 +376,6 @@ function saveList() {
     .then(response => {
         if (response.ok) {
             console.log('Items saved successfully');
-            // Optionally, perform any further action after saving items
         } else {
             console.error('Failed to save items');
         }
@@ -384,4 +383,47 @@ function saveList() {
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+function displaySavedHistory() {
+    try {
+        // Send an AJAX request to fetch the saved lists
+        $.ajax({
+            url: '/get_saved_lists',
+            type: 'GET',
+            success: function(response) {
+                console.log(response);
+                // Clear existing options from the dropdown
+                $('#savedListsDropdown').empty();
+                
+                // Add an option for each saved list to the dropdown
+                response.saved_lists.forEach(function(savedList) {
+                    $('#savedListsDropdown').append($('<option>', {
+                        value: savedList.id,
+                        text: savedList.created_at
+                    }));
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching saved lists:', error);
+            }
+        });
+    } catch (error) {
+        console.error('Error displaying saved history:', error);
+    }
+}
+
+async function displaySavedHistory() {
+    try {
+        const response = await fetch('/get_saved_lists');
+        if (!response.ok) {
+            throw new Error('Failed to fetch lists');
+        }
+        const lists = await response.json();
+        console.log('Fetched lists:', lists);
+        return lists;
+    } catch (error) {
+        console.error('Error fetching lists:', error);
+        return [];
+    }
 }
