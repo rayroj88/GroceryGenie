@@ -26,7 +26,6 @@ def get_saved_lists():
 
 @fetch_list_bp.route('/fetch_list_items', methods=['POST'])
 def fetch_list_items():
-    print('entered fetch_list_items') #DELETEME
     list_id = request.json.get('listId')  # Extract list ID from request body
 
     conn = sqlite3.connect('shopping_list.db')
@@ -37,8 +36,6 @@ def fetch_list_items():
     rows = c.fetchall()
 
     items = [row[0] for row in rows]
-
-    print('returning', items)
 
     conn.close()
     return jsonify(items)
