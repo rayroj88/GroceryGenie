@@ -6,7 +6,7 @@ from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
 from routes.save_list import save_list_bp
-from routes.get_saved_lists import saved_lists_bp
+from routes.get_saved_lists import saved_lists_bp, fetch_list_bp
 from dotenv import load_dotenv
 from openai import OpenAI
 from flask_migrate import Migrate
@@ -51,6 +51,7 @@ app.register_blueprint(logout_blueprint)
 app.register_blueprint(register_blueprint)
 app.register_blueprint(save_list_bp)
 app.register_blueprint(saved_lists_bp)
+app.register_blueprint(fetch_list_bp)
 
 
 # Homepage currently index.html but sent to login if not logged in
