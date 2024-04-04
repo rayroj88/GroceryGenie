@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/static/css/styles.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 
 </head>
@@ -24,14 +24,15 @@
         <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
-        <button od="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+        <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+        <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
          
         <div id="categoriesContainer" style="margin-top: 20px;">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
-    
+
 
     <div class="side-window">
         <h2>Add Recipe</h2>
@@ -43,6 +44,17 @@
         <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div> <!-- Hidden message placeholder -->
     </div>
     
+    
+
+
+    <div class="side-window">
+        <h2>Add Recipe</h2>
+        <form id="recipeForm">
+            <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
+            <textarea id="recipeIngredients" name="recipe_ingredients" rows="10" placeholder="List ingredients..."></textarea>
+            <button type="button" onclick="submitRecipe()">Submit Recipe</button>
+        </form>
+    </div>
     
     
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
