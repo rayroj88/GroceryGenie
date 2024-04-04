@@ -46,14 +46,14 @@ def get_saved_lists():
 
 @fetch_list_bp.route('/fetch_list_items', methods=['POST'])
 def fetch_list_items():
-    print('entered detch_list_items') #DELETEME
+    print('entered fetch_list_items') #DELETEME
     list_id = request.json.get('listId')  # Extract list ID from request body
 
     conn = sqlite3.connect('shopping_list.db')
     c = conn.cursor()
 
     # Fetch items for the specified list ID from the database
-    c.execute("SELECT item FROM list_items WHERE list_id = ?", (list_id,))
+    c.execute("SELECT list_data FROM lists WHERE id = ?", (list_id,))
     rows = c.fetchall()
 
     items = [row[0] for row in rows]

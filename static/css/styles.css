@@ -82,6 +82,12 @@ body {
     cursor: pointer;
 }
 
+#listDatesContainer {
+    display: flex;
+    justify-content: flex-end;
+    /* Add additional styles as needed */
+}
+
 h1 {
     color: #333;
     text-align: center;

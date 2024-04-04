@@ -77,28 +77,28 @@ function addItemFromAPI(itemName) {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
 
-            // You might or might not need this fetch request depending on your application's requirements
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    }
+    //         // You might or might not need this fetch request depending on your application's requirements
+    //         fetch('/add_item', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({ item_text: newItem })
+    //         })
+    //         .then(response => {
+    //             if (response.ok) {
+    //                 console.log('Item added successfully');
+    //             } else {
+    //                 console.error('Failed to add item');
+    //             }
+    //         })
+    //         .catch(error => {
+    //             console.error('Error:', error);
+    //         });
+    //     }
+    // } catch (error) {
+    //     console.error('Error adding item:', error);
+    // }
 }
 
 
