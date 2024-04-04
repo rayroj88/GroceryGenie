@@ -5,7 +5,6 @@ body {
     padding: 0;
 }
 
-
 .banner {
     background-color: #333;
     padding: 10px 0;
@@ -47,30 +46,36 @@ body {
     background-color: #4cae4c;
 }
 
+.flex-container{
+    display: flex;
+}
 
-.container {
-    width: 60%;
-    margin: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
+.item-input {
+    height: 60px; /* Adjust the height as needed */
+    width: 30%; /* Ensure it takes up the full width */
+    align-items: center; /* Center items vertically */
+    padding: 20px;
+}
+
+#categoriesContainer {
     margin-top: 20px;
 }
 
 #itemInput {
-    width: calc(100% - 200px); /* Adjust the width as needed */
-    padding: 10px;
+    width: 30px; /* Adjust the width as needed */
+    padding: 5px;
     margin-right: 10px; /* Add margin between input and buttons */
-    border: 1px solid #ddd;
+}
+
+.saved-lists {
+    text-align: center;
+    padding: 20px;
 }
 
 .form-button {
     padding: 10px;
     width: 28%; /* Adjust the width as needed */
     margin-right: 10px; /* Add margin between buttons */
-}
-
-#categoriesContainer {
-    margin-top: 20px;
 }
 
 .side-window {
@@ -116,20 +121,21 @@ body {
 }
 
 #listDates {
-    float: right;
-    margin-right:20px;
+    height: 60px; /* Adjust the height as needed */
+    width: 70%; /* Ensure it takes up the full width */
+    padding: 20px;
 }
 
-h1 {
+#shoppingListHeader {
     color: #333;
-    text-align: center;
+    text-align: left;
+    margin-left: 150px;
 }
 
 #itemInput {
-    width: 70%;
+    width: 200px;
     padding: 10px;
     margin-top: 20px;
-    border: 1px solid #ddd;
 }
 
 
@@ -218,4 +224,3 @@ h1 {
 #toggleSideWindowBtn:hover {
     background-color: #2980b9; /* Slightly darker shade on hover */
 }
-

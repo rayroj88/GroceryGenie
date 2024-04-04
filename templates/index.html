@@ -14,23 +14,30 @@
 
 </head>
 
-<body style="text-align: center; margin: 0; padding-top: 10px;">
-    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
-        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
-    </div>
-    <div class="container" style="margin: 0 auto; width: 100%; max-width: 600px; padding-top: 20px;">
-        <h1 style="margin-top: 10px; margin-bottom: 20px;">My Shopping List</h1>
-        <input type="text" id="itemInput" name="item_text" placeholder="Add new item..." style="margin-top: 20px;">
+<div style="margin: 50px auto; width: 200px; padding-top: 5px;">
+    <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
+</div>
+<div class="flex-container">
+<body style="text-align: center; margin: 20px; padding-top: 10px; padding-right: 20px;">
+
+    <div class="item-input">
+        <h1>My Shopping List</h1>
+        <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
         <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-         
-        <div id="categoriesContainer" style="margin-top: 20px;">
-            <!-- Categories will be added dynamically -->
-        </div>
     </div>
+    <div id="categoriesContainer" style="margin-top: 20px;">
+        <!-- Categories will be added dynamically -->
+    </div>
+    <div class="saved-lists">
+        <h1>Saved Lists</h1>
+        <div id="listDates"></div> <!-- Container to hold the list dates -->
+    </div>
+    <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
+</div>
 
 
     <div class="side-window">
@@ -67,10 +74,6 @@
         });
     </script>
 
-<h1>Saved Lists</h1>
-<div id="listDates"></div> <!-- Container to hold the list dates -->
-<ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
-
 <script>
     async function fetchLists() {
         try {
@@ -101,7 +104,6 @@
             listDateElement.textContent = formattedDate;
             listDateElement.style.cursor = 'pointer';
             listDateElement.addEventListener('click', async () => {
-                console.log('list id', list.id);
                 // Fetch the list items
                 const response = await fetch('/fetch_list_items', {
                     method: 'POST',
@@ -122,7 +124,6 @@
 
                 // Add each item to the grocery list
                 items.forEach(item => {
-                    console.log(item);
                     addItemFromAPI(item);
                 });
             });

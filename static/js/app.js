@@ -35,7 +35,6 @@ function addItemFromAPI(itemName) {
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
         }
-        }
 }
 
 
