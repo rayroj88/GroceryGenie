@@ -82,10 +82,8 @@ body {
     cursor: pointer;
 }
 
-#listDatesContainer {
-    display: flex;
-    justify-content: flex-end;
-    /* Add additional styles as needed */
+#listDates {
+    float: right;
 }
 
 h1 {
