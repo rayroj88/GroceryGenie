@@ -366,7 +366,6 @@ function saveList() {
 
     // Send the JSON string to the server
     fetch('/save_list', {
-    fetch('/save_list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
