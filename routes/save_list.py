@@ -2,18 +2,23 @@ from flask import Blueprint, request, jsonify
 import sqlite3
 import json
 from datetime import datetime
+from datetime import datetime
 
-add_item_bp = Blueprint('add_item_bp', __name__)
+save_list_bp = Blueprint('save_list_bp', __name__)
 
 # SQLite database setup
 def create_table():
     conn = sqlite3.connect('shopping_list.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS lists (id INTEGER PRIMARY KEY AUTOINCREMENT, list_data TEXT, created_at TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS saved_lists (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                list_data TEXT
+             )''')
     conn.commit()
     conn.close()
 
-@add_item_bp.route('/add_item', methods=['POST'])
+@save_list_bp.route('/save_list', methods=['POST'])
 def add_item():
     create_table()  # Ensure table exists
     data = request.get_json()
