@@ -17,6 +17,7 @@ function addItem() {
 
             items.push(newItem);
             document.getElementById("itemInput").value = "";
+            document.getElementById("itemInput").value = "";
         }
 }
 
@@ -365,6 +366,7 @@ function saveList() {
 
     // Send the JSON string to the server
     fetch('/save_list', {
+    fetch('/save_list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -381,6 +383,34 @@ function saveList() {
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
+function displaySavedHistory() {
+    try {
+        // Send an AJAX request to fetch the saved lists
+        $.ajax({
+            url: '/get_saved_lists',
+            type: 'GET',
+            success: function(response) {
+                console.log(response);
+                // Clear existing options from the dropdown
+                $('#savedListsDropdown').empty();
+                
+                // Add an option for each saved list to the dropdown
+                response.saved_lists.forEach(function(savedList) {
+                    $('#savedListsDropdown').append($('<option>', {
+                        value: savedList.id,
+                        text: savedList.created_at
+                    }));
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching saved lists:', error);
+            }
+        });
+    } catch (error) {
+        console.error('Error displaying saved history:', error);
+    }
 }
 
 async function displaySavedHistory() {

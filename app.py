@@ -5,10 +5,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
 from routes.register import register_blueprint
-from routes.get_saved_lists import saved_lists_bp, fetch_list_bp
 from routes.save_list import save_list_bp
+from routes.get_saved_lists import saved_lists_bp, fetch_list_bp
 from dotenv import load_dotenv
 from openai import OpenAI
+
 
 
 load_dotenv()
@@ -20,7 +21,13 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 OpenAI.api_key = os.getenv('OPENAI_API_KEY')
 
+
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+OpenAI.api_key = os.getenv('OPENAI_API_KEY')
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
 
 # Secret key needed?
 app.secret_key = os.urandom(24)
@@ -54,6 +61,7 @@ def home():
 @app.route('/process_recipe', methods=['POST'])
 def process_recipe():
     data = request.get_json()
+    recipe_name = data['recipe_name'] 
     recipe_name = data['recipe_name'] 
     system_message = "You are a helpful assistant. Provide a list of ingredients for recipes without any additional content. Make assumptions about what ingredients need to be used and ensure every item you list is in the exact format specified and do not provide optional ingredients. List ingredients as you would see on a recipe card. For example: Flour: 2 cups Sugar: 1 cup and so on..."
     user_message = f"What are the ingredients needed for {recipe_name}?"

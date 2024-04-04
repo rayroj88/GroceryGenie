@@ -10,16 +10,11 @@ save_list_bp = Blueprint('save_list_bp', __name__)
 def create_table():
     conn = sqlite3.connect('shopping_list.db')
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS lists (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    created_at TIMESTAMP
-                )''')
-    c.execute('''CREATE TABLE IF NOT EXISTS list_items (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    list_id INTEGER,
-                    item TEXT,
-                    FOREIGN KEY (list_id) REFERENCES lists(id)
-                )''')
+    c.execute('''CREATE TABLE IF NOT EXISTS lists (id INTEGER PRIMARY KEY AUTOINCREMENT, list_data TEXT, created_at TIMESTAMP)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS saved_lists (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                list_data TEXT
+             )''')
     conn.commit()
     conn.close()
 
