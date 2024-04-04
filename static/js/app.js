@@ -17,6 +17,7 @@ function addItem() {
 
             items.push(newItem);
             document.getElementById("itemInput").value = "";
+            document.getElementById("itemInput").value = "";
         }
 }
 
@@ -365,6 +366,7 @@ function saveList() {
 
     // Send the JSON string to the server
     fetch('/save_list', {
+    fetch('/save_list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -374,7 +376,6 @@ function saveList() {
     .then(response => {
         if (response.ok) {
             console.log('Items saved successfully');
-            // Optionally, perform any further action after saving items
         } else {
             console.error('Failed to save items');
         }
@@ -409,5 +410,20 @@ function displaySavedHistory() {
         });
     } catch (error) {
         console.error('Error displaying saved history:', error);
+    }
+}
+
+async function displaySavedHistory() {
+    try {
+        const response = await fetch('/get_saved_lists');
+        if (!response.ok) {
+            throw new Error('Failed to fetch lists');
+        }
+        const lists = await response.json();
+        console.log('Fetched lists:', lists);
+        return lists;
+    } catch (error) {
+        console.error('Error fetching lists:', error);
+        return [];
     }
 }
