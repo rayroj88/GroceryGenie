@@ -147,6 +147,9 @@ h1 {
     border: 1px solid #ddd;
 }
 
+#savedListButton {
+    color:purple
+}
 
 #clearListButton {
     padding: 10px;
