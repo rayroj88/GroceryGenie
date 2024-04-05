@@ -26,6 +26,11 @@
     <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
         <h1>My Shopping List</h1>
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <select id="storeSelect" class="form-button" style="margin-right: 10px;">
+                <option value="walmart">Walmart</option>
+                <option value="heb">HEB</option>
+                <!-- Add more store options here as needed -->
+            </select>
             <!-- Hidden File Input -->
             <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
             <!-- Process List Button -->
@@ -115,29 +120,32 @@ document.addEventListener('keypress', function(event) {
 
 function processItems(items) {
     let currentItemIndex = 0;
-    window.processingList = true; // Start processing
+    window.processingList = true;
+    const store = document.getElementById("storeSelect").value;
+    let searchBaseUrl = "https://www.walmart.com/search/?query=";
+    if (store === "heb") {
+        searchBaseUrl = "https://www.heb.com/search/?q="; // Adjust this URL as necessary
+    }
 
-    window.processNextItem = function() { // Define processNextItem for reuse
+    window.processNextItem = function() {
         while (currentItemIndex < items.length) {
             let item = items[currentItemIndex].trim();
             currentItemIndex++;
-
             if (item.endsWith(':') || item === '') continue;
-
-            item = item.replace(/^-+\s*/, ''); // Clean item string
-
-            const walmartTab = window.open(`https://www.walmart.com/search/?query=${encodeURIComponent(item)}`, 'walmartSearchTab');
-            walmartTab.focus();
+            item = item.replace(/^-+\s*/, '');
+            const searchUrl = searchBaseUrl + encodeURIComponent(item);
+            const searchTab = window.open(searchUrl, 'searchTab');
+            searchTab.focus();
             break;
         }
 
         if (currentItemIndex >= items.length) {
             alert("All items have been processed.");
-            window.processingList = false; // End processing
+            window.processingList = false;
         }
     };
 
-    window.processNextItem(); // Start processing items
+    window.processNextItem();
 }
 
 // Reset processNextItem on page load
