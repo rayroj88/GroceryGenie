@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-
 </head>
 <body>
     <div class="header">
@@ -22,19 +20,16 @@
             <a href="#">Contact</a>
         </nav>
     </div>
-    <div style="text-align: center; margin-top: 80px;"> <!-- Increased margin-top for logo alignment -->
+    <div style="text-align: center; margin-top: 80px;">
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
     </div>
     <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
         <h1>My Shopping List</h1>
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
-            <div style="margin-right: 10px;">
-                <label for="categorizationType" style="margin-bottom: 5px;">Categorization Type:</label>
-                <select id="categorizationType">
-                    <option value="Walmart">Walmart</option>
-                    <option value="HEB">HEB</option>
-                </select>
-            </div>
+            <!-- Hidden File Input -->
+            <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
+            <!-- Process List Button -->
+            <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
             <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
         </div>
         <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
@@ -42,27 +37,20 @@
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
         <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
-        <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-         
+        <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
         <div id="categoriesContainer" style="margin-top: 20px;">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
-
-
     <div class="side-window">
         <h2>Add Recipe</h2>
-        <h3>Add the name of your recipe below and we'll add the neccesary ingredients to your list! Please wait a moment for processing.</h3> <!-- Explanation text -->
+        <h3>Add the name of your recipe below and we'll add the necessary ingredients to your list! Please wait a moment for processing.</h3>
         <form id="recipeForm">
             <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
-        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div> <!-- Hidden message placeholder -->
+        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div>
     </div>
-    
-    
-
-
     <div class="side-window">
         <h2>Add Recipe</h2>
         <form id="recipeForm">
@@ -71,41 +59,80 @@
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
     </div>
-    
-    
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
-        // Event listener for adding an item when the Enter key is pressed
-        document.getElementById("itemInput").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Prevent the default action to stop submitting form
-                addItem();
-            }
+        document.getElementById('processListButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click(); // Trigger file input click
+ });
+    </script>
+    <script>
+        document.getElementById('processListButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click(); // Trigger file input click
         });
 
-        $(document).ready(function() {
-            $('#itemInput').on('change', function() {
-                var item = $(this).val();
-                $.ajax({
-                    url: '/categorize_item',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({ item: item }),
-                    dataType: 'json',
-                    success: function(response) {
-                        $('#categoriesContainer').append(`<p>${response.item} - ${response.category}</p>`);
-                        // Clear the input after processing
-                        $('#itemInput').val('');
-                    },
-                    error: function(error) {
-                        console.log(error);
-                        alert('Error categorizing item. Please try again.');
-                    }
-                });
-            });
+        function uploadAndProcessList() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+        
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const items = e.target.result.split('\n');
+                    processItems(items);
+                };
+                reader.readAsText(file);
+            } else {
+                alert("Please upload a file before continuing.");
+            }
+        }
+        
+function processItems(items) {
+    let currentItemIndex = 0;
+
+    const processNextItem = () => {
+        while (currentItemIndex < items.length) {
+            let item = items[currentItemIndex].trim();
+            currentItemIndex++;
+
+            // Skip category names
+            if (item.endsWith(':') || item === '') {
+                continue;
+            }
+
+            // Remove leading dash and any additional whitespace
+            item = item.replace(/^-+\s*/, '');
+
+            // Use a named tab for Walmart searches. This name can be anything but must be consistent.
+            const walmartTab = window.open(`https://www.walmart.com/search/?query=${encodeURIComponent(item)}`, 'walmartSearchTab');
+            walmartTab.focus(); // Optional: bring the Walmart search tab to the foreground
+            break; // Break after opening the tab for the current item
+        }
+
+        if (currentItemIndex >= items.length) {
+            alert("All items have been processed.");
+        }
+    };
+
+    // Process the next item when Enter is pressed and the GroceryGenie tab is focused
+    document.addEventListener('keypress', function onKeyPress(event) {
+        if (event.key === "Enter") {
+            processNextItem();
+            // Remove the event listener if all items have been processed to prevent errors
+            if (currentItemIndex >= items.length) {
+                document.removeEventListener('keypress', onKeyPress);
+            }
+        }
+    });
+
+    // Start processing items
+    processNextItem();
+}
+        
+        // Ensure to clear the previous session's function to avoid duplicate searches
+        window.addEventListener('load', () => {
+            window.processNextItem = () => {}; // Reset the function on page load
         });
     </script>
-
     <footer>
         <div class="footer-col">
             <h4>Follow Us</h4>
@@ -122,4 +149,3 @@
     </footer>
 </body>
 </html>
-

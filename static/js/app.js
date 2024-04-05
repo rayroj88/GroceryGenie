@@ -119,7 +119,7 @@ function ensureCategoryExists(category) {
     }
 }
 
-/*function categorizeItem(itemName) {
+function categorizeItem(itemName) {
     // Define a mapping of keywords to categories
     const categoryKeywords = {
         "Dairy & Eggs": [
@@ -282,7 +282,9 @@ function ensureCategoryExists(category) {
         }
     }
     return "Other"; // Default category if no match is found
-}*/
+}
+
+
 
 
 function clearList() {
