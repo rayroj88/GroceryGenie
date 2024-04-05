@@ -128,7 +128,7 @@ function categorizeItem(itemName) {
             "cream cheese", "mozzarella", "cheddar", "gouda", 
             "brie", "camembert", "feta", "ricotta", "parmesan", 
             "ghee", "kefir", "buttermilk", "half and half", 
-            "provolone", "swiss cheese", "blue cheese"
+            "provolone", "swiss cheese", "blue cheese", "egg"
           ],
         "Produce": [
             "apples", "bananas", "carrots", "dates", "eggplant", 
@@ -136,7 +136,7 @@ function categorizeItem(itemName) {
             "jalapeno peppers", "kale", "lemons", "mangoes", 
             "nectarines", "oranges", "peaches", "quinces", 
             "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini"
+            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup", "mustard"
           ],
         "Meats & Seafood": [
             "beef", "chicken", "duck", "eggs", "fish", 
@@ -217,7 +217,7 @@ function categorizeItem(itemName) {
             "fruit cocktail", "tuna", "salmon", "chicken", "beef stew",
             "olives", "pickles", "jam", "jelly", "peanut butter",
             "honey", "salsa", "pasta sauce", "coconut milk", "artichoke hearts",
-            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree"
+            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree" , "tomato sauce" , "tomato paste"
       ],
         "International Foods": [
             "asian food", "hispanic food", "european food", "indian food", "international spice",
@@ -245,7 +245,7 @@ function categorizeItem(itemName) {
             "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
             "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
             "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
-            "cardamom", "star anise"
+            "cardamom", "star anise", "italian seasoning"
       ],
         "Alcoholic Beverages": [
             "beer", "wine", "spirit", "mixer",
@@ -283,6 +283,8 @@ function categorizeItem(itemName) {
     }
     return "Other"; // Default category if no match is found
 }
+
+
 
 
 function clearList() {
