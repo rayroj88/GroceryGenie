@@ -1,0 +1,33 @@
+.contact-form input,
+.contact-form textarea,
+.contact-form h1,
+.contact-form p {
+    font-size: 18px; /* Adjust the font size as needed */
+}
+
+
+.contact-form {
+    
+    width: fit-content;
+    margin: 0 auto; /* This will center the contact form horizontally */
+    text-align: center; /* This will center the content inside the form horizontally */
+}
+
+.contact-form form {
+    margin-top: 0px; /* Adjust this value as needed */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the form elements vertically */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 300px; /* Adjust the width as needed */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 3px solid #ccc; /* Increase border width to make it bold */
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
