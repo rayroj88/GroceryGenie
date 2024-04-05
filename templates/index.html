@@ -37,7 +37,18 @@
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
         <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
-        <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+        <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
+
+              <!-- New dropdown for dietary restrictions -->
+    <div id="dietaryFilterContainer" style="margin-top: 20px;">
+        <select id="dietaryFilter" class="form-button">
+            <option value="">Select a diet</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Gluten-Free">Gluten-Free</option>
+            <!-- Add more options here -->
+        </select>
+    </div>
         <div id="categoriesContainer" style="margin-top: 20px;">
             <!-- Categories will be added dynamically -->
         </div>

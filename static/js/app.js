@@ -331,6 +331,25 @@ document.getElementById("toggleSideWindowBtn").addEventListener("click", functio
     }
 });
 
+
+// Function to filter items based on the selected dietary restriction
+function filterItemsByDiet(dietType) {
+    // Select all list items
+    const allListItems = document.querySelectorAll('.shoppingList li');
+
+    // Loop over each item and check its data-diet attribute
+    allListItems.forEach(item => {
+        // If no diet is selected or the item's diet includes the selected diet, show the item
+        if (dietType === '' || item.getAttribute('data-diet').includes(dietType)) {
+            item.style.display = '';
+        } else {
+            // Otherwise, hide the item
+            item.style.display = 'none';
+        }
+    });
+}
+
+
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
