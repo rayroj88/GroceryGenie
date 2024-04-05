@@ -61,79 +61,81 @@
     </div>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
-        document.getElementById('processListButton').addEventListener('click', function() {
-            document.getElementById('fileInput').click(); // Trigger file input click
- });
-    </script>
-    <script>
-        document.getElementById('processListButton').addEventListener('click', function() {
-            document.getElementById('fileInput').click(); // Trigger file input click
-        });
+window.processingList = false; // Global flag indicating if the list is being processed
 
-        function uploadAndProcessList() {
-            const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
-        
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const items = e.target.result.split('\n');
-                    processItems(items);
-                };
-                reader.readAsText(file);
-            } else {
-                alert("Please upload a file before continuing.");
+document.getElementById('processListButton').addEventListener('click', function() {
+    document.getElementById('fileInput').click(); // Trigger file input click
+});
+
+function uploadAndProcessList() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const items = e.target.result.split('\n');
+            processItems(items);
+        };
+        reader.readAsText(file);
+    } else {
+        alert("Please upload a file before continuing.");
+    }
+}
+
+// Modified to handle the Enter key based on processingList flag
+document.addEventListener('keypress', function(event) {
+    if (event.key === "Enter") {
+        const activeElement = document.activeElement;
+
+        if (activeElement && activeElement.id === "itemInput") {
+            event.preventDefault(); // Prevent form submission
+            if (!window.processingList) {
+                addItem(); // addItem is defined elsewhere
+            }
+        } else if (window.processingList) {
+            event.preventDefault();
+            if (typeof window.processNextItem === "function") {
+                window.processNextItem();
             }
         }
-        
+    }
+});
+
 function processItems(items) {
     let currentItemIndex = 0;
+    window.processingList = true; // Start processing
 
-    const processNextItem = () => {
+    window.processNextItem = function() { // Define processNextItem for reuse
         while (currentItemIndex < items.length) {
             let item = items[currentItemIndex].trim();
             currentItemIndex++;
 
-            // Skip category names
-            if (item.endsWith(':') || item === '') {
-                continue;
-            }
+            if (item.endsWith(':') || item === '') continue;
 
-            // Remove leading dash and any additional whitespace
-            item = item.replace(/^-+\s*/, '');
+            item = item.replace(/^-+\s*/, ''); // Clean item string
 
-            // Use a named tab for Walmart searches. This name can be anything but must be consistent.
             const walmartTab = window.open(`https://www.walmart.com/search/?query=${encodeURIComponent(item)}`, 'walmartSearchTab');
-            walmartTab.focus(); // Optional: bring the Walmart search tab to the foreground
-            break; // Break after opening the tab for the current item
+            walmartTab.focus();
+            break;
         }
 
         if (currentItemIndex >= items.length) {
             alert("All items have been processed.");
+            window.processingList = false; // End processing
         }
     };
 
-    // Process the next item when Enter is pressed and the GroceryGenie tab is focused
-    document.addEventListener('keypress', function onKeyPress(event) {
-        if (event.key === "Enter") {
-            processNextItem();
-            // Remove the event listener if all items have been processed to prevent errors
-            if (currentItemIndex >= items.length) {
-                document.removeEventListener('keypress', onKeyPress);
-            }
-        }
-    });
-
-    // Start processing items
-    processNextItem();
+    window.processNextItem(); // Start processing items
 }
-        
-        // Ensure to clear the previous session's function to avoid duplicate searches
-        window.addEventListener('load', () => {
-            window.processNextItem = () => {}; // Reset the function on page load
-        });
-    </script>
 
+// Reset processNextItem on page load
+window.addEventListener('load', () => {
+    window.processNextItem = () => {};
+});
+    </script>
+</body>
+</html>
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>
