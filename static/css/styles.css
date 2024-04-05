@@ -170,6 +170,7 @@ body {
 #shoppingList {
     list-style-type: none;
     padding: 0;
+    
 }
 
 #shoppingList li {
@@ -179,6 +180,7 @@ body {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
+    
 }
 
 #saveListButton {
@@ -205,6 +207,8 @@ body {
 
 #shoppingList li input[type="checkbox"] {
     margin-right: 10px;
+    max-height: 500px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 #toggleSideWindowBtn {

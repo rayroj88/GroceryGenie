@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-
 </head>
 
 <div style="margin: 50px auto; width: 200px; padding-top: 5px;">
@@ -23,6 +21,27 @@
     <div class="item-input">
         <h1>My Shopping List</h1>
         <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+<body>
+    <div class="header">
+        <a href="#" class="logo">GroceryGenie</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>                
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div style="text-align: center; margin-top: 80px;">
+        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
+    </div>
+    <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
+        <h1>My Shopping List</h1>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <!-- Hidden File Input -->
+            <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
+            <!-- Process List Button -->
+            <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
+            <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+        </div>
         <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
@@ -40,19 +59,30 @@
 </div>
 
 
+
+              <!-- New dropdown for dietary restrictions -->
+    <div id="dietaryFilterContainer" style="margin-top: 20px;">
+        <select id="dietaryFilter" class="form-button">
+            <option value="">Select a diet</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Gluten-Free">Gluten-Free</option>
+            <!-- Add more options here -->
+        </select>
+    </div>
+        <div id="categoriesContainer" style="margin-top: 20px;">
+            <!-- Categories will be added dynamically -->
+        </div>
+    </div>
     <div class="side-window">
         <h2>Add Recipe</h2>
-        <h3>Add the name of your recipe below and we'll add the neccesary ingredients to your list! Please wait a moment for processing.</h3> <!-- Explanation text -->
+        <h3>Add the name of your recipe below and we'll add the necessary ingredients to your list! Please wait a moment for processing.</h3>
         <form id="recipeForm">
             <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
-        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div> <!-- Hidden message placeholder -->
+        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div>
     </div>
-    
-    
-
-
     <div class="side-window">
         <h2>Add Recipe</h2>
         <form id="recipeForm">
@@ -61,17 +91,80 @@
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
     </div>
-    
-    
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
-        // Event listener for adding an item when the Enter key is pressed
-        document.getElementById("itemInput").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Prevent the default action to stop submitting form
-                addItem();
+window.processingList = false; // Global flag indicating if the list is being processed
+
+document.getElementById('processListButton').addEventListener('click', function() {
+    document.getElementById('fileInput').click(); // Trigger file input click
+});
+
+function uploadAndProcessList() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const items = e.target.result.split('\n');
+            processItems(items);
+        };
+        reader.readAsText(file);
+    } else {
+        alert("Please upload a file before continuing.");
+    }
+}
+
+// Modified to handle the Enter key based on processingList flag
+document.addEventListener('keypress', function(event) {
+    if (event.key === "Enter") {
+        const activeElement = document.activeElement;
+
+        if (activeElement && activeElement.id === "itemInput") {
+            event.preventDefault(); // Prevent form submission
+            if (!window.processingList) {
+                addItem(); // addItem is defined elsewhere
             }
-        });
+        } else if (window.processingList) {
+            event.preventDefault();
+            if (typeof window.processNextItem === "function") {
+                window.processNextItem();
+            }
+        }
+    }
+});
+
+function processItems(items) {
+    let currentItemIndex = 0;
+    window.processingList = true; // Start processing
+
+    window.processNextItem = function() { // Define processNextItem for reuse
+        while (currentItemIndex < items.length) {
+            let item = items[currentItemIndex].trim();
+            currentItemIndex++;
+
+            if (item.endsWith(':') || item === '') continue;
+
+            item = item.replace(/^-+\s*/, ''); // Clean item string
+
+            const walmartTab = window.open(`https://www.walmart.com/search/?query=${encodeURIComponent(item)}`, 'walmartSearchTab');
+            walmartTab.focus();
+            break;
+        }
+
+        if (currentItemIndex >= items.length) {
+            alert("All items have been processed.");
+            window.processingList = false; // End processing
+        }
+    };
+
+    window.processNextItem(); // Start processing items
+}
+
+// Reset processNextItem on page load
+window.addEventListener('load', () => {
+    window.processNextItem = () => {};
+});
     </script>
 
 <script>
@@ -140,10 +233,13 @@
             <a href="#" class="logo">GroceryGenie</a>
     
             <nav class="navbar">
-                <a href="#">Home</a>
-                <a href="#">About</a>                
-                <a href="#">Contact</a>
+                <a href="/login">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
             </nav>
+
+            
+
     
         </header>
 
@@ -160,11 +256,10 @@
                 </div>
                 
             </div>
-            
-            <div style="margin: 20px auto 0; width: 90px;">
-                <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
-            </div>
-        </footer>
-    </body>
-    </html>
-
+        </div>
+        <div style="margin: 20px auto 0; width: 90px;">
+            <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
+        </div>
+    </footer>
+</body>
+</html>
