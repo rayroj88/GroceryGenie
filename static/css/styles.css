@@ -49,10 +49,44 @@ body {
 
 
 .container {
-    width: 80%;
+    width: 60%;
     margin: auto;
-    overflow: hidden;
-    margin: 0 auto; /* Keeps horizontal centering */
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+#itemInput {
+    width: calc(100% - 200px); /* Adjust the width as needed */
+    padding: 10px;
+    margin-right: 10px; /* Add margin between input and buttons */
+    border: 1px solid #ddd;
+}
+
+.form-button {
+    padding: 10px;
+    width: 28%; /* Adjust the width as needed */
+    margin-right: 10px; /* Add margin between buttons */
+}
+
+#categoriesContainer {
+    margin-top: 20px;
+}
+
+#itemInput {
+    width: calc(100% - 200px); /* Adjust the width as needed */
+    padding: 10px;
+    margin-right: 10px; /* Add margin between input and buttons */
+    border: 1px solid #ddd;
+}
+
+.form-button {
+    padding: 10px;
+    width: 28%; /* Adjust the width as needed */
+    margin-right: 10px; /* Add margin between buttons */
+}
+
+#categoriesContainer {
     margin-top: 20px;
     max-height: 1000px; /* Adjust based on your needs */
     overflow-y: auto; /* Enables vertical scrolling */
@@ -100,6 +134,11 @@ body {
     background-color: #45a049; /* Darker shade on hover */
 }
 
+#listDates {
+    float: right;
+    margin-right:20px;
+}
+
 h1 {
     color: #333;
     text-align: center;
@@ -127,10 +166,14 @@ h1 {
 #downloadListButton {
     padding: 10px;
     width: 28%;
-    background-color: #000000;
+    background-color: #f696de;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+#downloadListButton:hover {
+    background-color: #ed62e4;
 }
 
 #addItemButton:hover {
@@ -153,8 +196,20 @@ h1 {
     
 }
 
-#savedListButton {
-    color:purple
+#saveListButton {
+    background-color:purple
+}
+
+#saveListButton:hover {
+    background-color: #560181;
+}
+
+#savedListsButton {
+    background-color:orange
+}
+
+#savedListsButton:hover {
+    background-color: #bd710d;
 }
 
 #clearListButton {
