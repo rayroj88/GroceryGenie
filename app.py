@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request, redirect, url_for, session
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session, Response
 import os
 from extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -9,8 +9,8 @@ from routes.save_list import save_list_bp
 from routes.get_saved_lists import saved_lists_bp
 from dotenv import load_dotenv
 from openai import OpenAI
+import openai
 from flask_migrate import Migrate
-
 from models import db, User, ShoppingList, Item, DietaryRestriction
 
 
@@ -85,6 +85,38 @@ def process_recipe():
 
     return jsonify(parsed_ingredients)
 
+# NEED HELP IMPLEMENTING
+# Trying to integrate flask and openai to categorize items
+#@app.route('/categorize_item', methods=['POST'])
+#def categorize_item():
+#    data = request.get_json()
+#    item_name = data.get('itemName')  # Ensure this matches the AJAX request's payload key
+#
+#   if not item_name:
+#        return Response("Item name is required", status=400)
+#
+#    system_message = "You are a helpful assistant. Given a list of categories such as Dairy & Eggs, Produce, Meats & Seafood, Bakery, Frozen Foods, Pantry Staples, Snacks, Drinks, Household & Cleaning, Health & Beauty, Baby Products, Pet Supplies, Canned & Jarred Goods, International Foods, Deli & Prepared Foods, Baking Goods, Spices & Seasonings, Alcoholic Beverages, Pharmacy, Floral & Garden, categorize items accurately without any additional content. Ensure every category you list matches exactly as specified."
+#    user_message = f"What category does the item '{item_name}' belong to?"
+#
+#    try:
+#        response = openai.ChatCompletion.create(
+#            model="gpt-3.5-turbo",  # Adjust according to the OpenAI model you're using
+#            messages=[
+#                {"role": "system", "content": system_message},
+#                {"role": "user", "content": user_message}
+#            ]
+#        )
+#        # Assuming the response's first choice's message content directly contains the category
+#        if response.choices:
+#            category = response.choices[0].content.strip().split('\n')[0]
+#        else:
+#            category = "Category not found."
+#
+#        return Response(category, mimetype='text/plain')
+#    except Exception as e:
+#        print(f"Error calling OpenAI API: {e}")
+#        return Response("Failed to categorize the item", status=500)
+#
 # About page
 @app.route('/about')
 def about():
