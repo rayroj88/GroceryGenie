@@ -6,9 +6,68 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
-
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+    <style>
+        /* Additional CSS for better styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 200px;
+            height: auto;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
+        .btn:hover {
+            background-color: #131413;
+        }
+         /* Center align buttons */
+         .button-group {
+            text-align: center;
+        }
+
+
+    </style>
+
+
 
 </head>
 
@@ -30,10 +89,14 @@
         <form action="/login" method="post">
             <input type="text" name="username" placeholder="Username" required class="frm" style="margin-bottom: 10px;"> 
             <input type="password" name="password" placeholder="Password" required class="frm" style="margin-bottom: 10px;"> 
+            <div class="button-group">
+
             <button type="submit" class="btn">Login</button> 
-        </form>
-        <button onclick="location.href='/register'" class="btn" style="margin-top: 20px;">Create Account</button> 
+            <button onclick="location.href='/register'" class="btn" style="margin-top: 20px;">Create Account</button> 
     </div>
+    </form>
+        </div>
+    
     
 
 
