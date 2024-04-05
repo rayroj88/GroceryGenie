@@ -29,6 +29,9 @@
             <select id="storeSelect" class="form-button" style="margin-right: 10px;">
                 <option value="walmart">Walmart</option>
                 <option value="heb">HEB</option>
+                <option value="target">Target</option>
+                <option value="kroger">Kroger</option>
+                <option value="costco">Costco</option>
                 <!-- Add more store options here as needed -->
             </select>
             <!-- Hidden File Input -->
@@ -122,16 +125,36 @@ function processItems(items) {
     let currentItemIndex = 0;
     window.processingList = true;
     const store = document.getElementById("storeSelect").value;
-    let searchBaseUrl = "https://www.walmart.com/search/?query=";
-    if (store === "heb") {
-        searchBaseUrl = "https://www.heb.com/search/?q="; // Adjust this URL as necessary
+    let searchBaseUrl;
+    switch (store) {
+        case "walmart":
+            searchBaseUrl = "https://www.walmart.com/search/?query=";
+            break;
+        case "heb":
+            searchBaseUrl = "https://www.heb.com/search/?q=";
+            break;
+        case "target":
+            searchBaseUrl = "https://www.target.com/s?searchTerm=";
+            break;
+        case "kroger":
+            searchBaseUrl = "https://www.kroger.com/search?query=";
+            break;
+        case "costco":
+            searchBaseUrl = "https://www.costco.com/CatalogSearch?keyword=";
+            break;
+        default:
+            alert("Store not supported.");
+            window.processingList = false;
+            return;
     }
 
     window.processNextItem = function() {
         while (currentItemIndex < items.length) {
             let item = items[currentItemIndex].trim();
             currentItemIndex++;
+
             if (item.endsWith(':') || item === '') continue;
+
             item = item.replace(/^-+\s*/, '');
             const searchUrl = searchBaseUrl + encodeURIComponent(item);
             const searchTab = window.open(searchUrl, 'searchTab');
@@ -141,14 +164,13 @@ function processItems(items) {
 
         if (currentItemIndex >= items.length) {
             alert("All items have been processed.");
-            window.processingList = false;
+            window.processingList = false; // End processing
         }
     };
 
-    window.processNextItem();
+    window.processNextItem(); // Start processing items
 }
 
-// Reset processNextItem on page load
 window.addEventListener('load', () => {
     window.processNextItem = () => {};
 });
