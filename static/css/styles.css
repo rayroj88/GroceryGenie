@@ -50,28 +50,26 @@ body {
     display: flex;
 }
 
-.item-input {
-    flex: 1;
-    height: 60px; /* Adjust the height as needed */
-    width: 30%; /* Ensure it takes up the full width */
-    align-items: center; /* Center items vertically */
-    padding: 20px;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#categoriesContainer {
-    margin-top: 20px;
-}
-
-#itemInput {
-    width: 30px; /* Adjust the width as needed */
-    padding: 5px;
-    margin-right: 10px; /* Add margin between input and buttons */
-}
-
-.saved-lists {
-    flex: 1;
+.savedListsHeader{
     text-align: center;
-    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.shoppingListHeader{
+    text-align:center;
+}
+
+#categoriesContainer{
+    flex:1;
+    margin-left: 200px;
+    padding: 50px;
+    margin-top: 20px;
 }
 
 .form-button {
@@ -128,6 +126,15 @@ body {
     padding: 20px;
 }
 
+.saved-lists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    padding: 50px;
+    margin-left: 600px;
+}
+
 #shoppingListHeader {
     color: #333;
     text-align: left;
@@ -137,9 +144,13 @@ body {
 #itemInput {
     width: 200px;
     padding: 10px;
-    margin-top: 20px;
+    margin-right: 10px;
 }
 
+#processListButton {
+    color: white;
+    background-color:red
+}
 
 #addItemButton {
     padding: 10px;
