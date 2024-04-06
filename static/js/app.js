@@ -21,7 +21,6 @@ function addItem() {
 }
 
 function addItemFromAPI(itemName) {
-    console.log('In addItemFromAPI');
         const newItem = itemName.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
@@ -317,7 +316,6 @@ function downloadList() {
     document.body.removeChild(link); // Clean up and remove the link
     
 }
-
 
 function saveList() {
     // Convert the items array to a JSON string

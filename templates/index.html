@@ -23,8 +23,10 @@
     <div style="text-align: center; margin-top: 80px;">
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
     </div>
-    <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
-        <h1>My Shopping List</h1>
+    <div class="container" style="margin: 0 auto; align-items: center; width: fit-content; padding-top: 50px;">
+        <div class="shoppingListHeader">
+            <h1>My Shopping List</h1>
+        </div>
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
             <select id="storeSelect" class="form-button" style="margin-right: 10px;">
                 <option value="walmart">Walmart</option>
@@ -39,24 +41,34 @@
             <!-- Process List Button -->
             <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
             <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+            <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         </div>
-        <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+        <div class="buttons">
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-
-              <!-- New dropdown for dietary restrictions -->
-    <div id="dietaryFilterContainer" style="margin-top: 20px;">
-        <select id="dietaryFilter" class="form-button">
-            <option value="">Select a diet</option>
-            <option value="Vegan">Vegan</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Gluten-Free">Gluten-Free</option>
-            <!-- Add more options here -->
-        </select>
+        <!-- New dropdown for dietary restrictions -->
+        <div id="dietaryFilterContainer" style="margin-top: 20px;">
+            <select id="dietaryFilter" class="form-button">
+                <option value="">Select a diet</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <!-- Add more options here -->
+            </select>
+            </div>
+        </div>
     </div>
-        <div id="categoriesContainer" style="margin-top: 20px;">
+    <div class="flex-container">
+        <div class="saved-lists-container">
+            <div class="savedListsHeader">
+            <h1>Saved Lists</h1>
+            </div>
+            <div id="listDates"></div> <!-- Container to hold the list dates -->
+            <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
+        </div>
+        <div id="categoriesContainer">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
@@ -175,10 +187,6 @@ window.addEventListener('load', () => {
 });
     </script>
 
-<h1>Saved Lists</h1>
-<div id="listDates"></div> <!-- Container to hold the list dates -->
-<ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
-
 <script>
     async function fetchLists() {
         try {
@@ -277,3 +285,4 @@ window.addEventListener('load', () => {
     </footer>
 </body>
 </html>
+

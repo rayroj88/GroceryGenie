@@ -8,7 +8,7 @@ save_list_bp = Blueprint('save_list_bp', __name__)
 
 # SQLite database setup
 def create_table():
-    conn = sqlite3.connect('shopping_list.db')
+    conn = sqlite3.connect('instance/list.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS lists (id INTEGER PRIMARY KEY AUTOINCREMENT, list_data TEXT, created_at TIMESTAMP)''')
     conn.commit()
@@ -20,7 +20,7 @@ def save_list():
     data = request.get_json()
     
     if isinstance(data, list):
-        conn = sqlite3.connect('shopping_list.db')
+        conn = sqlite3.connect('instance/list.db')
         c = conn.cursor()
 
         # Convert list data to JSON string

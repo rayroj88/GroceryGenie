@@ -5,7 +5,7 @@ fetch_list_bp = Blueprint('fetch_list_bp', __name__)
 saved_lists_bp = Blueprint('saved_lists_bp', __name__)
 @saved_lists_bp.route('/get_saved_lists', methods=['GET'])
 def get_saved_lists():
-    conn = sqlite3.connect('shopping_list.db')
+    conn = sqlite3.connect('instance/list.db')
     c = conn.cursor()
 
     # Fetch all lists from the database
@@ -28,7 +28,7 @@ def get_saved_lists():
 def fetch_list_items():
     list_id = request.json.get('listId')  # Extract list ID from request body
 
-    conn = sqlite3.connect('shopping_list.db')
+    conn = sqlite3.connect('instance/list.db')
     c = conn.cursor()
 
     # Fetch items for the specified list ID from the database
