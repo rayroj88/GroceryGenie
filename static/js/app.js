@@ -17,12 +17,10 @@ function addItem() {
 
             items.push(newItem);
             document.getElementById("itemInput").value = "";
-            document.getElementById("itemInput").value = "";
         }
 }
 
 function addItemFromAPI(itemName) {
-    try {
         const newItem = itemName.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
@@ -36,69 +34,7 @@ function addItemFromAPI(itemName) {
 
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
-
-            // You might or might not need this fetch request depending on your application's requirements
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
         }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    }
-}
-
-function addItemFromAPI(itemName) {
-    try {
-        const newItem = itemName.trim();
-        if (newItem !== "") {
-            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
-
-            ensureCategoryExists(categoryFound); // Ensure the category exists
-
-            const li = document.createElement("li");
-            li.textContent = newItem;
-
-            const categoryId = categoryFound.replace(/\s+/g, '');
-
-            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
-            categoryList.appendChild(li);
-
-            // You might or might not need this fetch request depending on your application's requirements
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    }
 }
 
 
@@ -128,7 +64,7 @@ function categorizeItem(itemName) {
             "cream cheese", "mozzarella", "cheddar", "gouda", 
             "brie", "camembert", "feta", "ricotta", "parmesan", 
             "ghee", "kefir", "buttermilk", "half and half", 
-            "provolone", "swiss cheese", "blue cheese"
+            "provolone", "swiss cheese", "blue cheese", "egg"
           ],
         "Produce": [
             "apples", "bananas", "carrots", "dates", "eggplant", 
@@ -136,7 +72,7 @@ function categorizeItem(itemName) {
             "jalapeno peppers", "kale", "lemons", "mangoes", 
             "nectarines", "oranges", "peaches", "quinces", 
             "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini"
+            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup", "mustard"
           ],
         "Meats & Seafood": [
             "beef", "chicken", "duck", "eggs", "fish", 
@@ -217,7 +153,7 @@ function categorizeItem(itemName) {
             "fruit cocktail", "tuna", "salmon", "chicken", "beef stew",
             "olives", "pickles", "jam", "jelly", "peanut butter",
             "honey", "salsa", "pasta sauce", "coconut milk", "artichoke hearts",
-            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree"
+            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree" , "tomato sauce" , "tomato paste"
       ],
         "International Foods": [
             "asian food", "hispanic food", "european food", "indian food", "international spice",
@@ -245,7 +181,7 @@ function categorizeItem(itemName) {
             "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
             "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
             "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
-            "cardamom", "star anise"
+            "cardamom", "star anise", "italian seasoning"
       ],
         "Alcoholic Beverages": [
             "beer", "wine", "spirit", "mixer",
@@ -283,6 +219,8 @@ function categorizeItem(itemName) {
     }
     return "Other"; // Default category if no match is found
 }
+
+
 
 
 function clearList() {
@@ -329,6 +267,25 @@ document.getElementById("toggleSideWindowBtn").addEventListener("click", functio
     }
 });
 
+
+// Function to filter items based on the selected dietary restriction
+function filterItemsByDiet(dietType) {
+    // Select all list items
+    const allListItems = document.querySelectorAll('.shoppingList li');
+
+    // Loop over each item and check its data-diet attribute
+    allListItems.forEach(item => {
+        // If no diet is selected or the item's diet includes the selected diet, show the item
+        if (dietType === '' || item.getAttribute('data-diet').includes(dietType)) {
+            item.style.display = '';
+        } else {
+            // Otherwise, hide the item
+            item.style.display = 'none';
+        }
+    });
+}
+
+
 function downloadList() {
     var listContent = "";
     var categories = document.querySelectorAll("#categoriesContainer .category");
@@ -360,7 +317,6 @@ function downloadList() {
     
 }
 
-
 function saveList() {
     // Convert the items array to a JSON string
     const itemsJson = JSON.stringify(items);
@@ -383,34 +339,6 @@ function saveList() {
     .catch(error => {
         console.error('Error:', error);
     });
-}
-
-function displaySavedHistory() {
-    try {
-        // Send an AJAX request to fetch the saved lists
-        $.ajax({
-            url: '/get_saved_lists',
-            type: 'GET',
-            success: function(response) {
-                console.log(response);
-                // Clear existing options from the dropdown
-                $('#savedListsDropdown').empty();
-                
-                // Add an option for each saved list to the dropdown
-                response.saved_lists.forEach(function(savedList) {
-                    $('#savedListsDropdown').append($('<option>', {
-                        value: savedList.id,
-                        text: savedList.created_at
-                    }));
-                });
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching saved lists:', error);
-            }
-        });
-    } catch (error) {
-        console.error('Error displaying saved history:', error);
-    }
 }
 
 async function displaySavedHistory() {

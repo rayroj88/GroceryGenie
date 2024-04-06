@@ -5,7 +5,6 @@ body {
     padding: 0;
 }
 
-
 .banner {
     background-color: #333;
     padding: 10px 0;
@@ -47,13 +46,33 @@ body {
     background-color: #4cae4c;
 }
 
+.flex-container{
+    display: flex;
+}
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    margin: 0 auto; /* Keeps horizontal centering */
+
+
+.savedListsHeader{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shoppingListHeader{
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+#categoriesContainer{
+    flex:1;
+    margin-left: 200px;
+    padding: 50px;
     margin-top: 20px;
+}
+
+.form-button {
+    padding: 10px;
+    width: 28%; /* Adjust the width as needed */
+    margin-right: 10px; /* Add margin between buttons */
 }
 
 .side-window {
@@ -98,18 +117,37 @@ body {
     background-color: #45a049; /* Darker shade on hover */
 }
 
-h1 {
+#listDates {
+    height: 60px; /* Adjust the height as needed */
+    width: 70%; /* Ensure it takes up the full width */
+    padding: 20px;
+}
+
+.saved-lists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    padding: 50px;
+    margin-left: 600px;
+}
+
+#shoppingListHeader {
     color: #333;
-    text-align: center;
+    text-align: left;
+    margin-left: 150px;
 }
 
 #itemInput {
-    width: 70%;
+    width: 300px;
     padding: 10px;
-    margin-top: 20px;
-    border: 1px solid #ddd;
+    margin-right: 10px;
 }
 
+#processListButton {
+    color: white;
+    background-color:red
+}
 
 #addItemButton {
     padding: 10px;
@@ -123,10 +161,14 @@ h1 {
 #downloadListButton {
     padding: 10px;
     width: 28%;
-    background-color: #000000;
+    background-color: #f696de;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+#downloadListButton:hover {
+    background-color: #ed62e4;
 }
 
 #addItemButton:hover {
@@ -136,6 +178,7 @@ h1 {
 #shoppingList {
     list-style-type: none;
     padding: 0;
+    
 }
 
 #shoppingList li {
@@ -145,10 +188,15 @@ h1 {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
+    
 }
 
-#savedListButton {
-    color:purple
+#saveListButton {
+    background-color:purple
+}
+
+#saveListButton:hover {
+    background-color: #560181;
 }
 
 #clearListButton {
@@ -167,6 +215,8 @@ h1 {
 
 #shoppingList li input[type="checkbox"] {
     margin-right: 10px;
+    max-height: 500px; /* Adjust based on your needs */
+    overflow-y: auto; /* Enables vertical scrolling */
 }
 
 #toggleSideWindowBtn {
@@ -180,4 +230,3 @@ h1 {
 #toggleSideWindowBtn:hover {
     background-color: #2980b9; /* Slightly darker shade on hover */
 }
-

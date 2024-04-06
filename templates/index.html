@@ -7,46 +7,80 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-
 </head>
-
-<body style="text-align: center; margin: 0; padding-top: 10px;">
-    <div style="margin: 50px auto; width: 200px; padding-top: 30px;">
-        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%;">
+<body>
+    <div class="header">
+        <a href="#" class="logo">GroceryGenie</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>                
+            <a href="#">Contact</a>
+        </nav>
     </div>
-    <div class="container" style="margin: 0 auto; width: 100%; max-width: 600px; padding-top: 20px;">
-        <h1 style="margin-top: 10px; margin-bottom: 20px;">My Shopping List</h1>
-        <input type="text" id="itemInput" name="item_text" placeholder="Add new item..." style="margin-top: 20px;">
-        <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+    <div style="text-align: center; margin-top: 80px;">
+        <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
+    </div>
+    <div class="container" style="margin: 0 auto; align-items: center; width: fit-content; padding-top: 50px;">
+        <div class="shoppingListHeader">
+            <h1>My Shopping List</h1>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <select id="storeSelect" class="form-button" style="margin-right: 10px;">
+                <option value="walmart">Walmart</option>
+                <option value="heb">HEB</option>
+                <option value="target">Target</option>
+                <option value="kroger">Kroger</option>
+                <option value="costco">Costco</option>
+                <!-- Add more store options here as needed -->
+            </select>
+            <!-- Hidden File Input -->
+            <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
+            <!-- Process List Button -->
+            <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
+            <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+            <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+        </div>
+        <div class="buttons">
         <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
         <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
         <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-        <button id="savedLists" class="form-button" onclick="displaySavedHistory()">Saved Lists</button>
         <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-         
-        <div id="categoriesContainer" style="margin-top: 20px;">
+        <!-- New dropdown for dietary restrictions -->
+        <div id="dietaryFilterContainer" style="margin-top: 20px;">
+            <select id="dietaryFilter" class="form-button">
+                <option value="">Select a diet</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <!-- Add more options here -->
+            </select>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="saved-lists-container">
+            <div class="savedListsHeader">
+            <h1>Saved Lists</h1>
+            </div>
+            <div id="listDates"></div> <!-- Container to hold the list dates -->
+            <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
+        </div>
+        <div id="categoriesContainer">
             <!-- Categories will be added dynamically -->
         </div>
     </div>
-
-
     <div class="side-window">
         <h2>Add Recipe</h2>
-        <h3>Add the name of your recipe below and we'll add the neccesary ingredients to your list! Please wait a moment for processing.</h3> <!-- Explanation text -->
+        <h3>Add the name of your recipe below and we'll add the necessary ingredients to your list! Please wait a moment for processing.</h3>
         <form id="recipeForm">
             <input type="text" id="recipeName" name="recipe_name" placeholder="Recipe Name">
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
-        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div> <!-- Hidden message placeholder -->
+        <div id="processingMessage" style="margin-top: 10px; display: none;">Processing... This may take a moment.</div>
     </div>
-    
-    
-
-
     <div class="side-window">
         <h2>Add Recipe</h2>
         <form id="recipeForm">
@@ -55,19 +89,167 @@
             <button type="button" onclick="submitRecipe()">Submit Recipe</button>
         </form>
     </div>
-    
-    
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script>
-        // Event listener for adding an item when the Enter key is pressed
-        document.getElementById("itemInput").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Prevent the default action to stop submitting form
-                addItem();
+window.processingList = false; // Global flag indicating if the list is being processed
+
+document.getElementById('processListButton').addEventListener('click', function() {
+    document.getElementById('fileInput').click(); // Trigger file input click
+});
+
+function uploadAndProcessList() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const items = e.target.result.split('\n');
+            processItems(items);
+        };
+        reader.readAsText(file);
+    } else {
+        alert("Please upload a file before continuing.");
+    }
+}
+
+// Modified to handle the Enter key based on processingList flag
+document.addEventListener('keypress', function(event) {
+    if (event.key === "Enter") {
+        const activeElement = document.activeElement;
+
+        if (activeElement && activeElement.id === "itemInput") {
+            event.preventDefault(); // Prevent form submission
+            if (!window.processingList) {
+                addItem(); // addItem is defined elsewhere
             }
-        });
+        } else if (window.processingList) {
+            event.preventDefault();
+            if (typeof window.processNextItem === "function") {
+                window.processNextItem();
+            }
+        }
+    }
+});
+
+function processItems(items) {
+    let currentItemIndex = 0;
+    window.processingList = true;
+    const store = document.getElementById("storeSelect").value;
+    let searchBaseUrl;
+    switch (store) {
+        case "walmart":
+            searchBaseUrl = "https://www.walmart.com/search/?query=";
+            break;
+        case "heb":
+            searchBaseUrl = "https://www.heb.com/search/?q=";
+            break;
+        case "target":
+            searchBaseUrl = "https://www.target.com/s?searchTerm=";
+            break;
+        case "kroger":
+            searchBaseUrl = "https://www.kroger.com/search?query=";
+            break;
+        case "costco":
+            searchBaseUrl = "https://www.costco.com/CatalogSearch?keyword=";
+            break;
+        default:
+            alert("Store not supported.");
+            window.processingList = false;
+            return;
+    }
+
+    window.processNextItem = function() {
+        while (currentItemIndex < items.length) {
+            let item = items[currentItemIndex].trim();
+            currentItemIndex++;
+
+            if (item.endsWith(':') || item === '') continue;
+
+            item = item.replace(/^-+\s*/, '');
+            const searchUrl = searchBaseUrl + encodeURIComponent(item);
+            const searchTab = window.open(searchUrl, 'searchTab');
+            searchTab.focus();
+            break;
+        }
+
+        if (currentItemIndex >= items.length) {
+            alert("All items have been processed.");
+            window.processingList = false; // End processing
+        }
+    };
+
+    window.processNextItem(); // Start processing items
+}
+
+window.addEventListener('load', () => {
+    window.processNextItem = () => {};
+});
     </script>
 
+<script>
+    async function fetchLists() {
+        try {
+            const response = await fetch('/get_saved_lists');
+            if (!response.ok) {
+                throw new Error('Failed to fetch lists');
+            }
+            const lists = await response.json();
+            return lists;
+        } catch (error) {
+            console.error('Error fetching lists:', error);
+            return [];
+        }
+    }
+
+    async function displayListDates() {
+        const lists = await fetchLists();
+
+        const listDatesContainer = document.getElementById('listDates');
+        listDatesContainer.innerHTML = ''; // Clear previous content
+
+        lists.forEach(list => {
+            const listDate = new Date(list.created_at);
+            const formattedDate = listDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+            // Create a clickable list date
+            const listDateElement = document.createElement('div');
+            listDateElement.textContent = formattedDate;
+            listDateElement.style.cursor = 'pointer';
+            listDateElement.addEventListener('click', async () => {
+                console.log('list id', list.id);
+                // Fetch the list items
+                const response = await fetch('/fetch_list_items', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ listId: list.id }) // Send list ID to identify the list
+                });
+                if (!response.ok) {
+                    console.error('Failed to fetch list items');
+                    return;
+                }
+                const items = await response.json();
+                
+                // Clear previous grocery list items
+                const groceryList = document.getElementById('groceryList');
+                groceryList.innerHTML = '';
+
+                // Add each item to the grocery list
+                items.forEach(item => {
+                    console.log(item);
+                    addItemFromAPI(item);
+                });
+            });
+
+            listDatesContainer.appendChild(listDateElement);
+        });
+    }
+
+    // Call the function to display list dates when the page loads
+    displayListDates();
+</script>
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>
@@ -96,11 +278,11 @@
                 </div>
                 
             </div>
-            
-            <div style="margin: 20px auto 0; width: 90px;">
-                <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
-            </div>
-        </footer>
-    </body>
-    </html>
+        </div>
+        <div style="margin: 20px auto 0; width: 90px;">
+            <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
+        </div>
+    </footer>
+</body>
+</html>
 

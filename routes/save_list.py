@@ -8,23 +8,19 @@ save_list_bp = Blueprint('save_list_bp', __name__)
 
 # SQLite database setup
 def create_table():
-    conn = sqlite3.connect('shopping_list.db')
+    conn = sqlite3.connect('instance/list.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS lists (id INTEGER PRIMARY KEY AUTOINCREMENT, list_data TEXT, created_at TIMESTAMP)''')
-    c.execute('''CREATE TABLE IF NOT EXISTS saved_lists (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                list_data TEXT
-             )''')
     conn.commit()
     conn.close()
 
 @save_list_bp.route('/save_list', methods=['POST'])
-def add_item():
+def save_list():
     create_table()  # Ensure table exists
     data = request.get_json()
     
     if isinstance(data, list):
-        conn = sqlite3.connect('shopping_list.db')
+        conn = sqlite3.connect('instance/list.db')
         c = conn.cursor()
 
         # Convert list data to JSON string
