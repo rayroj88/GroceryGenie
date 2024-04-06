@@ -17,12 +17,11 @@ function addItem() {
 
             items.push(newItem);
             document.getElementById("itemInput").value = "";
-            document.getElementById("itemInput").value = "";
         }
 }
 
 function addItemFromAPI(itemName) {
-    try {
+    console.log('In addItemFromAPI');
         const newItem = itemName.trim();
         if (newItem !== "") {
             const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
@@ -36,69 +35,7 @@ function addItemFromAPI(itemName) {
 
             const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
             categoryList.appendChild(li);
-
-            // You might or might not need this fetch request depending on your application's requirements
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
         }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    }
-}
-
-function addItemFromAPI(itemName) {
-    try {
-        const newItem = itemName.trim();
-        if (newItem !== "") {
-            const categoryFound = categorizeItem(newItem); // Assumes this function categorizes items
-
-            ensureCategoryExists(categoryFound); // Ensure the category exists
-
-            const li = document.createElement("li");
-            li.textContent = newItem;
-
-            const categoryId = categoryFound.replace(/\s+/g, '');
-
-            const categoryList = document.getElementById(categoryId).querySelector(".shoppingList");
-            categoryList.appendChild(li);
-
-            // You might or might not need this fetch request depending on your application's requirements
-            fetch('/add_item', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ item_text: newItem })
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Item added successfully');
-                } else {
-                    console.error('Failed to add item');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    } catch (error) {
-        console.error('Error adding item:', error);
-    }
 }
 
 
@@ -404,34 +341,6 @@ function saveList() {
     .catch(error => {
         console.error('Error:', error);
     });
-}
-
-function displaySavedHistory() {
-    try {
-        // Send an AJAX request to fetch the saved lists
-        $.ajax({
-            url: '/get_saved_lists',
-            type: 'GET',
-            success: function(response) {
-                console.log(response);
-                // Clear existing options from the dropdown
-                $('#savedListsDropdown').empty();
-                
-                // Add an option for each saved list to the dropdown
-                response.saved_lists.forEach(function(savedList) {
-                    $('#savedListsDropdown').append($('<option>', {
-                        value: savedList.id,
-                        text: savedList.created_at
-                    }));
-                });
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching saved lists:', error);
-            }
-        });
-    } catch (error) {
-        console.error('Error displaying saved history:', error);
-    }
 }
 
 async function displaySavedHistory() {
