@@ -26,6 +26,14 @@
     <div class="container" style="margin: 0 auto; width: fit-content; padding-top: 50px;">
         <h1>My Shopping List</h1>
         <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <select id="storeSelect" class="form-button" style="margin-right: 10px;">
+                <option value="walmart">Walmart</option>
+                <option value="heb">HEB</option>
+                <option value="target">Target</option>
+                <option value="kroger">Kroger</option>
+                <option value="costco">Costco</option>
+                <!-- Add more store options here as needed -->
+            </select>
             <!-- Hidden File Input -->
             <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
             <!-- Process List Button -->
@@ -114,19 +122,42 @@ document.addEventListener('keypress', function(event) {
 
 function processItems(items) {
     let currentItemIndex = 0;
-    window.processingList = true; // Start processing
+    window.processingList = true;
+    const store = document.getElementById("storeSelect").value;
+    let searchBaseUrl;
+    switch (store) {
+        case "walmart":
+            searchBaseUrl = "https://www.walmart.com/search/?query=";
+            break;
+        case "heb":
+            searchBaseUrl = "https://www.heb.com/search/?q=";
+            break;
+        case "target":
+            searchBaseUrl = "https://www.target.com/s?searchTerm=";
+            break;
+        case "kroger":
+            searchBaseUrl = "https://www.kroger.com/search?query=";
+            break;
+        case "costco":
+            searchBaseUrl = "https://www.costco.com/CatalogSearch?keyword=";
+            break;
+        default:
+            alert("Store not supported.");
+            window.processingList = false;
+            return;
+    }
 
-    window.processNextItem = function() { // Define processNextItem for reuse
+    window.processNextItem = function() {
         while (currentItemIndex < items.length) {
             let item = items[currentItemIndex].trim();
             currentItemIndex++;
 
             if (item.endsWith(':') || item === '') continue;
 
-            item = item.replace(/^-+\s*/, ''); // Clean item string
-
-            const walmartTab = window.open(`https://www.walmart.com/search/?query=${encodeURIComponent(item)}`, 'walmartSearchTab');
-            walmartTab.focus();
+            item = item.replace(/^-+\s*/, '');
+            const searchUrl = searchBaseUrl + encodeURIComponent(item);
+            const searchTab = window.open(searchUrl, 'searchTab');
+            searchTab.focus();
             break;
         }
 
@@ -139,7 +170,6 @@ function processItems(items) {
     window.processNextItem(); // Start processing items
 }
 
-// Reset processNextItem on page load
 window.addEventListener('load', () => {
     window.processNextItem = () => {};
 });
