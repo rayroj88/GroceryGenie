@@ -32,3 +32,20 @@
     font-weight: bold;
     /* Add other text styles as needed */
 }
+
+/* Styles for recipe cards */
+.recipe {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.recipe h2 {
+    color: #333;
+}
+
+.recipe p {
+    color: #666;
+}
