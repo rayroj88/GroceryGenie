@@ -1,0 +1,34 @@
+/* Styles for dietary labels */
+#dietaryLabels {
+    margin-top: 20px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+    /* Add background images or font icons for dietary symbols */
+}
+
+.vegetarian-icon {
+    background-image: url('path/to/vegetarian-icon.png'); /* Example URL */
+    /* Add background image specific styles */
+}
+
+.vegan-icon {
+    background-image: url('path/to/vegan-icon.png'); /* Example URL */
+    /* Add background image specific styles */
+}
+
+/* Add styles for other dietary icons as needed */
+
+.label-text {
+    font-weight: bold;
+    /* Add other text styles as needed */
+}
