@@ -75,6 +75,36 @@ Project is: _in progress_
 ## Contact
 Contact the team at: hmi12@txstate.edu
 
+## Sprint 3 goals:
+- Improve the UI for a better and more professional experience.
+- Finish database features.
+- Finish dietary feature.
+- finish view saved lists to output to the actual list instead of the array.
+
+# Sprint 2 contributions:
+
+### Danny hmi12
+- Some of my commits were not tracked by bitbucket (not sure why). If that was the case for one of my tasks, I linked the pull request which *does* show all the commits. Sorry about that and thanks!
+
+- SCRUM-94 Research: API exploration and Testing. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-94?atlOrigin=eyJpIjoiZDgyZTZmMWNkZGEyNGQ4YmFmYzIwZWI5MDY1YzcxYTYiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/90bbc9001a6108ad17561fcb69471dbbf40f0e5b. Pull request: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/8
+
+- SCRUM-96 Implement recipe search and selection UI ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-96?atlOrigin=eyJpIjoiYjlmYTg0ZGFlNjZiNGNiZjg3ZjFmY2Y2ZDc4NDA1NjciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/4da3188e0ed580e7332c9c3cdc1f727cbd7f3838. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/b905415b60cc5423ee6743c15ccc3fbb9828c489. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/28e386cfdb5ac32575006caaa9c1bc81bea7d182
+
+- SCRUM-95 Define data models for recipes and ingredients. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-95?atlOrigin=eyJpIjoiZDA4ZWMzNjEyMmVhNDY0MDliN2Q2ZDk1NzA1MmIyODciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/3c688dd77aa0e93675520c1d228038aff9243096. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/11.
+
+- SCRUM-97 Integrate openAI API for ingredient extraction. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-97?atlOrigin=eyJpIjoiYzk4YmU3NGU3ZDFmNGI4NDk4NjIzYzVlZTcxZjdkNGIiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/b81dd2dad09b0619438564c280d106568ddfe229. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/bbc69de885d1d3532d88ed62c9e57013fcbb7e47. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/12 
+
+- SCRUM-98 Parse API response into database and add to list. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-98?atlOrigin=eyJpIjoiMzY2MzUwMmE0MzM0NDFmNTk2OGU5ZWQyZjY2MTdkZmEiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/75ec0e44d5b6f0c7d4a3639e4af9c697c73a219b. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/face42fd3b94ef8ab9973748e29acc5dd15287be. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/13.  
+
+
+
+
+
+
+
+
+
+
 # Sprint 1 contributions:
 
 ### Danny hmi12:
