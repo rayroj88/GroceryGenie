@@ -75,6 +75,46 @@ Project is: _in progress_
 ## Contact
 Contact the team at: hmi12@txstate.edu
 
+## Sprint 3 goals:
+- Improve the UI for a better and more professional experience.
+- Finish database features.
+- Finish dietary feature.
+- finish view saved lists to output to the actual list instead of the array.
+
+# Sprint 2 contributions:
+
+### Danny hmi12
+- Some of my commits were not tracked by bitbucket (not sure why). If that was the case for one of my tasks, I linked the pull request which *does* show all the commits. Sorry about that and thanks!
+
+- SCRUM-94 Research: API exploration and Testing. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-94?atlOrigin=eyJpIjoiZDgyZTZmMWNkZGEyNGQ4YmFmYzIwZWI5MDY1YzcxYTYiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/90bbc9001a6108ad17561fcb69471dbbf40f0e5b. Pull request: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/8
+
+- SCRUM-96 Implement recipe search and selection UI ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-96?atlOrigin=eyJpIjoiYjlmYTg0ZGFlNjZiNGNiZjg3ZjFmY2Y2ZDc4NDA1NjciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/4da3188e0ed580e7332c9c3cdc1f727cbd7f3838. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/b905415b60cc5423ee6743c15ccc3fbb9828c489. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/28e386cfdb5ac32575006caaa9c1bc81bea7d182
+
+- SCRUM-95 Define data models for recipes and ingredients. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-95?atlOrigin=eyJpIjoiZDA4ZWMzNjEyMmVhNDY0MDliN2Q2ZDk1NzA1MmIyODciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/3c688dd77aa0e93675520c1d228038aff9243096. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/11.
+
+- SCRUM-97 Integrate openAI API for ingredient extraction. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-97?atlOrigin=eyJpIjoiYzk4YmU3NGU3ZDFmNGI4NDk4NjIzYzVlZTcxZjdkNGIiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/b81dd2dad09b0619438564c280d106568ddfe229. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/bbc69de885d1d3532d88ed62c9e57013fcbb7e47. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/12 
+
+- SCRUM-98 Parse API response into database and add to list. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-98?atlOrigin=eyJpIjoiMzY2MzUwMmE0MzM0NDFmNTk2OGU5ZWQyZjY2MTdkZmEiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/75ec0e44d5b6f0c7d4a3639e4af9c697c73a219b. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/face42fd3b94ef8ab9973748e29acc5dd15287be. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/13.  
+
+### Ray xvc3
+
+- bugfix/SCRUM-32-get-database-frontend-and-backend.ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-32?atlOrigin=eyJpIjoiYTdkZTk1NGI4NjE5NGVjNDhkOTdlNzJmNWUxYmQ5NzYiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e207ce6e38c435ced1fa2092f6c3784f1f5a7145 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/5e5af5bd37410c5f07e1b22c03a55a1fee4e28f0 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/7
+
+ - Feature/SCRUM-33 implement backend logic for saving lists. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-33?atlOrigin=eyJpIjoiMWM2YWQyZGY4NDQzNGMxOGE0OTYyNDNiOTljOWY4MDYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ac56e0a8d109f7a88ffc5f9265e90dc24334d79c PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/14.
+
+- Feature/SCRUM-34 integrate frontend with backend for List Display. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-34?atlOrigin=eyJpIjoiMWIyYzg4YmExNDQwNDJlYzg4NjkwM2M5ZTg5ZDY0ODciLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/3cbc412b40809efbd377162a43737141fb116c2a https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/57ab0f4951908f17e050f4ec88df904743d2f470 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/5aa4fbdd4ae9481a289cc1d24ffef73932d74507 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/8645ef617856c3f648be031ef2415b9470d1b53c. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/16
+
+-  Feature/SCRUM-35 create a ui to display lists on index page. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-35?atlOrigin=eyJpIjoiMGE0MDdkYzhkMTBhNGVmZmFlMTNmNDIwZTA1NTY5NTEiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/46b74a76ad2fcc1d65250b15371fe4a157f9c901 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/2cec84e81b6b4f6d8615764baa69b706a41d6c5d https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/455bb133eac5a1e67f951d971c819cdeb5ed82c0 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7dad7ef238f38d9cf44145af595e1150e49b72d3 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/3e51be38cf3bd02c5d46afc344d87a6121b43e26 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ecd831879c0570b2829616a5ce147acc2b270191 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/17
+
+- Feature/SCRUM-36 make separate components of page more visible. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-36?atlOrigin=eyJpIjoiMGJjMmY0Mjg0YWJlNDUzY2FiZTg4OGNjMDg3NTMyYTYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e6f3c82716cc935a07da72c5c7f4c650b657e341 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f6bb762d292984ba7280924f3482611352aa28c0 PULL REQUESTS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/25
+
+
+
+
+
+
+
+
 # Sprint 1 contributions:
 
 ### Danny hmi12:

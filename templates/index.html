@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
-    <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -20,9 +20,11 @@
             <a href="#">Contact</a>
         </nav>
     </div>
+
     <div style="text-align: center; margin-top: 80px;">
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
     </div>
+
     <div class="container" style="margin: 0 auto; align-items: center; width: fit-content; padding-top: 50px;">
         <div class="shoppingListHeader">
             <h1>My Shopping List</h1>
@@ -34,32 +36,29 @@
                 <option value="target">Target</option>
                 <option value="kroger">Kroger</option>
                 <option value="costco">Costco</option>
-                <!-- Add more store options here as needed -->
             </select>
-            <!-- Hidden File Input -->
             <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
-            <!-- Process List Button -->
             <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
             <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
             <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
         </div>
+
         <div class="buttons">
-        <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
-        <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
-        <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-        <button id="toggleSideWindowBtn" class="form-button" >Add Recipe</button>
-        <!-- New dropdown for dietary restrictions -->
-        <div id="dietaryFilterContainer" style="margin-top: 20px;">
-            <select id="dietaryFilter" class="form-button">
-                <option value="">Select a diet</option>
-                <option value="Vegan">Vegan</option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Gluten-Free">Gluten-Free</option>
-                <!-- Add more options here -->
-            </select>
+            <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
+            <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
+            <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+            <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+            <div id="dietaryFilterContainer" style="margin-top: 20px;">
+                <select id="dietaryFilter" class="form-button">
+                    <option value="">Select a diet</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Gluten-Free">Gluten-Free</option>
+                </select>
             </div>
         </div>
     </div>
+    
     <div class="flex-container">
         <div class="saved-lists-container">
             <div class="savedListsHeader">
