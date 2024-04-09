@@ -108,6 +108,21 @@ Contact the team at: hmi12@txstate.edu
 
 - Feature/SCRUM-36 make separate components of page more visible. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-36?atlOrigin=eyJpIjoiMGJjMmY0Mjg0YWJlNDUzY2FiZTg4OGNjMDg3NTMyYTYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e6f3c82716cc935a07da72c5c7f4c650b657e341 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f6bb762d292984ba7280924f3482611352aa28c0 PULL REQUESTS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/25
 
+## Gerardo Uby1
+One issue i did see was that i would get the emails of my pull requests getting approved but didnt always see it as approved in the actual bitbucket page.
+
+-SCRUM 106- Research Dietary Restrictions. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-106?atlOrigin=eyJpIjoiMzQwY2NmZjEwZTU3NGQ2YmJmZTkwNDY4Yzc5YjljYzciLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/b9a747fa60378a1767c50d506b7ff747084b3ca0 PULL REQUESTS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/10
+
+-SCRUM 109- Develop Back-End Filtering Logic. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-109?atlOrigin=eyJpIjoiNDE0Y2FkMzEzMzJiNGE2YThlMDc0N2I2YTRhNmU3YjAiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/e8ad5a8d252ebd8024029df685ad0fd778b21140 PULL REQUEST:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/18
+
+-SCRUM 110- CREATE DIETARY FILTER UI. ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-110?atlOrigin=eyJpIjoiMDY0MDY1NTRiYzBkNDk5NTkyYmZhOTdhNjJiYjEzNzQiLCJwIjoiaiJ9 COMMITS:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d828142cd2517c8e7b20f14f5e0d7719f2db2ef7 PULL REQUEST:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/20
+
+-SCRUM 113- DESIGN DIETARY LABELS. ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-113?atlOrigin=eyJpIjoiNDA3NmMxMWJhYjM4NDJmYjhiMzdlZGM1YmMwOTgyODYiLCJwIjoiaiJ9  COMMITS:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/c14e9c3ff25aa978510bffb1c616e00f2b39d7cf  PULL REQUEST:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/23
+
+-SCRUM 114- IMPLEMENT LABELS ON RECIPE DISPLAY. ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-114?atlOrigin=eyJpIjoiNzFmNTMwZWY4MWIzNDJiYmFlM2FiZTE5MWIzNmY3ZTYiLCJwIjoiaiJ9  COMMITS:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/37d22107429fbac6b0ea34802af0b25f3c110716 PULL REQUEST:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/23    Im not sure why my pull request for 113 meerged with 114.
+
+-SCRUM 111,112 STAYED IN PROGRESS BECAUSE OF ISSUES I WAS HAVING WITH THE DATABASE.
+
 ### Brandon bds156
 -Feature/SCRUM 122 Implementing Item-Based Search for Walmart. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-122 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/64334f85d8bb07b417f69cf54002b2d58cdacef0 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/f729ed8cf1df9c160d3f2726f42166c0576a9105 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/c38a8aaba63f8e6e68e458c99deb3055b34429dd https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/6d3a0bd6349cc5b794ef76b4fba7a3ec56485165 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/475ddf34fab0131b1b22c452924798a63acf480a https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/42079cd66dc6aab82978280fad8cba49a2de0576 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/19
 
@@ -127,8 +142,6 @@ Contact the team at: hmi12@txstate.edu
 - SCRUM-118: modify the social media links to add a professional touch to the website. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-118?atlOrigin=eyJpIjoiYjNkYzU0NjIzY2Q0NDBlODlmODA0M2EzOTRhMWYxZDEiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/eed34264989bb33af89486a3c6ccaabaeab084eb
 
 - SCRUM-120: Implement routes and the UI theme across all pages matching the homepage. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-120?atlOrigin=eyJpIjoiYmZhZjIwMGJiM2NhNGUzNjk3ZmJkNGU1YWVjZGI5NDUiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/4f40d2e7780c3d1d123eada3431975595bd54649
-
-
 
 
 
