@@ -108,9 +108,12 @@ Contact the team at: hmi12@txstate.edu
 
 - Feature/SCRUM-36 make separate components of page more visible. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-36?atlOrigin=eyJpIjoiMGJjMmY0Mjg0YWJlNDUzY2FiZTg4OGNjMDg3NTMyYTYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e6f3c82716cc935a07da72c5c7f4c650b657e341 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f6bb762d292984ba7280924f3482611352aa28c0 PULL REQUESTS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/25
 
+### Brandon bds156
+-Feature/SCRUM 122 Implementing Item-Based Search for Walmart. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-122 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/64334f85d8bb07b417f69cf54002b2d58cdacef0 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/f729ed8cf1df9c160d3f2726f42166c0576a9105 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/c38a8aaba63f8e6e68e458c99deb3055b34429dd https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/6d3a0bd6349cc5b794ef76b4fba7a3ec56485165 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/475ddf34fab0131b1b22c452924798a63acf480a https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/42079cd66dc6aab82978280fad8cba49a2de0576 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/19
 
+-Feature/SCRUM 122 Implementing Item-Based Search for HEB. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-122 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/f230fa6f8b037a81ffb30f32c1ab85e157fccf29 https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/ff9d074f2333e93d177805111bf57480d8412bf1 Pull Request: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/21/feature-scrum-123-shop-for-different
 
-
+-Research website scraping and Walmart/HEB API options SCRUM-125 ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-125
 
 
 
