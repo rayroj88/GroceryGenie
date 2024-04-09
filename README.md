@@ -182,6 +182,7 @@ Contact the team at: hmi12@txstate.edu
 ### What can each teamember do better:
 - Danny: I could've done a better job about communicating what needs to be done and delegating tasks.
 - Gerardo: I need to get better at using Gitkraken. Also need to finish my tasks quicker so i can work on bugs.
+- salem: I could have collaborated and met with my teamates more to create an even more visually appealing UI
 
 ### What might be impeding us from performing better:
 - Gitkraken proper usage. making sure we all know how to use it correctly and merge all of our code to main.
