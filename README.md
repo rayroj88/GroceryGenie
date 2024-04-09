@@ -108,6 +108,18 @@ Contact the team at: hmi12@txstate.edu
 
 - Feature/SCRUM-36 make separate components of page more visible. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-36?atlOrigin=eyJpIjoiMGJjMmY0Mjg0YWJlNDUzY2FiZTg4OGNjMDg3NTMyYTYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e6f3c82716cc935a07da72c5c7f4c650b657e341 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f6bb762d292984ba7280924f3482611352aa28c0 PULL REQUESTS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/25
 
+### Salem Rqn3
+
+- SCRUM-116 Modify the login fields to be visually appealing and user-friendly, enhancing my experience when accessing the website. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-116?atlOrigin=eyJpIjoiNGJkOTZkNGZjZWM1NDExODgxMzZjYjNjNTQ3YmE0YzEiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/1cc966b4e8b9769d9cb89d349f4b72027ef5b8b7
+
+- SCRUM-119 Implement the route of the links of the homepage so when clicked it goes to the correct destination. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-119?atlOrigin=eyJpIjoiNDVkOWFlNzU2NWIzNGRiZTg1ZmM2OTVhNGNiMmRlMGIiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/1b395ec6767b1bea11a12d4e4c5be32801853be7
+
+- SCURM-117: Create and fix the User interface aspects of the website and add to list/delete item button on the website. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-117?atlOrigin=eyJpIjoiZmFiNjJmOWVmNzBiNDYzYWEwOGI5ZTAyNTU5NDI4OTYiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/595c9b7faad228baa1e9919bb4a46cad5ce357f8
+
+- SCRUM-118: modify the social media links to add a professional touch to the website. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-118?atlOrigin=eyJpIjoiYjNkYzU0NjIzY2Q0NDBlODlmODA0M2EzOTRhMWYxZDEiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/eed34264989bb33af89486a3c6ccaabaeab084eb
+
+- SCRUM-120: Implement routes and the UI theme across all pages matching the homepage. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-120?atlOrigin=eyJpIjoiYmZhZjIwMGJiM2NhNGUzNjk3ZmJkNGU1YWVjZGI5NDUiLCJwIjoiaiJ9 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/4f40d2e7780c3d1d123eada3431975595bd54649
+
 
 
 
