@@ -16,7 +16,7 @@ def login():
         
         if username == "admin" and password == "password":
             session['user_id'] = "admin"  # You can decid'home what to store in the session
-            return redirect(url_for('home'))  # Assuming e' is the function name of your home page route
+            return redirect(url_for('site.main'))  # Assuming e' is the function name of your home page route
         
         # Query the database for the user
         user = User.query.filter_by(username=username).first()
@@ -24,7 +24,7 @@ def login():
         # If user exists and password is correct
         if user and check_password_hash(user.password_hash, password):
             session['user_id'] = user.user_id  # Store the user's ID in the session
-            return redirect(url_for('home'))  # Redirect to the home page or dashboard
+            return redirect(url_for('site.main'))  # Redirect to the home page or dashboard
         else:
             return 'Invalid credentials'
     return render_template('login.html')
