@@ -1,4 +1,4 @@
-from extensions import db 
+from .extensions import db 
  
          # Association table for Items and DietaryRestrictions
 item_dietary_restriction = db.Table('item_dietary_restriction',

@@ -1,4 +1,4 @@
-import create_app
+from grocerygenieapp import create_app
 
 app = create_app()
 
