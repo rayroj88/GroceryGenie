@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/static/css/contact.css">
 
+    <script>
+        function submitForm() {
+            // Display confirmation message
+            alert("Your message has been received. Thank you!");
+
+            // Optionally, reset the form after submission
+            document.getElementById("contact-form").reset();
+        }
+    </script>
 
    
 
@@ -32,7 +41,7 @@
     </div>
 
     <div class="contact-form">
-        <form action="#" method="post">
+        <form id="contact-form" action="#" method="post" onsubmit="submitForm(); return false;">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="subject" placeholder="Subject" required> <!-- New Subject Field -->
