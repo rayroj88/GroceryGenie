@@ -2,9 +2,9 @@ from flask import Flask
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import generate_password_hash
 from datetime import datetime
-from models import User
-from extensions import db
-from models import User
+from ..models import User
+from ..extensions import db
+from ..models import User
 
 
 register_blueprint = Blueprint('register', __name__)

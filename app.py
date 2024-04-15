@@ -1,6 +1,11 @@
+"""
+KEEPING THIS FILE TEMPORARILY IN CASE THE REFACTORING IS WRONG
+
+
+
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session, Response
 import os
-from extensions import db
+from grocerygenie.extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from routes.auth import auth_blueprint
 from routes.logout import logout_blueprint
@@ -11,7 +16,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 import openai
 from flask_migrate import Migrate
-from models import db, User, ShoppingList, Item, DietaryRestriction
+from grocerygenie.models import db, User, ShoppingList, Item, DietaryRestriction
 
 
 
@@ -158,3 +163,4 @@ def filter_items():
 
 if __name__ == '__main__':
     app.run(debug=True)
+"""
