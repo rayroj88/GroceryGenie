@@ -14,8 +14,8 @@
             // Display confirmation message
             alert("Your message has been received. Thank you!");
 
-            // Optionally, reset the form after submission
-            document.getElementById("contact-form").reset();
+            // Redirect to confirmation page
+            window.location.href = "confirmation.html";
         }
     </script>
 
@@ -41,7 +41,7 @@
     </div>
 
     <div class="contact-form">
-        <form id="contact-form" action="#" method="post" onsubmit="submitForm(); return false;">
+        <form id="contact-form" action="confirmation.html" method="post" onsubmit="submitForm(); return false;">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="subject" placeholder="Subject" required> <!-- New Subject Field -->
