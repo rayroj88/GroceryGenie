@@ -19,3 +19,9 @@ def about():
 @site.route('/contact')
 def contact():
     return render_template('contact.html')
+
+# Confirmation page
+@site.route('/confirmation')
+def confirmation():
+    return render_template('confirmation.html')
+
