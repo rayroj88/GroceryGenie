@@ -133,6 +133,13 @@ def about():
 def contact():
     return render_template('contact.html')
 
+# Confirmation page
+@app.route('/confirmation')
+def confirmation():
+    return render_template('confirmation.html')
+
+
+
 # Add this new route here
 @app.route('/api/items/filter', methods=['GET'])
 def filter_items():
