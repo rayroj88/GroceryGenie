@@ -1,0 +1,28 @@
+.savedListsHeader, .shoppingListHeader {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.saved-lists-container, #categoriesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin: 0 600px 20px 600px;
+}
+
+.shoppingListHeader {
+    color: #333;
+    text-align: left;
+    margin-left: 150px;
+}
+
+#shoppingList, #shoppingList li {
+    list-style-type: none;
+    background-color: #eee;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    align-items: center;
+    display: flex;
+}
