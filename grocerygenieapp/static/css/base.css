@@ -1,10 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f6f5;
-    margin: 0;
-    padding: 0;
+:root {
+    --primary-color: #4CAF50;
+    --error-color: #d9534f;
+    --hover-primary: #45a049;
+    --background-color: #f8f6f5;
+    --text-color: #333;
+    --border-color: #ccc;
 }
 
-.flex-container {
-    display: flex;
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
 }

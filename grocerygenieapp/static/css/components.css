@@ -1,37 +1,45 @@
+:root {
+    --primary-bg-color: #5cb85c; /* Main button color */
+    --primary-text-color: white;
+    --hover-bg-color: #4cae4c; /* Hover state color */
+    --error-bg-color: #d9534f; /* Error state color */
+    --secondary-bg-color: #f696de; /* Secondary button color */
+    --banner-bg-color: #333; /* Banner background color */
+    --base-border-radius: 5px;
+}
+
 .banner {
-    background-color: #333;
+    background-color: var(--banner-bg-color);
     padding: 10px 0;
     text-align: center;
+    color: var(--primary-text-color); /* Improved contrast */
 }
 
 .btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
     padding: 10px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
+    border-radius: var(--base-border-radius);
     text-decoration: none;
     margin: 0 10px;
 }
 
 #processListButton, #saveListButton {
-    background-color: red; /* Modify accordingly */
+    background-color: var(--error-bg-color); /* Use for critical actions */
 }
 
 #downloadListButton {
-    background-color: #f696de;
+    background-color: var(--secondary-bg-color);
 }
 
 .btn:hover, #addItemButton:hover, #downloadListButton:hover, #saveListButton:hover, #clearListButton:hover, #toggleSideWindowBtn:hover {
-    background-color: #4cae4c;
+    background-color: var(--hover-bg-color);
 }
 
 #clearListButton, #toggleSideWindowBtn {
-    background-color: #d9534f; /* Adjust the base colors as needed */
+    background-color: var(--error-bg-color);
 }
 
 .side-window {
@@ -48,3 +56,6 @@
     display: none;
     transition: right 0.3s;
 }
+
+
+
