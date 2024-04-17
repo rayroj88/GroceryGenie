@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f6f5;
-    margin: 0;
-    padding: 0;
-}
+
 
 .banner {
     background-color: #333;
@@ -45,11 +40,6 @@ body {
 .btn:hover {
     background-color: #4cae4c;
 }
-
-.flex-container{
-    display: flex;
-}
-
 
 
 .savedListsHeader{

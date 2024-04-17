@@ -1,0 +1,50 @@
+.banner {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#processListButton, #saveListButton {
+    background-color: red; /* Modify accordingly */
+}
+
+#downloadListButton {
+    background-color: #f696de;
+}
+
+.btn:hover, #addItemButton:hover, #downloadListButton:hover, #saveListButton:hover, #clearListButton:hover, #toggleSideWindowBtn:hover {
+    background-color: #4cae4c;
+}
+
+#clearListButton, #toggleSideWindowBtn {
+    background-color: #d9534f; /* Adjust the base colors as needed */
+}
+
+.side-window {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    transition: right 0.3s;
+}
