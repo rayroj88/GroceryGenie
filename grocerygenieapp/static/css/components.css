@@ -18,8 +18,8 @@
 .btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
     display: flex;
     flex-direction: column;  /* Aligns the children (buttons) in a vertical column */
-    align-items: start; 
-    
+    align-items: center; 
+    width: 94%;
     padding: 10px;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
@@ -28,23 +28,99 @@
     border-radius: var(--base-border-radius);
     text-decoration: none;
     margin: 0 10px;
+    gap: 10px;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    color: white; /* White text for contrast */
+    text-transform: uppercase; /* Optional: makes text more legible and styled */
+    letter-spacing: 1px; /* More readable and stylish */
+    border: 1px solid #000000; /* Slight border using a darker shade of the gradient */
+    margin-top: 10px; /* Adds top margin to each button */
+    margin-bottom: 10px; /* Adds bottom margin to each button */
 }
 
-#processListButton, #saveListButton {
-    background-color: var(--error-bg-color); /* Use for critical actions */
+#categoriesContainer {
+    width: 5%;               /* Define a width */
+    margin: 0 auto;           /* Auto margins on both sides */
+}
+
+#storeSelect { 
+    background: linear-gradient(to right, #d09e6f, #eee3d2);
+}
+
+#processListButton {
+    background: linear-gradient(to right, #010401, #444543);
+}
+
+#saveListButton {
+    background: linear-gradient(to right, #016b7c, #92d0f8); /* Use for critical actions */
 }
 
 #downloadListButton {
-    background-color: var(--secondary-bg-color);
+    background: linear-gradient(to right, #010401, #444543);
 }
 
 .btn:hover, #addItemButton:hover, #downloadListButton:hover, #saveListButton:hover, #clearListButton:hover, #toggleSideWindowBtn:hover {
     background-color: var(--hover-bg-color);
 }
 
-#clearListButton, #toggleSideWindowBtn {
-    background-color: var(--error-bg-color);
+#clearListButton {
+    background: linear-gradient(to right, #761d04, #7d1103);
 }
+
+#toggleSideWindowBtn {
+    background: linear-gradient(to right, #020750, #14029e);
+}
+
+.addItemForm {
+    display: flex;        /* Use flexbox for horizontal layout */
+    width: 100%;          /* Fill the width of the parent container */
+    margin: 10px 0;       /* Add some margin for spacing around the form */
+    align-items: center;  /* Align items vertically in the center */
+}
+
+.addItemForm input[type="text"], .addItemForm button {
+    flex-grow: 1;         /* Both input and button will expand to fill available space */
+    margin: 5px;          /* Margin for spacing between input and button */
+}
+
+.addItemForm input[type="text"] {
+    margin-right: 10px;   /* Additional margin to separate the input from the button */
+}
+
+.addItemForm button {
+    padding: 12px 15px; /* Matching padding with the input for visual symmetry */
+    background: linear-gradient(to right, #4caf50, #8bc34a); /* Gradient background */
+    color: white; /* Text color for readability */
+    border: none; /* No border for a cleaner look */
+    border-radius: 4px; /* Rounded corners to match the input */
+    text-transform: uppercase; /* Makes text uppercase for a modern touch */
+    letter-spacing: 1px; /* Increases letter spacing for style */
+    cursor: pointer; /* Changes the cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.addItemForm button:hover {
+    background-color: #3a9431; /* Darker shade on hover for interaction feedback */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for a "lifted" button effect */
+}
+
+select.form-button {
+    color: #333; /* Dark color for text, visible on light backgrounds */
+    background-color: #fff; /* Ensures the background is white */
+    border: 1px solid #ccc; /* Light grey border for better visibility */
+    padding: 10px; /* Adds some padding inside the select box */
+    width: auto; /* Adjusts width to content or specify as needed */
+    text-align-last: center; /* Centers the text within the select box in some browsers */
+}
+
+/* To ensure option text is visible and not white */
+select.form-button option {
+    color: #333; /* Ensures text is dark and visible */
+    background-color: #fff; /* Light background for options */
+    text-align: center; /* Centers text in options - may not work in all browsers */
+}
+
+
 
 .side-window {
     position: fixed;

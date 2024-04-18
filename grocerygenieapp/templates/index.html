@@ -31,6 +31,16 @@
         <!-- Left Panel -->
         <div class="left-panel">
             <div class="buttons">
+                <div class="addItemForm">
+                    <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+                    <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+                </div>
+                
+                <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
+                <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+                <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
+                <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+
                 <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
                 <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
                 <select id="storeSelect" class="form-button" style="margin-right: 10px;">
@@ -40,10 +50,8 @@
                     <option value="kroger">Kroger</option>
                     <option value="costco">Costco</option>
                 </select>
-                <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
-                <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
-                <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-                <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+                
+                
                 <div id="dietaryFilterContainer" style="margin-top: 20px;">
                     <select id="dietaryFilter" class="form-button">
                         <option value="">Select a diet</option>
@@ -51,10 +59,6 @@
                         <option value="Vegetarian">Vegetarian</option>
                         <option value="Gluten-Free">Gluten-Free</option>
                     </select>
-                </div>
-                <div class="addItemForm">
-                    <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
-                    <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
                 </div>
             </div>
         </div>
@@ -64,8 +68,10 @@
             <div class="shoppingListHeader">
                 <h1>My Shopping List</h1>
             </div>
-            <ul id="groceryList">
-                <!-- Shopping List Items will be dynamically added here -->
+            <div id="categoriesContainer">
+                <!-- Categories will be dynamically added here -->
+            </div>
+            
             </ul>
         </div>
     
