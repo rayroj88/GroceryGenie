@@ -16,6 +16,10 @@
 }
 
 .btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
+    display: flex;
+    flex-direction: column;  /* Aligns the children (buttons) in a vertical column */
+    align-items: start; 
+    
     padding: 10px;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);

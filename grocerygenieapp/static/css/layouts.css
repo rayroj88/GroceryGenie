@@ -32,6 +32,10 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc; /* Adding a border to visually see the panels */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
 }
 
 .left-panel, .right-panel {

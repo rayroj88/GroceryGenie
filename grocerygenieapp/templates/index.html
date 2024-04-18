@@ -28,55 +28,59 @@
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
     </div>
     <div class="container">
+        <!-- Left Panel -->
         <div class="left-panel">
-            
-            <div class="buttons">          
-            <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
-            <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
-            <select id="storeSelect" class="form-button" style="margin-right: 10px;">
-                <option value="walmart">Walmart</option>
-                <option value="heb">HEB</option>
-                <option value="target">Target</option>
-                <option value="kroger">Kroger</option>
-                <option value="costco">Costco</option>
-            </select>
-            <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
-            <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
-            <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-            <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
-            <div id="dietaryFilterContainer" style="margin-top: 20px;">
-                <select id="dietaryFilter" class="form-button">
-                    <option value="">Select a diet</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Gluten-Free">Gluten-Free</option>
+            <div class="buttons">
+                <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
+                <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
+                <select id="storeSelect" class="form-button" style="margin-right: 10px;">
+                    <option value="walmart">Walmart</option>
+                    <option value="heb">HEB</option>
+                    <option value="target">Target</option>
+                    <option value="kroger">Kroger</option>
+                    <option value="costco">Costco</option>
                 </select>
-            </div>
-            <div class="addItemForm">
-                <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
-                <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+                <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
+                <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
+                <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+                <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+                <div id="dietaryFilterContainer" style="margin-top: 20px;">
+                    <select id="dietaryFilter" class="form-button">
+                        <option value="">Select a diet</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Gluten-Free">Gluten-Free</option>
+                    </select>
+                </div>
+                <div class="addItemForm">
+                    <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+                    <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+                </div>
             </div>
         </div>
     
+        <!-- Center Panel -->
         <div class="center-panel">
-            <!-- Shopping List and Header -->
             <div class="shoppingListHeader">
                 <h1>My Shopping List</h1>
             </div>
-            <ul id="groceryList"> <!-- Updated Grocery List -->
+            <ul id="groceryList">
                 <!-- Shopping List Items will be dynamically added here -->
             </ul>
         </div>
     
+        <!-- Right Panel -->
         <div class="right-panel">
-            <!-- Saved Lists and Their Management -->
             <div class="savedListsHeader">
                 <h1>Saved Lists</h1>
             </div>
-            <div id="listDates"></div> <!-- Existing Container for List Dates -->
-            <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
+            <div id="listDates"></div>
+            <ul id="groceryList">
+                <!-- Container to display the grocery list items -->
+            </ul>
         </div>
     </div>
+    
     
     <div class="side-window">
         <h2>Add Recipe</h2>
