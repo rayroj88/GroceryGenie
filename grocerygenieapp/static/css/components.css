@@ -1,10 +1,10 @@
 :root {
-    --primary-bg-color: #5cb85c; /* Main button color */
+    --primary-bg-color: #5cb85c; 
     --primary-text-color: white;
-    --hover-bg-color: #4cae4c; /* Hover state color */
-    --error-bg-color: #d9534f; /* Error state color */
-    --secondary-bg-color: #f696de; /* Secondary button color */
-    --banner-bg-color: #333; /* Banner background color */
+    --hover-bg-color: #4cae4c; 
+    --error-bg-color: #d9534f; 
+    --secondary-bg-color: #f696de; 
+    --banner-bg-color: #333; 
     --base-border-radius: 5px;
 }
 
@@ -30,12 +30,12 @@
     margin: 0 10px;
     gap: 10px;
     background: linear-gradient(to right, #4caf50, #8bc34a);
-    color: white; /* White text for contrast */
-    text-transform: uppercase; /* Optional: makes text more legible and styled */
-    letter-spacing: 1px; /* More readable and stylish */
-    border: 1px solid #000000; /* Slight border using a darker shade of the gradient */
-    margin-top: 10px; /* Adds top margin to each button */
-    margin-bottom: 10px; /* Adds bottom margin to each button */
+    color: white; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border: 1px solid #000000; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
 }
 
 #categoriesContainer {
@@ -72,10 +72,10 @@
 }
 
 .addItemForm {
-    display: flex;        /* Use flexbox for horizontal layout */
-    width: 100%;          /* Fill the width of the parent container */
-    margin: 10px 0;       /* Add some margin for spacing around the form */
-    align-items: center;  /* Align items vertically in the center */
+    display: flex;      
+    width: 100%;         
+    margin: 10px 0;       
+    align-items: center;  
 }
 
 .addItemForm input[type="text"], .addItemForm button {
@@ -100,24 +100,24 @@
 }
 
 .addItemForm button:hover {
-    background-color: #3a9431; /* Darker shade on hover for interaction feedback */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for a "lifted" button effect */
+    background-color: #3a9431; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 select.form-button {
-    color: #333; /* Dark color for text, visible on light backgrounds */
-    background-color: #fff; /* Ensures the background is white */
-    border: 1px solid #ccc; /* Light grey border for better visibility */
-    padding: 10px; /* Adds some padding inside the select box */
-    width: auto; /* Adjusts width to content or specify as needed */
-    text-align-last: center; /* Centers the text within the select box in some browsers */
+    color: #333; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    width: auto; 
+    text-align-last: center; 
 }
 
 /* To ensure option text is visible and not white */
 select.form-button option {
     color: #333; /* Ensures text is dark and visible */
     background-color: #fff; /* Light background for options */
-    text-align: center; /* Centers text in options - may not work in all browsers */
+    text-align: center; 
 }
 
 
