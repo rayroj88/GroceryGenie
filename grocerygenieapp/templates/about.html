@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="/static/css/about.css">
-
+    <link rel="stylesheet" href="/static/css/chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 </head>
 <body>
@@ -36,9 +37,32 @@ Introducing GroceryGenie, your ultimate grocery shopping companion! Our mission 
         <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1723173/food-drive-clipart-xl.png" alt="Centered Image">
 
         </div>
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+            <div class="chatbot">
+                <header>
+                    <h2>chatbot</h2>
+                </header>
+                <ul class="chatbox">
+                    <li class="Chat incoming">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                        <p>hi there How can i help you today?</p>
+                    </li>
+                    <li class="chat outgoing">
+                        <p>loreum eainfen enfienfe fenifneifen</p>
+                    </li>
+                </ul>
+                <div class="chat-input">
+                    <textarea placeholder="enter a message..." required></textarea>
+                    <span id="send-btn" class="material-symbols-outlined">send</span>
+                </div>
+            </div>
        
     </div>
     </div>
+    
 
     <footer>
         <div class="footer-col">
