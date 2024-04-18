@@ -3,6 +3,12 @@
     width: fit-content;
     text-align: center; /* Center align content */
 }
+.content-wrapper h1 {
+    font-size: 40px; /* Adjust the font size as needed */
+    text-decoration: underline; /* Add underline to the text */
+
+}
+
 .description {
     font-size: 25px; /* Adjust the font size as needed */
 }
