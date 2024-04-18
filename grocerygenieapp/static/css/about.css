@@ -1,0 +1,26 @@
+.content-wrapper {
+    margin: 90px auto;
+    width: fit-content;
+    text-align: center; /* Center align content */
+}
+.description {
+    font-size: 25px; /* Adjust the font size as needed */
+}
+.content-wrapper img {
+    display: block;
+    margin: 20px auto; /* Adjust the margin as needed */
+    width: 200px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add border radius if desired */
+}
+
+.image-container {
+    display: flex; /* Use flexbox to align images */
+    justify-content: center; /* Center align images horizontally */
+    margin-top: 20px;
+}
+.image-container img {
+    margin: 0 20px; /* Add space between images */
+    width: 150px; /* Set width of images */
+    height: auto; /* Maintain aspect ratio */
+}
