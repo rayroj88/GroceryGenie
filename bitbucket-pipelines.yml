@@ -1,0 +1,30 @@
+image: python:3.9
+
+pipelines:
+  default:
+    - step:
+        name: Install dependencies
+        caches:
+          - pip
+        script:
+          - python -m venv venv
+          - source venv/bin/activate
+          - pip install --upgrade pip
+          - pip install -r requirements.txt
+        artifacts:
+          - venv/**
+
+    - step:
+        name: Run tests
+        script:
+          - source venv/bin/activate
+          - pytest  # Add your testing commands here
+
+    - step:
+        name: Deploy to Heroku
+        trigger: manual
+        script:
+          - source venv/bin/activate
+          - pip install heroku
+          - heroku git:remote -a <your-heroku-app-name>
+          - git push heroku master
