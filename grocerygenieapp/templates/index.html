@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layouts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesfooter.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -24,53 +27,67 @@
     <div style="text-align: center; margin-top: 80px;">
         <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 200px; margin: auto;">
     </div>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="buttons">
+                <div class="addItemForm">
+                    <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
+                    <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
+                </div>
+                
+                <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
+                <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
+                <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
+                <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
 
-    <div class="container" style="margin: 0 auto; align-items: center; width: fit-content; padding-top: 50px;">
-        <div class="shoppingListHeader">
-            <h1>My Shopping List</h1>
-        </div>
-        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
-            <select id="storeSelect" class="form-button" style="margin-right: 10px;">
-                <option value="walmart">Walmart</option>
-                <option value="heb">HEB</option>
-                <option value="target">Target</option>
-                <option value="kroger">Kroger</option>
-                <option value="costco">Costco</option>
-            </select>
-            <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
-            <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
-            <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
-            <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
-        </div>
-
-        <div class="buttons">
-            <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
-            <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
-            <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
-            <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
-            <div id="dietaryFilterContainer" style="margin-top: 20px;">
-                <select id="dietaryFilter" class="form-button">
-                    <option value="">Select a diet</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Gluten-Free">Gluten-Free</option>
+                <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
+                <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
+                <select id="storeSelect" class="form-button" style="margin-right: 10px;">
+                    <option value="walmart">Walmart</option>
+                    <option value="heb">HEB</option>
+                    <option value="target">Target</option>
+                    <option value="kroger">Kroger</option>
+                    <option value="costco">Costco</option>
                 </select>
+                
+                
+                <div id="dietaryFilterContainer" style="margin-top: 20px;">
+                    <select id="dietaryFilter" class="form-button">
+                        <option value="">Select a diet</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Gluten-Free">Gluten-Free</option>
+                    </select>
+                </div>
             </div>
+        </div>
+    
+        <!-- Center Panel -->
+        <div class="center-panel">
+            <div class="shoppingListHeader">
+                <h1>My Shopping List</h1>
+            </div>
+            <div id="categoriesContainer">
+                <!-- Categories will be dynamically added here -->
+            </div>
+            
+            </ul>
+        </div>
+    
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="savedListsHeader">
+                <h1>Saved Lists</h1>
+            </div>
+            <div id="listDates"></div>
+            <ul id="groceryList">
+                <!-- Container to display the grocery list items -->
+            </ul>
         </div>
     </div>
     
-    <div class="flex-container">
-        <div class="saved-lists-container">
-            <div class="savedListsHeader">
-            <h1>Saved Lists</h1>
-            </div>
-            <div id="listDates"></div> <!-- Container to hold the list dates -->
-            <ul id="groceryList"></ul> <!-- Container to display the grocery list items -->
-        </div>
-        <div id="categoriesContainer">
-            <!-- Categories will be added dynamically -->
-        </div>
-    </div>
+    
     <div class="side-window">
         <h2>Add Recipe</h2>
         <h3>Add the name of your recipe below and we'll add the necessary ingredients to your list! Please wait a moment for processing.</h3>
@@ -265,23 +282,6 @@ window.addEventListener('load', () => {
         </header>
 
     
-        <footer>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="links">
-                    <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-    
-                </div>
-                
-            </div>
-        </div>
-        <div style="margin: 20px auto 0; width: 90px;">
-            <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
-        </div>
-    </footer>
 </body>
 </html>
 
