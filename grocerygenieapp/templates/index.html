@@ -88,10 +88,25 @@
     </div>
 
 
-    <div id="recommendedRecipe"></div>
-    
-    <!-- Include the external JavaScript file hosted on a CDN -->
-    <script src="../static/js/app.js"></script>
+    <!-- Recipe Recommendation system -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Immediately fetch the recipe when the page loads
+    $.ajax({
+        url: '/get_recipe_recommendations',
+        type: 'GET',
+        success: function(response) {
+            $('#recipe').html('<h2>Recommended Recipe</h2>' + response.recipe);
+        },
+        error: function(xhr, status, error) {
+            console.log("Error fetching recipe:", xhr.responseText);
+            $('#recipe').html('<h2>Recommended Recipe</h2><p>Error fetching recipe.</p>');
+        }
+    });
+});
+</script>
+<div id="recipe"><h2>Recommended Recipe</h2><p>Loading...</p></div>
     
     
     <div class="side-window">
