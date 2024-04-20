@@ -355,3 +355,43 @@ async function displaySavedHistory() {
         return [];
     }
 }
+
+// Define a function to fetch a recommended recipe
+async function fetchRecommendedRecipe() {
+    try {
+        // Send a GET request to the backend route to fetch the recommended recipe
+        const response = await fetch('/recommend_recipe');
+        
+        // Check if the response is successful
+        if (!response.ok) {
+            throw new Error('Failed to fetch recommended recipe');
+        }
+        
+        // Parse the response JSON data
+        const recipeData = await response.json();
+        
+        // Display the recommended recipe on the front end
+        displayRecipe(recipeData);
+    } catch (error) {
+        console.error('Error fetching recommended recipe:', error);
+    }
+}
+
+// Define a function to display the recommended recipe
+function displayRecipe(recipeData) {
+    // Assuming there is an HTML element with id "recommendedRecipe" to display the recipe
+    const recommendedRecipeElement = document.getElementById('recommendedRecipe');
+    
+    // Construct the HTML content for the recipe
+    const recipeHTML = `
+        <h2>${recipeData.title}</h2>
+        <p><strong>Ingredients:</strong> ${recipeData.ingredients}</p>
+        <p><strong>Instructions:</strong> ${recipeData.instructions}</p>
+    `;
+    
+    // Set the HTML content of the recommended recipe element
+    recommendedRecipeElement.innerHTML = recipeHTML;
+}
+
+// Call the fetchRecommendedRecipe function when the page loads
+window.addEventListener('load', fetchRecommendedRecipe);
