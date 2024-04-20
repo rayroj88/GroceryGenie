@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/static/css/chatbot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
+    <script src="chatbot.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -50,9 +50,7 @@ Introducing GroceryGenie, your ultimate grocery shopping companion! Our mission 
                         <span class="material-symbols-outlined">smart_toy</span>
                         <p>hi there How can i help you today?</p>
                     </li>
-                    <li class="chat outgoing">
-                        <p>loreum eainfen enfienfe fenifneifen</p>
-                    </li>
+                    
                 </ul>
                 <div class="chat-input">
                     <textarea placeholder="enter a message..." required></textarea>
@@ -79,5 +77,6 @@ Introducing GroceryGenie, your ultimate grocery shopping companion! Our mission 
             <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
         </div>
     </footer>
+    
 </body>
 </html>
