@@ -8,6 +8,7 @@ from .routes.save_list import save_list_bp
 from .routes.get_saved_lists import saved_lists_bp, fetch_list_bp
 from .routes.recipe import recipe_bp
 from .routes.dietary import dietary_bp
+from .routes.recipe_recommendation import recipe_recommendation_bp
 from .views import site
 import os
 
@@ -35,5 +36,6 @@ def create_app():
     app.register_blueprint(fetch_list_bp)
     app.register_blueprint(recipe_bp)
     app.register_blueprint(dietary_bp)
+    app.register_blueprint(recipe_recommendation_bp)
 
     return app
