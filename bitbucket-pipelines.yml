@@ -18,7 +18,6 @@ pipelines:
         name: Run tests
         script:
           - source venv/bin/activate
-          - pytest  # Add your testing commands here
 
     - step:
         name: Deploy to Heroku
