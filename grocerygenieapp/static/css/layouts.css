@@ -1,0 +1,81 @@
+.savedListsHeader, .shoppingListHeader {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shoppingListHeader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: 700; /* Bold weight for the header */
+    text-align: center;
+    color: #333; /* Dark grey for better readability */
+    margin-top: 20px; /* Provides space from the top */
+    margin-bottom: 10px; /* Space before the content starts */
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+#shoppingList, #shoppingList li {
+    list-style-type: none;
+    background-color: #eee;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Explicitly set the flex-direction to row */
+    justify-content: space-between;
+    align-items: flex-start; /* This will align items to the top of the container */
+    width: 100%; /* Ensure the container takes full width of its parent */
+    margin-top: 20px; /* Provide some top margin for spacing from the header */
+}
+
+.left-panel, .center-panel, .right-panel {
+    padding: 20px;
+    background-color: #f8f6f5; /* Adds a clean, uniform background */
+    
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    min-width: 200px; /* Ensure minimum width */
+    max-width: 500px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns all items to the right */
+    padding: 20px;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;  /* Organizes children vertically */
+    align-items: center;     /* Centers children horizontally in the flex container */
+    
+    width: 100%;             /* Takes full width of its parent or adjust as necessary */
+    padding: 20px;           /* Optional: Adds padding inside the right panel */
+}
+
+.center-panel {
+    flex: 1;
+    min-width: 400px; /* Ensure minimum width */
+}
+
+@media (max-width: 960px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-panel, .center-panel, .right-panel {
+        flex: none;
+        max-width: 100%;
+    }
+}
