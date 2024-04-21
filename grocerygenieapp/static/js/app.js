@@ -355,3 +355,30 @@ async function displaySavedHistory() {
         return [];
     }
 }
+
+function submitRecommendedRecipe(recommendedRecipe) {
+    const recipeName = document.getElementById("recipeName").value;
+    fetch('/process_recipe', {
+        method: 'POST',
+        body: JSON.stringify({ recipe_name: recommendedRecipe }),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // For debugging
+        
+        if (Array.isArray(data.ingredients) && data.ingredients.length > 0) {
+            // Iterate over the array of ingredients
+            data.ingredients.forEach(ingredient => {
+                
+                addItemFromAPI(ingredient.trim()); 
+            });
+        } else {
+            
+            console.log('No ingredients found or incorrect format received');
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
