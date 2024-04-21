@@ -97,7 +97,13 @@ $(document).ready(function() {
         url: '/get_recipe_recommendations',
         type: 'GET',
         success: function(response) {
-            $('#recipe').html('<h2>Recommended Recipe</h2>' + response.recipe);
+            var recommendedRecipe = response.recipe;
+            var $recipeButton = $('<button>').text(recommendedRecipe).on('click', function() {
+                submitRecommendedRecipe(recommendedRecipe);
+            });
+
+            // Append the button to the #recipe div
+            $('#recipe').html('<h2>Recommended Recipe</h2>').append($recipeButton);
         },
         error: function(xhr, status, error) {
             console.log("Error fetching recipe:", xhr.responseText);
