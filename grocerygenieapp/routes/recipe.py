@@ -11,7 +11,7 @@ OpenAI.api_key = os.getenv('OPENAI_API_KEY')
 recipe_bp = Blueprint('recipe', __name__)
 
 @recipe_bp.route('/process_recipe', methods=['POST'])
-def process_recipe():
+def process_recipe():  
     data = request.get_json()
     recipe_name = data['recipe_name'] 
     recipe_name = data['recipe_name'] 

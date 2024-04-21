@@ -29,3 +29,9 @@ def filter_items():
 
     # Return the filtered items
     return jsonify(items_json)
+
+@dietary_bp.route('/get_dietary_restrictions', methods=['GET'])
+def get_dietary_restrictions():
+        restrictions = DietaryRestriction.query.all()
+        restrictions_list = [{'id': restriction.id, 'name': restriction.name} for restriction in restrictions]
+        return jsonify(restrictions_list)

@@ -23,14 +23,17 @@ def add_item():
         c = conn.cursor()
 
         # Convert list data to JSON string
-        list_data = json.dumps(data)
+        #list_data = json.dumps(data) 
         
-        # Insert the list data and timestamp into the lists table
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        c.execute("INSERT INTO lists (list_data, created_at) VALUES (?, ?)", (list_data, current_time))
-
+        for item in data:
+             # Convert list data to JSON string
+            item_data = json.dumps(item.get("item", {}))
+            dietary_restrictions = ','.join(item.get("dietary_restrictions", []))
+             # Insert the list data and timestamp into the lists table
+            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            c.execute("INSERT INTO lists (list_data, dietary_restrictions, created_at) VALUES (?, ?, ?)", (item_data, dietary_restrictions, current_time))
         conn.commit()
         conn.close()
         return jsonify({'message': 'List saved successfully'}), 200
     else:
-        return jsonify({'error': 'Invalid request. Expecting a list of items.'}), 400
+        return jsonify({'error': 'Invalid request. Expecting a list of items.'}), 400 

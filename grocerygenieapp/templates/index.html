@@ -17,7 +17,7 @@
         <nav class="navbar">
             <a href="#">Home</a>
             <a href="#">About</a>                
-            <a href="#">Contact</a>
+            <a href="#">Contact</a>b
         </nav>
     </div>
 
@@ -288,6 +288,26 @@ window.addEventListener('load', () => {
             <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
         </div>
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            $.getJSON('/get_dietary_restrictions', function(data) {
+                var select = $('#dietaryFilter');
+                select.empty(); // Clear existing options
+                select.append($('<option>', { value: "", text: "Select a diet" })); // Default option
+                $.each(data, function(index, item) {
+                    select.append($('<option>', { 
+                        value: item.name, 
+                        text: item.name 
+                    }));
+                });
+            });
+        });
+        </script>
+
+
 </body>
 </html>
+
+
 

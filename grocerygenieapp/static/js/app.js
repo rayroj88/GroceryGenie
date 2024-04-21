@@ -1,4 +1,81 @@
 items = []
+$(document).ready(function() {
+    // Existing document-ready code (if any)
+    // ...
+
+    // New code for dietary restrictions
+    $.getJSON('/get_dietary_restrictions', function(data) {
+        var select = $('#dietaryFilter');
+        select.empty(); // Clear existing options
+        select.append($('<option>', { value: "", text: "Select a diet" })); // Default option
+        $.each(data, function(index, item) {
+            select.append($('<option>', { 
+                value: item.name, 
+                text: item.name 
+            }));
+        });
+    });
+
+    $('#dietaryFilter').change(function() {
+        var diet = $(this).val();
+        $.ajax({
+            url: `/filter_items?diet=${encodeURIComponent(diet)}`,
+            type: 'GET',
+            success: function(data) {
+                const listContainer = $('#groceryList');
+                listContainer.empty(); // Clear existing items
+                data.forEach(function(item) {
+                    listContainer.append(`<li>${item.name}</li>`);
+                });
+            },
+            error: function(error) {
+                console.error('Error filtering items:', error);
+            }
+        });
+    });
+});
+// Example function to gather items from UI inputs and dietary restrictions checkboxes
+function gatherItemsAndRestrictions() {
+    const items = []; // This array will store all the item objects
+    // Example: Query your item inputs and dietary restriction checkboxes
+    // Assuming you have multiple items each with a specified input class or id
+    document.querySelectorAll('.item-input').forEach(input => {
+        const itemName = input.value; // Get the item name from the input
+        const quantity = 1; // Example static quantity or get it from another input
+        const dietaryRestrictions = [];
+        // Assuming you have checkboxes classed by item names for dietary restrictions
+        document.querySelectorAll(`.dietary-${itemName}:checked`).forEach(checkbox => {
+            dietaryRestrictions.push(checkbox.value);
+        });
+        
+        items.push({
+            item: { name: itemName, quantity: quantity },
+            dietary_restrictions: dietaryRestrictions
+        });
+    });
+    return items;
+}
+
+function addNewItemWithRestrictions() {
+    const data = gatherItemsAndRestrictions();
+
+    fetch('/add_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message);
+        // Handle the response from the server, e.g., display a message, clear inputs, etc.
+    })
+    .catch(error => console.error('Error:', error));  
+}
+// Attach the event listener to the button
+document.getElementById('addItemButton').addEventListener('click', addNewItemWithRestrictions);
+
 
 function addItem() {
         const newItem = document.getElementById("itemInput").value.trim();
@@ -355,3 +432,4 @@ async function displaySavedHistory() {
         return [];
     }
 }
+
