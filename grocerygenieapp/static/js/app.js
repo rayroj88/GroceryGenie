@@ -1,4 +1,48 @@
 items = []
+// Function to gather items and their dietary restrictions from the form inputs
+function gatherItemsAndRestrictions() {
+    const items = []; 
+    // The code here should be modified according to the actual class or ID names used in your HTML
+    document.querySelectorAll('.item-input').forEach(input => {
+        const itemName = input.value; 
+        const quantity = 1; // Replace with logic to get quantity if needed
+        const dietaryRestrictions = [];
+        // The selector should be modified according to your actual dietary restriction checkboxes or input
+        document.querySelectorAll(`.dietary-${itemName}:checked`).forEach(checkbox => {
+            dietaryRestrictions.push(checkbox.value);
+        });
+        
+        items.push({
+            item: { name: itemName, quantity: quantity },
+            dietary_restrictions: dietaryRestrictions
+        });
+    });
+    return items;
+}
+
+// Function to send the collected item data and dietary restrictions to the backend
+function addNewItemWithRestrictions() {
+    const data = gatherItemsAndRestrictions();
+
+    fetch('/add_item', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message);
+        // Add logic to handle the response, such as updating the UI or clearing the form
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Bind the addNewItemWithRestrictions function to the "Add Item" button
+// Make sure 'addItemButton' matches the ID of your actual add item button
+document.getElementById('addItemButton').addEventListener('click', addNewItemWithRestrictions);
+
 
 function addItem() {
         const newItem = document.getElementById("itemInput").value.trim();
