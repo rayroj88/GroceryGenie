@@ -23,14 +23,22 @@ def add_item():
         c = conn.cursor()
 
         # Convert list data to JSON string
-        list_data = json.dumps(data)
+        #list_data = json.dumps(data)
+        for item in data:
+            # Get the item details and dietary restrictions from the request data
+            item_data = item.get("item", {})
+            name = item_data.get("name")
+            quantity = item_data.get("quantity")
+            dietary_restrictions = ','.join(item.get("dietary_restrictions", []))
+            current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            # Insert the data into the database
+            c.execute("INSERT INTO items (name, quantity, dietary_restrictions, created_at) VALUES (?, ?, ?, ?)", 
+                      (name, quantity, dietary_restrictions, current_time))
         
-        # Insert the list data and timestamp into the lists table
-        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        c.execute("INSERT INTO lists (list_data, created_at) VALUES (?, ?)", (list_data, current_time))
-
         conn.commit()
         conn.close()
-        return jsonify({'message': 'List saved successfully'}), 200
+        return jsonify({'message': 'Items added successfully'}), 200
     else:
         return jsonify({'error': 'Invalid request. Expecting a list of items.'}), 400
+
+# Add any other Flask route definitions here
