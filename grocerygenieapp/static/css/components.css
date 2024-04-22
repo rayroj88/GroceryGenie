@@ -1,0 +1,141 @@
+:root {
+    --primary-bg-color: #5cb85c; 
+    --primary-text-color: white;
+    --hover-bg-color: #4cae4c; 
+    --error-bg-color: #d9534f; 
+    --secondary-bg-color: #f696de; 
+    --banner-bg-color: #333; 
+    --base-border-radius: 5px;
+}
+
+.banner {
+    background-color: var(--banner-bg-color);
+    padding: 10px 0;
+    text-align: center;
+    color: var(--primary-text-color); /* Improved contrast */
+}
+
+.btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
+    display: flex;
+    flex-direction: column;  /* Aligns the children (buttons) in a vertical column */
+    align-items: center; 
+    width: 94%;
+    padding: 10px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    cursor: pointer;
+    border-radius: var(--base-border-radius);
+    text-decoration: none;
+    margin: 0 10px;
+    gap: 10px;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    color: white; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border: 1px solid #000000; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+#categoriesContainer {
+    width: 5%;               /* Define a width */
+    margin: 0 auto;           /* Auto margins on both sides */
+}
+
+#storeSelect { 
+    background: linear-gradient(to right, #d09e6f, #eee3d2);
+}
+
+#processListButton {
+    background: linear-gradient(to right, #010401, #444543);
+}
+
+#saveListButton {
+    background: linear-gradient(to right, #016b7c, #92d0f8); /* Use for critical actions */
+}
+
+#downloadListButton {
+    background: linear-gradient(to right, #010401, #444543);
+}
+
+.btn:hover, #addItemButton:hover, #downloadListButton:hover, #saveListButton:hover, #clearListButton:hover, #toggleSideWindowBtn:hover {
+    background-color: var(--hover-bg-color);
+}
+
+#clearListButton {
+    background: linear-gradient(to right, #761d04, #7d1103);
+}
+
+#toggleSideWindowBtn {
+    background: linear-gradient(to right, #020750, #14029e);
+}
+
+.addItemForm {
+    display: flex;      
+    width: 100%;         
+    margin: 10px 0;       
+    align-items: center;  
+}
+
+.addItemForm input[type="text"], .addItemForm button {
+    flex-grow: 1;         /* Both input and button will expand to fill available space */
+    margin: 5px;          /* Margin for spacing between input and button */
+}
+
+.addItemForm input[type="text"] {
+    margin-right: 10px;   /* Additional margin to separate the input from the button */
+}
+
+.addItemForm button {
+    padding: 12px 15px; /* Matching padding with the input for visual symmetry */
+    background: linear-gradient(to right, #4caf50, #8bc34a); /* Gradient background */
+    color: white; /* Text color for readability */
+    border: none; /* No border for a cleaner look */
+    border-radius: 4px; /* Rounded corners to match the input */
+    text-transform: uppercase; /* Makes text uppercase for a modern touch */
+    letter-spacing: 1px; /* Increases letter spacing for style */
+    cursor: pointer; /* Changes the cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.addItemForm button:hover {
+    background-color: #3a9431; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+select.form-button {
+    color: #333; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    width: auto; 
+    text-align-last: center; 
+}
+
+/* To ensure option text is visible and not white */
+select.form-button option {
+    color: #333; /* Ensures text is dark and visible */
+    background-color: #fff; /* Light background for options */
+    text-align: center; 
+}
+
+
+
+.side-window {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    transition: right 0.3s;
+}
+
+
+
