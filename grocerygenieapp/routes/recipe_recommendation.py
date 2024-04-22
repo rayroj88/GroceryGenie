@@ -3,6 +3,7 @@ import sqlite3
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
+import re
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
@@ -21,10 +22,9 @@ def get_recipe_recommendations():
 
             # Combine all items into a single string, assuming each list_data contains a CSV of items
             combined_items = ', '.join([item[0] for item in all_items])
-            print(combined_items)
 
-        system_message = 'You are a helpful assistant. Provide a recipe based on the items list given without any additional content. Only provide the name of the recipe.'
-        user_message = f"What is a recipe that uses {combined_items}?"
+        system_message = 'You are a helpful assistant. Provide 10 recipes based on the items list given without any additional content. Only provide the names of the recipes.'
+        user_message = f"What are 10 recipes that use {combined_items}?"
 
         # Assuming you have configured your OpenAI API Key correctly
         response = client.chat.completions.create(
@@ -34,12 +34,13 @@ def get_recipe_recommendations():
                 {"role": "user", "content": user_message}
             ]
         )
-        recipe = response.choices[0].message.content.strip()
-        print('recipe:', recipe)
-        return jsonify({'recipe': recipe})
+        recipes = response.choices[0].message.content.strip().split('\n')
+        # Split the text by double newlines assuming recipes are well separated
+        # recipes = raw_recipes.split('\n\n')
+        # Use regular expressions to remove numeric prefixes from each recipe
+        cleaned_recipes = [re.sub(r'^\d+\.\s*', '', recipe).strip() for recipe in recipes]
+        return jsonify({'recipes': cleaned_recipes})
     except sqlite3.Error as e:
-        print(f"Database error: {e}")
-        return jsonify({'error': 'Database error occurred'}), 500
+        return jsonify({'error': 'Database error occurred: ' + str(e)}), 500
     except Exception as e:
-        print(f"OpenAI API error: {e}")
-        return jsonify({'error': 'Error processing your request'}), 500
+        return jsonify({'error': 'Error processing your request: ' + str(e)}), 500

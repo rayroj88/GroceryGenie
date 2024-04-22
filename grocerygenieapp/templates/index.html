@@ -84,36 +84,52 @@
             <ul id="groceryList">
                 <!-- Container to display the grocery list items -->
             </ul>
-        </div>
-    </div>
-
-
-    <!-- Recipe Recommendation system -->
+                <!-- Recipe Recommendation system -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+let currentRecipeIndex = 0;
+let recipes = [];
+
 $(document).ready(function() {
+
+    function displayRecipe() {
+        if (recipes.length > 0 && currentRecipeIndex < recipes.length) {
+            // Create a button with the recipe text and an onclick event
+            var recipeText = recipes[currentRecipeIndex];
+            var recipeButton = $('<button>').text(recipeText).on('click', function() {
+                submitRecommendedRecipe(recipeText);  // Call your function with the recipe text
+            });
+
+           $('#recipe').html('<h2>We recommend:</h2>').append(recipeButton);
+        } else {
+            $('#recipe').html('<h2>We recommend:</h2><p>No recipes available.</p>');
+        }
+    }
+
     // Immediately fetch the recipe when the page loads
     $.ajax({
         url: '/get_recipe_recommendations',
         type: 'GET',
         success: function(response) {
-            var recommendedRecipe = response.recipe;
-            var $recipeButton = $('<button>').text(recommendedRecipe).on('click', function() {
-                submitRecommendedRecipe(recommendedRecipe);
-            });
-
-            // Append the button to the #recipe div
-            $('#recipe').html('<h2>Recommended Recipe</h2>').append($recipeButton);
+            recipes = response.recipes;
+            console.log(recipes);
+            displayRecipe();  // Display the first recipe initially
         },
         error: function(xhr, status, error) {
-            console.log("Error fetching recipe:", xhr.responseText);
-            $('#recipe').html('<h2>Recommended Recipe</h2><p>Error fetching recipe.</p>');
+            console.error("Error fetching recipes:", xhr.responseText);
+            $('#recipe').html('<h2>We recommend:</h2><p>Error fetching recipes.</p>');
         }
+    });
+    $('#nextRecipeButton').click(function() {
+        currentRecipeIndex = (currentRecipeIndex + 1) % recipes.length; // Cycle through recipes
+        displayRecipe();
     });
 });
 </script>
-<div id="recipe"><h2>Recommended Recipe</h2><p>Loading...</p></div>
-    
+<div id="recipe"><h2>We recommend:</h2><p>Loading...</p></div>
+<button id="nextRecipeButton" style="display: block; margin-top: 20px;">-></button>   
+        </div>
+    </div> 
     
     <div class="side-window">
         <h2>Add Recipe</h2>
