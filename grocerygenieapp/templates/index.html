@@ -103,7 +103,7 @@ $(document).ready(function() {
             var recipeText = recipes[currentRecipeIndex];
             var recipeButton = $('<button>').text(recipeText).on('click', function() {
                 submitRecommendedRecipe(recipeText);  // Call your function with the recipe text
-            });
+            }).addClass('recipeButton');
 
            $('#recipe').html('<h2>We recommend:</h2>').append(recipeButton);
         } else {
@@ -131,8 +131,10 @@ $(document).ready(function() {
 });
 </script>
 <div id="recipe"><h2>We recommend:</h2><p>Loading...</p></div>
-<button id="nextRecipeButton" style="display: block; margin-top: 20px;">-></button>   
-        </div>
+    <div id="'nextRecipeButton">
+        <button id="nextRecipeButton" style="display: block; margin-top: 20px;">-></button> 
+    </div>  
+</div>
     </div> 
     
     <div class="side-window">
