@@ -256,13 +256,18 @@ function ensureCategoryExists(category) {
 function categorizeItem(itemName) {
     // Define a mapping of keywords to categories
     const categoryKeywords = {
+
         "Dairy & Eggs": [
             "milk", "cheese", "yogurt", "butter", "eggs", 
             "cream", "plant-based milk", "sour cream", "cottage cheese", 
             "cream cheese", "mozzarella", "cheddar", "gouda", 
             "brie", "camembert", "feta", "ricotta", "parmesan", 
             "ghee", "kefir", "buttermilk", "half and half", 
-            "provolone", "swiss cheese", "blue cheese", "egg"
+            "provolone", "swiss cheese", "blue cheese", "egg","Almond milk", "Soy milk", "Cashew cheese", "Coconut yogurt", "Vegan butter", 
+            "Vegan mayonnaise", "Vegan cream cheese", "Rice milk", "Vegan ice cream", "Nutritional yeast", "Cashew cream", "Hemp cheese", "Almond ricotta", 
+            "Coconut whipped cream", "Dairy-free condensed milk", "Oat cream", "Rice cheese", 
+            "Soy sour cream", "Dairy-free custard", "Flax milk", "Pea milk", "Sunflower cheese", 
+            "Lupin-based yogurt", "Vegan ghee", "Tofu cream", "Carrageenan-free milk"
           ],
         "Produce": [
             "apples", "bananas", "carrots", "dates", "eggplant", 
@@ -270,7 +275,8 @@ function categorizeItem(itemName) {
             "jalapeno peppers", "kale", "lemons", "mangoes", 
             "nectarines", "oranges", "peaches", "quinces", 
             "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup", "mustard"
+            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup"
+            , "mustard","Wild berries", "Jerusalem artichoke", "Yucca root", "Jackfruit", "Spirulina"
           ],
         "Meats & Seafood": [
             "beef", "chicken", "duck", "eggs", "fish", 
@@ -278,7 +284,10 @@ function categorizeItem(itemName) {
             "kangaroo", "lamb", "mussels", "nuggets", "octopus", 
             "pork", "quail", "rabbit", "salmon", "turkey", 
             "veal", "whale", "xiphias (swordfish)", "yellowtail", 
-            "zebra (not common)"
+            "zebra (not common)","Kelp", "Seaweed snacks", "Fish roe", "Octopus", "Squid", "Sea cucumber", "Abalone", 
+            "Sea urchin", "Monkfish liver", "Mackerel", "Eel", "Marinated herring", "Smoked salmon",
+            "Canned sardines", "Clam juice", "Prawn crackers", "Scallops", "Turbot", "Soft-shell crab",
+            "Anchovy paste"
           ],
         "Bakery": [
             "bread", "roll", "bagel", "pastry", "cake", "pie", "whole wheat bread", 
@@ -287,6 +296,7 @@ function categorizeItem(itemName) {
             "pita bread", "pizza dough", "pretzels", "scones", "ciabatta",
             "panettone", "fruitcake", "pound cake", "challah", "donuts",
             "garlic bread", "gingerbread", "baguette", "brioche", "cornbread"
+            ,"Gluten-free cookies", "Gluten-free cakes", "Gluten-free cereals", "Gluten-free pancakes"
       ],
         "Frozen Foods": [
             "ice cream", "frozen vegetable", "frozen dinner", "pizza", "frozen fruit", "frozen dessert", 
@@ -295,6 +305,7 @@ function categorizeItem(itemName) {
             "frozen burgers", "frozen fruit bars", "frozen pie crusts", "frozen dumplings", "frozen bread dough",
             "frozen bagels", "frozen cheesecake", "frozen meatballs", "frozen corn", "frozen spinach",
             "frozen broccoli", "frozen breakfast sandwiches", "frozen edamame", "frozen mixed fruit", "frozen yogurt"
+            ,"Dairy-free ice cream", "Dairy-free smoothies"
       ],
         "Pantry Staples": [
             "rice", "pasta", "canned tomatoes", "olive oil", "flour",
@@ -302,6 +313,7 @@ function categorizeItem(itemName) {
             "vinegar", "cereal", "oatmeal", "lentils", "quinoa",
             "spices", "soy sauce", "nuts", "dried fruit", "tea",
             "coffee", "baking powder", "baking soda", "yeast", "chocolate chips"
+            ,"Almond flour", "Coconut flour", "MCT oil"
       ],
         "Snacks": [
             "chips", "popcorn", "granola bars", "chocolate", "trail mix",
@@ -309,6 +321,7 @@ function categorizeItem(itemName) {
             "cookies", "crackers", "candy", "dried fruit", "yogurt covered raisins",
             "cheese snacks", "fruit cups", "pudding cups", "pop tarts", "gummies",
             "energy bars", "protein bars", "sunflower seeds", "almonds", "cashews"
+            ,"Vegan chocolate", "Gluten-free cookies", "Nutritional bars"
       ],
         "Drinks": [
             "water", "soda", "juice", "milk", "coffee",
