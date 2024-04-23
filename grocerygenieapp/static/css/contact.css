@@ -35,3 +35,40 @@
 .contact-form h1 {
     font-size: 50px; /* Adjust the font size as needed */
 }
+
+/* CSS styles for the "Find Us" button */
+.btn-find-us {
+    display: inline-block;
+    padding: 6px 15px; /* Adjusted padding for smaller vertical size */
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-find-us:hover {
+    background-color: #45a049;
+}
+
+.btn-qustions{
+    display: inline-block;
+    padding: 6px 15px; /* Adjusted padding for smaller vertical size */
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-qustions:hover {
+    background-color: #45a049;
+
+}
+.location-image {
+    display: block;
+    max-width: 100px; /* Adjust the max-width as needed */
+    height: auto;
+    margin: 10px auto; /* Center the image horizontally with some margin */
+}
