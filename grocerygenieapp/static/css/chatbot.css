@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
+.description {
+    font-size: 20px; /* Adjust the font size as needed */
+    line-height: 1; /* Adjust the line height for better readability */
+}
 .chatbot-toggler{
     position: fixed;
     right: 40px;
