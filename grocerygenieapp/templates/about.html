@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layouts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/chatbot.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="chatbot.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -21,24 +27,46 @@
             <a href="/contact">Contact</a>
         </nav>
     </header>
-
+    <div class="content-wrapper">
     <div style="margin: 90px auto; width: fit-content;">
         <h1>About Us</h1>
-        <p>
-            GroceryGenie is your one-stop solution for all your grocery shopping needs. 
-            Our mission is to make grocery shopping convenient, efficient, and enjoyable for everyone.
+        <p class="description">
+             
+Introducing GroceryGenie, your ultimate grocery shopping companion! Our mission is to revolutionize your experience, making it convenient and enjoyable. With cutting-edge technology, we curate precise lists for your recipes, guide you through the aisles, and provide top-notch customer service. Say goodbye to hassle and hello to convenience with GroceryGenie!
         </p>
         <p>
-            We strive to provide the best grocery shopping list, excellent customer service, and 
-            seamless shopping experience to our users.
+            
         </p>
-        <p>
+        <div class="image-container" style="text-align: center;">
+        <img src="https://cdn1.iconfinder.com/data/icons/supermarket-16/64/supermarket-grocery-store-food-1024.png" alt="Description of the image"  style="width: 100px; height: auto;">
+        <img src="https://cdn-icons-png.flaticon.com/512/135/135763.png" alt="Description of the image" style="width: 100px; height: auto;">
+        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1723173/food-drive-clipart-xl.png" alt="Centered Image" style="width: 100px; height: auto;">
 
-        </p>
-        <b>...</b><p>
-            <b>STill currently under construction...</b>
-        </p>
+        </div>
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined">mode_comment</span>
+            <span class="material-symbols-outlined">close</span>
+        </button>
+            <div class="chatbot">
+                <header>
+                    <h2>chatbot</h2>
+                </header>
+                <ul class="chatbox">
+                    <li class="Chat incoming">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                        <p>hi there How can i help you today?</p>
+                    </li>
+                    
+                </ul>
+                <div class="chat-input">
+                    <textarea placeholder="enter a message..." required></textarea>
+                    <span id="send-btn" class="material-symbols-outlined">send</span>
+                </div>
+            </div>
+       
     </div>
+    </div>
+    
 
     <footer>
         <div class="footer-col">
@@ -55,5 +83,11 @@
             <img src="{{ url_for('static', filename='images/GroceryGenie logo.png') }}" alt="GroceryGenie Logo" style="width: 100%; border-radius: 70px;">
         </div>
     </footer>
+    
 </body>
 </html>
+
+
+
+
+
