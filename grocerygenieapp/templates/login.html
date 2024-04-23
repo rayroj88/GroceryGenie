@@ -169,12 +169,21 @@
             document.getElementById('overlay').style.display = 'block';
         };
     
-        // Function to close the pop-up
+        // Function to close the pop-up with a fade-out effect
         function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+            popup.style.transition = "opacity 0.5s ease";
+            overlay.style.transition = "opacity 0.5s ease";
+            popup.style.opacity = '0';
+            overlay.style.opacity = '0';
+            setTimeout(function() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 500);
         }
     </script>
+    
 
 
 </body>
