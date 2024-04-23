@@ -1,7 +1,9 @@
 items = []
 // Hardcoded list of items for each diet
 const dietItems = {
-    'Vegan': ['Almond milk', 'Coconut yogurt', 'Tempeh', 'Chickpeas', 
+    'Vegan': {
+     
+    items:['Almond milk', 'Coconut yogurt', 'Tempeh', 'Chickpeas', 
     'Black beans', 'Lentils', 'Quinoa', 'Vegan cheese', 
     'Seitan', 'Jackfruit', 'Tofu', 'Soy milk', 
     'Nutritional yeast', 'Chia seeds', 'Flax seeds', 
@@ -11,8 +13,13 @@ const dietItems = {
     'Ratatouille', 'Vegan curry', 'Stuffed bell peppers', 'Marinated tofu stir-fry',
     'Vegan lasagna', 'Rice and bean burritos', 'Peanut butter', 'Tabbouleh',
     'Vegan pizza', 'Roasted chickpeas', 'Kale chips', 'Guacamole'],
+    favoriteItem: 'Almond milk',
+    tip: 'Vegan diets exclude all animal products, making them rich in plant-based nutrients.',
+    },
 
-    'Vegetarian': ['Eggs', 'Greek yogurt', 'Paneer', 'Halloumi', 
+    'Vegetarian': {
+    
+     items:['Eggs', 'Greek yogurt', 'Paneer', 'Halloumi', 
     'Feta cheese', 'Ricotta cheese', 'Cheddar cheese', 'Mozzarella', 
     'Butter', 'Milk', 'Ice cream', 'Whey protein', 
     'Cottage cheese', 'Sour cream', 'Pesto sauce', 
@@ -22,8 +29,13 @@ const dietItems = {
     'Brie and apple sandwich', 'Greek salad', 'Caprese salad', 'Eggplant parmesan',
     'Vegetable lasagna', 'Cheese fondue', 'Gnocchi', 'Mushroom stroganoff',
     'Spinach pie', 'Egg fried rice', 'Zucchini fritters', 'Arugula and goat cheese salad'],
+    favoriteItem: 'Paneer',
+    tip: 'Vegetarian diets include dairy and eggs but exclude meat, fish, and poultry.',
+    },
 
-    'Gluten-Free': ['Rice cakes', 'Gluten-free pasta', 'Quinoa', 'Buckwheat', 
+    'Gluten-Free':{
+
+     items:['Rice cakes', 'Gluten-free pasta', 'Quinoa', 'Buckwheat', 
     'Gluten-free bread', 'Corn tortillas', 'Gluten-free oats', 'Rice flour', 
     'Almond flour', 'Coconut flour', 'Corn chips', 'Popcorn', 
     'Rice crackers', 'Gluten-free cereal', 'Millet', 
@@ -33,9 +45,13 @@ const dietItems = {
     'Amaranth', 'Teff', 'Arrowroot', 'Sorghum',
     'Gluten-free croutons', 'Gluten-free tortilla chips', 'Gluten-free pita', 'Gluten-free beer',
     'Gluten-free pretzels', 'Gluten-free cookies', 'Gluten-free cake mix', 'Gluten-free mac and cheese'],
+    favoriteItem: 'Quinoa',
+    tip: 'Gluten-Free diets exclude wheat, barley, and rye, and are essential for those with celiac disease.',
+    },
     // Add more diets and items here
-    'Keto': [
-        'Avocado', 'Eggs', 'Bacon', 'Ground beef', 
+    'Keto': {
+
+     items:['Avocado', 'Eggs', 'Bacon', 'Ground beef', 
         'Salmon', 'Tuna', 'Butter', 'Heavy cream', 
         'Olive oil', 'Coconut oil', 'Almond flour', 'Macadamia nuts', 
         'Pecans', 'Cheddar cheese', 'Cream cheese', 
@@ -44,10 +60,13 @@ const dietItems = {
         'Chia seed pudding', 'Keto bread', 'Pork rinds', 'Keto brownies',
         'String cheese', 'Keto cookies', 'Egg muffins', 'Spinach and feta stuffed chicken',
         'Keto chocolate', 'Keto ice cream', 'Bone broth', 'Brussels sprouts with bacon',
-        'Cobb salad', 'Keto pizza', 'Almond butter', 'Keto smoothie'
-    ],
-    'Paleo': [
-        'Grass-fed meat', 'Fish', 'Nuts and seeds', 'Eggs', 
+        'Cobb salad', 'Keto pizza', 'Almond butter', 'Keto smoothie'],
+    favoriteItem: 'Avocado',
+    tip: 'Keto diets are high in fat, low in carbs, and help in potentially losing weight by achieving ketosis.',
+    },
+    'Paleo': {
+    
+        items:['Grass-fed meat', 'Fish', 'Nuts and seeds', 'Eggs', 
         'Fresh fruits', 'Fresh vegetables', 'Sweet potatoes', 'Coconut oil', 
         'Olive oil', 'Avocado', 'Almond butter', 'Squash', 
         'Zucchini', 'Beef jerky', 'Coconut milk', 
@@ -56,11 +75,15 @@ const dietItems = {
         'Roasted turkey', 'Baked sweet potato fries', 'Grain-free granola', 'Paleo protein bars',
         'Shakshuka', 'Tuna salad lettuce wraps', 'Paleo banana bread', 'Almond crusted chicken',
         'Coconut shrimp', 'Beef jerky', 'Fruit leather', 'Vegetable chips',
-        'Bison burgers', 'Chicken zoodle soup', 'Stuffed avocados', 'Paleo pancakes'
-      ],
+        'Bison burgers', 'Chicken zoodle soup', 'Stuffed avocados', 'Paleo pancakes'],
+        favoriteItem: 'Grass-fed Beef Jerky',
+        tip: 'Paleo diets focus on eating like our ancestors, emphasizing whole foods and avoiding processed items.',
+    },
     
-    'Dairy-Free': [
-        'Almond milk', 'Coconut milk', 'Oat milk', 'Rice milk', 
+    'Dairy-Free': {
+    
+
+        items:['Almond milk', 'Coconut milk', 'Oat milk', 'Rice milk', 
         'Soy milk', 'Dairy-free cheese', 'Coconut cream', 'Dairy-free yogurt', 
         'Sorbet', 'Dairy-free chocolate', 'Dairy-free ice cream', 'Dairy-free margarine', 
         'Dairy-free smoothies', 'Almond-based desserts', 'Cashew-based spreads', 
@@ -69,10 +92,12 @@ const dietItems = {
         'Dairy-free pesto', 'Dairy-free flatbread', 'Dairy-free biscuits', 'Dairy-free creamer',
         'Dairy-free custard', 'Dairy-free gravy', 'Dairy-free protein shake', 'Dairy-free Caesar salad',
         'Dairy-free garlic bread', 'Dairy-free Alfredo sauce', 'Dairy-free queso', 'Dairy-free enchiladas',
-        'Dairy-free pancakes', 'Dairy-free brownies', 'Dairy-free mozzarella sticks', 'Dairy-free ranch'
-    ],
-    'Pescatarian': [
-        'Salmon', 'Tuna', 'Trout', 'Cod', 
+        'Dairy-free pancakes', 'Dairy-free brownies', 'Dairy-free mozzarella sticks', 'Dairy-free ranch'],
+        favoriteItem: 'Almond Milk',
+        tip: 'Dairy-Free diets exclude all dairy products, often due to allergies or lactose intolerance.',
+    },
+    'Pescatarian': {
+        items:['Salmon', 'Tuna', 'Trout', 'Cod', 
         'Shrimp', 'Scallops', 'Lobster', 'Mussels', 
         'Oysters', 'Sushi', 'Crab', 'Clams', 
         'Sardines', 'Anchovies', 'Seaweed', 
@@ -81,10 +106,12 @@ const dietItems = {
         'Seafood risotto', 'Seared scallops', 'Grilled sea bass', 'Halibut steaks',
         'Spicy tuna rolls', 'Clam chowder', 'Fish ceviche', 'Seafood gumbo',
         'Smoked salmon', 'Calamari', 'Lobster bisque', 'Crab cakes',
-        'Grilled mackerel', 'Seared ahi tuna', 'Poke bowl', 'Shrimp scampi'
-    ],
-    'Food Allergens': [
-        'Gluten-free bread', 'Nut-free granola bars', 'Dairy-free milk', 'Soy-free sauces', 
+        'Grilled mackerel', 'Seared ahi tuna', 'Poke bowl', 'Shrimp scampi'],
+        favoriteItem: 'Grilled Salmon',
+        tip: 'Pescatarian diets include fish and seafood as sources of protein instead of meat from land animals.',
+    },
+    'Food Allergens': {
+        items:['Gluten-free bread', 'Nut-free granola bars', 'Dairy-free milk', 'Soy-free sauces', 
         'Egg-free mayo', 'Seed butters', 'Coconut yogurt', 'Allergen-free chocolates', 
         'Gluten-free pasta', 'Nut-free trail mix', 'Dairy-free cheeses', 'Soy-free veggie burgers', 
         'Egg-free cake mixes', 'Hypoallergenic cereals', 'Non-dairy ice cream', 
@@ -92,29 +119,37 @@ const dietItems = {
         'Soy-free chocolate', 'Soy-free ice cream', 'Nut-free peanut butter substitute', 'Nut-free chocolate',
         'Dairy-free protein bars', 'Egg-free protein bars', 'Wheat-free soy sauce', 'Gluten-free vegan pizza',
         'Dairy and egg-free pancake mix', 'Soy-free veggie chips', 'Nut-free energy balls', 'Dairy-free vegan cheese',
-        'Gluten and nut-free granola', 'Allergen-free snack bars', 'Corn and gluten-free tortillas', 'Gluten and dairy-free cupcakes'
-    ]
+        'Gluten and nut-free granola', 'Allergen-free snack bars', 'Corn and gluten-free tortillas', 'Gluten and dairy-free cupcakes'],
+        favoriteItem: 'Gluten-Free Vegan Pizza',
+        tip: 'Food Allergen-friendly diets avoid common allergens like nuts, dairy, gluten, etc., to prevent allergic reactions.',
+    },
 };
 
 // Bind the change event to the dietaryFilter dropdown
 $('#dietaryFilter').change(function() {
     const selectedDiet = $(this).val();
-
+    
     // Clear the current items
     $('#groceryList').empty();
 
-    // Check if the selected diet has associated items
-    if (dietItems[selectedDiet]) {
+    // Check if the selected diet has associated items and it's in the correct format
+    if (dietItems[selectedDiet] && Array.isArray(dietItems[selectedDiet].items)) {
         // Add each hardcoded item to the grocery list
-        dietItems[selectedDiet].forEach(function(item) {
+        dietItems[selectedDiet].items.forEach(function(item) {
             $('#groceryList').append('<li>' + item + '</li>');
         });
+
+        // Check if there is a favorite item and tip for the diet
+        if (dietItems[selectedDiet].favoriteItem && dietItems[selectedDiet].tip) {
+            // Display the favorite item and tip
+            $('#groceryList').append('<li><strong>Favorite Item:</strong> ' + dietItems[selectedDiet].favoriteItem + '</li>');
+            $('#groceryList').append('<li><strong>Tip:</strong> ' + dietItems[selectedDiet].tip + '</li>');
+        }
     } else {
         // Handle diets with no items or a placeholder message
         $('#groceryList').append('<li>No items listed for this diet.</li>');
     }
 });
-
 // ... (the rest of your existing app.js code)
 
 
