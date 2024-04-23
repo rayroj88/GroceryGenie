@@ -7,11 +7,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sendButton.addEventListener('click', sendMessage);
     chatInput.addEventListener('input', toggleTypingIndicator);
+    chatInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    const clearChatButton = document.getElementById('clear-chat-btn');
+    clearChatButton.addEventListener('click', function () {
+        chatbox.innerHTML = ''; // Clear chatbox
+    });
+
+    const chatIconInput = document.getElementById('chat-icon-input');
+    const changeIconButton = document.getElementById('change-icon-btn');
+    changeIconButton.addEventListener('click', function () {
+        const newIcon = chatIconInput.value.trim();
+        if (newIcon !== '') {
+            document.querySelectorAll('.material-icons-outlined').forEach(icon => {
+                icon.textContent = newIcon;
+            });
+        }
+    });
 
     function sendMessage() {
         const messageText = chatInput.value.trim();
         if (messageText !== '') {
-            appendMessage('outgoing', messageText);
+            const userName = document.getElementById('user-name-input').value.trim();
+            const userNameDisplay = userName ? `${userName}: ` : ''; // Include user name if provided
+            appendMessage('outgoing', userNameDisplay + messageText);
             simulateResponse(messageText);
             chatInput.value = '';
             toggleTypingIndicator(); // Hide typing indicator after sending message
@@ -51,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         li.appendChild(p);
         li.appendChild(timestamp);
         chatbox.appendChild(li);
-        chatbox.scrollTop = chatbox.scrollHeight;
+        chatbox.scrollTop = chatbox.scrollHeight; // Scroll to bottom
     }
 
     function getCurrentTime() {
