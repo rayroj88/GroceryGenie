@@ -36,7 +36,6 @@ def get_recipe_recommendations():
         )
         recipes = response.choices[0].message.content.strip().split('\n')
         # Split the text by double newlines assuming recipes are well separated
-        # recipes = raw_recipes.split('\n\n')
         # Use regular expressions to remove numeric prefixes from each recipe
         cleaned_recipes = [re.sub(r'^\d+\.\s*', '', recipe).strip() for recipe in recipes]
         return jsonify({'recipes': cleaned_recipes})

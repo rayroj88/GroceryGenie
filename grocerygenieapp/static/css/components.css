@@ -67,6 +67,36 @@
     background: linear-gradient(to right, #761d04, #7d1103);
 }
 
+.recipeButton {
+    display: flex;
+    flex-direction: column;  /* Aligns the children (buttons) in a vertical column */
+    align-items: center; 
+    width: 94%;
+    padding: 10px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    cursor: pointer;
+    border-radius: var(--base-border-radius);
+    text-decoration: none;
+    margin: 0 10px;
+    gap: 10px;
+    background: linear-gradient(to right, #4caf50, #8bc34a);
+    color: white; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border: 1px solid #000000; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    background: linear-gradient(to right, brown, rgb(168, 60, 60));
+    color: white;
+}
+
+#nextRecipeButton {
+    background: linear-gradient(to right, brown, rgb(168, 60, 60));
+    color: white;
+}
+
 #toggleSideWindowBtn {
     background: linear-gradient(to right, #020750, #14029e);
 }
