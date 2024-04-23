@@ -66,9 +66,13 @@
     background-color: #45a049;
 
 }
+/* CSS styles for the location image */
 .location-image {
     display: block;
     max-width: 100px; /* Adjust the max-width as needed */
-    height: auto;
+    width: 200px; /* Set the width of the image */
+    height: auto; 
     margin: 10px auto; /* Center the image horizontally with some margin */
+    border: 3px solid #060505; /* Add a 1px solid border with color #ccc */
+    border-radius: 5px; /* Add border radius for rounded corners */
 }
