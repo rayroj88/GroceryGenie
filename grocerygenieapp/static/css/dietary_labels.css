@@ -1,51 +1,50 @@
-/* Styles for dietary labels */
-#dietaryLabels {
+/* dietary_labels.css */
+
+/* Style for the dropdown container */
+#dietaryFilterContainer {
     margin-top: 20px;
 }
 
-.label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.label-icon {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
-    margin-right: 10px;
-    /* Add background images or font icons for dietary symbols */
-}
-
-.vegetarian-icon {
-    background-image: url('path/to/vegetarian-icon.png'); /* Example URL */
-    /* Add background image specific styles */
-}
-
-.vegan-icon {
-    background-image: url('path/to/vegan-icon.png'); /* Example URL */
-    /* Add background image specific styles */
-}
-
-/* Add styles for other dietary icons as needed */
-
-.label-text {
-    font-weight: bold;
-    /* Add other text styles as needed */
-}
-
-/* Styles for recipe cards */
-.recipe {
-    background-color: #f9f9f9;
+/* Style for the dropdown select element */
+#dietaryFilter {
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.recipe h2 {
+    background-color: #fff;
     color: #333;
+    font-size: 16px;
 }
 
-.recipe p {
-    color: #666;
+/* Style for the dropdown options */
+#dietaryFilter option {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Add custom styles for dietary labels dropdown */
+#dietaryFilter option[value="Vegan"] {
+    color: green;
+}
+#dietaryFilter option[value="Vegetarian"] {
+    color: orange;
+}
+#dietaryFilter option[value="Gluten-Free"] {
+    color: blue;
+}
+#dietaryFilter option[value="Keto"] {
+    color: purple;
+}
+#dietaryFilter option[value="Paleo"] {
+    color: brown;
+}
+#dietaryFilter option[value="Dairy-Free"] {
+    color: lightblue;
+}
+#dietaryFilter option[value="Pescatarian"] {
+    color: teal;
+}
+#dietaryFilter option[value="Food Allergens"] {
+    color: red;
 }

@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layouts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="css/dietary_labels.css">
+
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -55,16 +59,15 @@
                 <div id="dietaryFilterContainer" style="margin-top: 20px;">
                     <select id="dietaryFilter" class="form-button">
                         <option value="">Select a diet</option>
-                        <option value="Vegan">Vegan</option>
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Gluten-Free">Gluten-Free</option>
-                        <option value="Keto">Keto</option>
-                        <option value="Paleo">Paleo</option>
-                        <option value="Dairy-Free">Dairy-Free</option>
-                        <option value="Pescatarian">Pescatarian</option>
-                        <option value="Food Allergens">Food Allergens</option>
+                        <option value="Vegan"><i class="fa fa-leaf"></i> Vegan</option>
+                        <option value="Vegetarian"><i class="fa fa-carrot"></i> Vegetarian</option>
+                        <option value="Gluten-Free"><i class="fa fa-bread-slice"></i> Gluten-Free</option>
+                        <option value="Keto"><i class="fa fa-bacon"></i> Keto</option>
+                        <option value="Paleo"><i class="fa fa-drumstick-bite"></i> Paleo</option>
+                        <option value="Dairy-Free"><i class="fa fa-cheese"></i> Dairy-Free</option>
+                        <option value="Pescatarian"><i class="fa fa-fish"></i> Pescatarian</option>
+                        <option value="Food Allergens"><i class="fa fa-allergies"></i> Food Allergens</option>
                     </select>
-                    
                 </div>
                 
             </div>
