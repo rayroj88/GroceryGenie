@@ -1,4 +1,34 @@
 items = []
+// Hardcoded list of items for each diet
+const dietItems = {
+    'Vegan': ['Almond milk', 'Tofu', 'Chickpeas', 'Lentils'],
+    'Vegetarian': ['Eggs', 'Cheese', 'Yogurt', 'Milk'],
+    'Gluten-Free': ['Rice cakes', 'Gluten-free pasta', 'Quinoa'],
+    // Add more diets and items here
+};
+
+// Bind the change event to the dietaryFilter dropdown
+$('#dietaryFilter').change(function() {
+    const selectedDiet = $(this).val();
+
+    // Clear the current items
+    $('#groceryList').empty();
+
+    // Check if the selected diet has associated items
+    if (dietItems[selectedDiet]) {
+        // Add each hardcoded item to the grocery list
+        dietItems[selectedDiet].forEach(function(item) {
+            $('#groceryList').append('<li>' + item + '</li>');
+        });
+    } else {
+        // Handle diets with no items or a placeholder message
+        $('#groceryList').append('<li>No items listed for this diet.</li>');
+    }
+});
+
+// ... (the rest of your existing app.js code)
+
+
 // Function to gather items and their dietary restrictions from the form inputs
 function gatherItemsAndRestrictions() {
     const items = []; 
