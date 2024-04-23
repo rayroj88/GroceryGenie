@@ -117,7 +117,6 @@ $(document).ready(function() {
         type: 'GET',
         success: function(response) {
             recipes = response.recipes;
-            console.log(recipes);
             displayRecipe();  // Display the first recipe initially
         },
         error: function(xhr, status, error) {
