@@ -5,7 +5,14 @@
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
+<<<<<<< HEAD
 
+=======
+.description {
+    font-size: 20px; /* Adjust the font size as needed */
+    line-height: 1; /* Adjust the line height for better readability */
+}
+>>>>>>> SCRUM-127-create-a-visually-captivating-
 .chatbot-toggler{
     position: fixed;
     right: 40px;
@@ -17,7 +24,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
 
+=======
+>>>>>>> SCRUM-127-create-a-visually-captivating-
     outline: none;
     cursor: pointer;
     background: blue;
@@ -26,12 +36,19 @@
 .chatbot-toggler span{
     position: absolute;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> SCRUM-127-create-a-visually-captivating-
 .chatbot {
    right: 40px;
    bottom: 100px;
    width: 420px;
+<<<<<<< HEAD
+=======
+   
+>>>>>>> SCRUM-127-create-a-visually-captivating-
    background: white;
    border-radius: 15px;
    box-shadow: black;
@@ -47,7 +64,11 @@
     font-size: 1.4rem;
 }
 .chatbot .chatbox {
+<<<<<<< HEAD
     height: 200px;
+=======
+    height: 300px;
+>>>>>>> SCRUM-127-create-a-visually-captivating-
     overflow-y: auto;
     padding: 30px 20px 70px;
 }
@@ -64,7 +85,10 @@
     line-height: 32px;
     border-radius: 4px;
     margin: 0 10px 7px 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> SCRUM-127-create-a-visually-captivating-
 }
 .chatbox .outgoing{
     margin: 20px 0;
@@ -91,4 +115,8 @@
     font-size: 1.35rem;
     cursor: pointer;
     visibility: hidden;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> SCRUM-127-create-a-visually-captivating-
