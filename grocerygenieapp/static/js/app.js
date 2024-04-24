@@ -317,41 +317,8 @@ $('#dietaryFilter').change(function() {
 });
 // ... (the rest of your existing app.js code)
 
-// Load from local storage
-function loadCategoriesFromStorage() {
-    const storedCategories = localStorage.getItem('categoryKeywords');
-    return storedCategories ? JSON.parse(storedCategories) : null;
-}
-
-// Save to local storage
-function saveCategoriesToStorage() {
-    localStorage.setItem('categoryKeywords', JSON.stringify(categoryKeywords));
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const loadedCategories = loadCategoriesFromStorage();
-    console.log('Loaded categories:', loadedCategories); // Check if categories are loaded correctly
-    if (loadedCategories) {
-        categoryKeywords = loadedCategories;
-    }
-    refreshCategories(); // Refresh categories on page load using possibly updated keywords
-});
 
 // This function adds an item to a category and updates storage and UI
-function addItemToCategory(itemName) {
-    const category = categorizeItem(itemName);
-    if (category !== "Other" && itemName) {
-        if (!categoryKeywords[category]) categoryKeywords[category] = [];
-        categoryKeywords[category].push(itemName);
-        console.log(`Added ${itemName} to ${category}`);
-        console.log('Before saving:', categoryKeywords); // Log data before saving
-        saveCategoriesToStorage(); // Save changes to local storage
-        console.log('After saving:', categoryKeywords); // Log data after saving
-        refreshCategories(); // Immediately update the UI
-    } else {
-        console.log('Item could not be categorized or is invalid');
-    }
-}
 
 function refreshCategories() {
     const categoriesContainer = document.getElementById('categoriesContainer');
@@ -378,6 +345,22 @@ function gatherItemsAndRestrictions() {
         });
     });
     return items;
+}
+
+// Function to add the item to the category
+function addItemToCategory(itemName, selectedCategory) {
+    const category = selectedCategory || categorizeItem(itemName); // Use selectedCategory if provided, otherwise categorize the item
+    if (category !== "Other" && itemName) {
+        if (!categoryKeywords[category]) categoryKeywords[category] = [];
+        categoryKeywords[category].push(itemName);
+        console.log(`Added ${itemName} to ${category}`);
+        console.log('Before saving:', categoryKeywords); // Log data before saving
+        saveCategoriesToStorage(); // Save changes to local storage
+        console.log('After saving:', categoryKeywords); // Log data after saving
+        refreshCategories(); // Immediately update the UI
+    } else {
+        console.log('Item could not be categorized or is invalid');
+    }
 }
 
 // Function to send the collected item data and dietary restrictions to the backend
@@ -514,14 +497,16 @@ function populateCategories() {
     table.innerHTML = html;
 
     // Attach event listener to the parent element of the add item buttons
-    table.addEventListener('click', function(event) {
-        if (event.target.tagName === 'BUTTON') {
-            const category = event.target.dataset.category;
-            // Here you can call a function to handle adding an item to the selected category
-            // For example: addItemToCategory(category);
-            console.log('Add item to category:', category);
+table.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-item-btn')) {
+        const category = event.target.dataset.category;
+        // Prompt the user to enter an item for the category
+        const newItemName = prompt(`Enter item for ${category}:`);
+        if (newItemName !== null) { // Check if the user clicked "OK"
+            addItemToCategory(newItemName, category); // Add the item to the category
         }
-    });
+    }
+});
 }
 
 document.getElementById('refreshCategoriesBtn').addEventListener('click', refreshCategories);
@@ -534,16 +519,7 @@ function showAddItemForm(category) {
     form.dataset.category = category;  // Store the current category in the form's data attribute for later use
 }
 
-// Function to add the item to the category
-function addItemToCategory(itemName) {
-    const category = categorizeItem(itemName);
-    if (category !== "Other" && itemName) {
-        categoryKeywords[category].push(itemName); // Add the item to the category
-        console.log(`Added ${itemName} to ${category}`);
-    } else {
-        console.log('Item could not be categorized or is invalid');
-    }
-}
+
 
 // Function to close the form
 function closeForm() {
@@ -684,6 +660,35 @@ async function displaySavedHistory() {
         return [];
     }
 }
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-item-btn')) {
+        const category = event.target.dataset.category;
+        const newItemName = prompt(`Enter item for ${category}:`);
+        if (newItemName !== null) {
+            addItemToCategory(newItemName, category);
+        }
+    }
+});
+
+// Load from local storage
+function loadCategoriesFromStorage() {
+    const storedCategories = localStorage.getItem('categoryKeywords');
+    if (storedCategories) {
+        categoryKeywords = JSON.parse(storedCategories);
+        refreshCategories(); // Update the UI with loaded categories
+    }
+}
+
+// Save to local storage
+function saveCategoriesToStorage() {
+    localStorage.setItem('categoryKeywords', JSON.stringify(categoryKeywords));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadCategoriesFromStorage();
+});
+
 
 function submitRecommendedRecipe(recommendedRecipe) {
     const recipeName = document.getElementById("recipeName").value;
