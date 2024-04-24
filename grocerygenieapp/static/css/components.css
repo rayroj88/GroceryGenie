@@ -156,7 +156,7 @@
 .addItemForm button {
     padding: 12px 15px; /* Matching padding with the input for visual symmetry */
     background: linear-gradient(to right, #4caf50, #8bc34a); /* Gradient background */
-    color: white; /* Text color for readability */
+    color: black; /* Text color for readability */
     border: none; /* No border for a cleaner look */
     border-radius: 4px; /* Rounded corners to match the input */
     text-transform: uppercase; /* Makes text uppercase for a modern touch */

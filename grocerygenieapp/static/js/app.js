@@ -441,38 +441,42 @@ document.getElementById('categoriesBtn').addEventListener('click', function() {
 
 // Dynamically populate the category list
 document.addEventListener('DOMContentLoaded', function() {
-    var categoryKeywords = [
-        "Dairy & Eggs", 
-        "Produce", 
-        "Meats & Seafood",
-        "Bakery",
-        "Frozen Foods",
-        "Pantry Staples",
-        "Snacks",
-        "Drinks",
-        "Household & Cleaning",
-        "Health & Beauty",
-        "Baby Products",
-        "Pet Supplies",
-        "Canned & Jarred Goods",
-        "International Foods",
-        "Deli & Prepared Foods",
-        "Baking Goods",
-        "Spices & Seasonings",
-        "Alcoholic Beverages",
-        "Pharmacy",
-        "Floral & Garden",
-        "Other"
-    ];
+    var categoryKeywords = {
+        "Dairy & Eggs": [], 
+        "Produce": [], 
+        "Meats & Seafood": [],
+        "Bakery": [],
+        "Frozen Foods": [],
+        "Pantry Staples": [],
+        "Snacks": [],
+        "Drinks": [],
+        "Household & Cleaning": [],
+        "Health & Beauty": [],
+        "Baby Products": [],
+        "Pet Supplies": [],
+        "Canned & Jarred Goods": [],
+        "International Foods": [],
+        "Deli & Prepared Foods": [],
+        "Baking Goods": [],
+        "Spices & Seasonings": [],
+        "Alcoholic Beverages": [],
+        "Pharmacy": [],
+        "Floral & Garden": [],
+        "Other": []
+    };
 
     var table = document.getElementById('categoriesList').querySelector('table');
-    var cellsPerRow = 5; // Adjust as needed for your layout
     var html = '';
+    var categories = Object.keys(categoryKeywords);
+    var i = 0;
 
-    for (let i = 0; i < categoryKeywords.length; i += cellsPerRow) {
+    // Create rows with five categories each
+    while (i < categories.length) {
         html += '<tr>';
-        for (let j = i; j < i + cellsPerRow && j < categoryKeywords.length; j++) {
-            html += `<td>${categoryKeywords[j]}</td>`;
+        for (let j = 0; j < 5 && i < categories.length; j++, i++) {
+            let category = categories[i];
+            html += `<td>${category}</td><td><button class="add-item-btn" data-category="${category}">+</button></td>`;
+            if (j < 4 && i < categories.length - 1) html += '</tr><tr>'; // Prepare the next row if not the last in line
         }
         html += '</tr>';
     }
@@ -480,6 +484,34 @@ document.addEventListener('DOMContentLoaded', function() {
     table.innerHTML = html;
 });
 
+// Function to show the add item form and store the category
+function showAddItemForm(category) {
+    var form = document.getElementById('addItemForm');
+    form.style.display = 'block';  // Show the form
+    form.dataset.category = category;  // Store the current category in the form's data attribute for later use
+}
+
+// Function to add the item to the category
+function addItemToCategory() {
+    var itemName = document.getElementById('newItemName').value.trim();  // Get the user input and trim whitespace
+    var category = document.getElementById('addItemForm').dataset.category;  // Retrieve the category from the form's data attribute
+
+    if (itemName && categoryKeywords[category]) {
+        categoryKeywords[category].push(itemName);  // Add the item to the correct category array
+        console.log(`Added ${itemName} to ${category}`);  // Log success
+        document.getElementById('newItemName').value = '';  // Clear the input field
+        closeForm();  // Close the form
+    } else {
+        alert('Please enter a valid item name.');  // Alert if no input
+    }
+}
+
+// Function to close the form
+function closeForm() {
+    var form = document.getElementById('addItemForm');
+    form.style.display = 'none';  // Hide the form
+    document.getElementById('newItemName').value = '';  // Clear the input field just in case
+}
 
 function clearList() {
     var categoriesContainer = document.getElementById("categoriesContainer");
