@@ -424,6 +424,17 @@ function addItemFromAPI(itemName) {
         }
 }
 
+// Event listener for delete category button
+document.addEventListener('click', function(event) {
+    if (event.target.id === 'delete-category') {
+        const categoryNameToDelete = prompt('Enter the name of the category to delete:');
+        if (categoryNameToDelete && categoryKeywords.hasOwnProperty(categoryNameToDelete)) {
+            deleteCategory(categoryNameToDelete);
+        } else {
+            alert('Invalid category name or category does not exist.');
+        }
+    }
+});
 
 function ensureCategoryExists(category) {
     let categoryId = category.replace(/\s+/g, '');
@@ -671,30 +682,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Function to handle category deletion
-function deleteCategory(categoryName) {
-    console.log("deleteCategory function called");
-    if (confirm(`Are you sure you want to delete the category "${categoryName}"?`)) {
-        // Remove the category from the categoryKeywords object
-        delete categoryKeywords[categoryName];
-        // Update the UI
-        refreshCategories();
-        // Optionally, save the changes to local storage
-        saveCategoriesToStorage();
-    }
-}
 
-// Event listener for delete category button
-document.getElementById('delete-category').addEventListener('click', function() {
-    // Prompt the user to enter the category name to delete
-    console.log("Delete category button clicked");
-    const categoryNameToDelete = prompt('Enter the name of the category to delete:');
-    if (categoryNameToDelete && categoryKeywords.hasOwnProperty(categoryNameToDelete)) {
-        deleteCategory(categoryNameToDelete);
-    } else {
-        alert('Invalid category name or category does not exist.');
-    }
-});
 
 // Load from local storage
 function loadCategoriesFromStorage() {
@@ -713,6 +701,22 @@ function saveCategoriesToStorage() {
 document.addEventListener('DOMContentLoaded', function() {
     loadCategoriesFromStorage();
 });
+
+
+// Function to handle category deletion
+function deleteCategory(categoryName) {
+    console.log("deleteCategory function called");
+    if (confirm(`Are you sure you want to delete the category "${categoryName}"?`)) {
+        // Remove the category from the categoryKeywords object
+        delete categoryKeywords[categoryName];
+        // Update the UI
+        refreshCategories();
+        // Optionally, save the changes to local storage
+        saveCategoriesToStorage();
+    }
+}
+
+
 
 
 function submitRecommendedRecipe(recommendedRecipe) {
