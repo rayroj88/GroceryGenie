@@ -81,6 +81,22 @@ Contact the team at: hmi12@txstate.edu
 - Finish dietary feature.
 - finish view saved lists to output to the actual list instead of the array.
 
+# Sprint 3 contributions: 
+
+### Danny hmi12
+- Some of my commits were not tracked by bitbucket (not sure why). If that was the case for one of my tasks, I linked the pull request which *does* show all the commits. Sorry about that and thanks!
+
+- SCRUM-136 Prepare codebase for deployment. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-136?atlOrigin=eyJpIjoiOTA3M2I1ZjMyYjU5NDc2ZTk4MjQyODc1Y2MzY2U1NjAiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/5a8296b522c086344578f1d5ce4ad73c914808f2. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d727062256f97472737ee639733c5f8dcb79146d
+
+- SCRUM-134 Modify new and existing styling for enhanced usability and experience. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-134?atlOrigin=eyJpIjoiZDY1MTAyOGZmZWRkNDBkNzlkOTUxMmRjZWMxZmEzYzEiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/5774237d7d077d9ba023315226b477fdfd433615. 
+https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/545930c47f8be27bd33f038ebdbb65e9673b2d5e. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/30
+
+- SCRUM-133 Audit and clean the current UI. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-133?atlOrigin=eyJpIjoiMDI4NjIwZTVjYjYxNDM3OWJjZWIxMmM2MzAzZmU0ZTciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/545930c47f8be27bd33f038ebdbb65e9673b2d5e. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/809b42d26cbee30ef789298ef94814604c840023
+
+- SCRUM-135 Deploy (set up bitbucket pipelines). ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-135?atlOrigin=eyJpIjoiNjM0YWJiMzRkMTgzNDUxZThjMThhYmRkOTE0ZDBhZDIiLCJwIjoiaiJ9. COMMITS https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/7b2a767c4f13298f745eb7e1e6fea6ae91578bb0. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/32
+
+- SCRUM-139 Test deployment process using pipelines. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-139?atlOrigin=eyJpIjoiZjI1YmFkMmVkMmIwNGE0ZmJjNDIwNWVmZjQ1YTQwM2EiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/a436d437abdff333fbb3306ba5346c14b31c04c7. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/ea2b7fc2866f431c6ea9408251874b6ae36763e2.
+
 # Sprint 2 contributions:
 
 ### Danny hmi12
