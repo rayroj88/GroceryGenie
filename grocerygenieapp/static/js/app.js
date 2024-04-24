@@ -431,7 +431,32 @@ function categorizeItem(itemName) {
     return "Other"; // Default category if no match is found
 }
 
+document.getElementById('categoriesBtn').addEventListener('click', function() {
+    var categoriesList = document.getElementById('categoriesList');
+    categoriesList.classList.toggle('hidden'); // This will show or hide the categories list
+});
 
+// Dynamically populate the category list
+document.addEventListener('DOMContentLoaded', function() {
+    var categoryKeywords = {
+        // Include your categories here, as previously defined
+    };
+
+    var table = document.getElementById('categoriesList').querySelector('table');
+    var categories = Object.keys(categoryKeywords);
+    var cellsPerRow = 5; // Adjust as needed for your layout
+    var html = '';
+
+    for (let i = 0; i < categories.length; i += cellsPerRow) {
+        html += '<tr>';
+        for (let j = i; j < i + cellsPerRow && j < categories.length; j++) {
+            html += `<td>${categories[j]}</td>`;
+        }
+        html += '</tr>';
+    }
+
+    table.innerHTML = html;
+});
 
 
 function clearList() {

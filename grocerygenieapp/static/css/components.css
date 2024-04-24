@@ -8,6 +8,10 @@
     --base-border-radius: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 .banner {
     background-color: var(--banner-bg-color);
     padding: 10px 0;
@@ -41,6 +45,39 @@
 #categoriesContainer {
     width: 5%;               /* Define a width */
     margin: 0 auto;           /* Auto margins on both sides */
+}
+
+.categories-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.categories-list {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.categories-list table {
+    width: 100%;
+}
+
+.categories-list td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.categories-list td:hover {
+    background-color: #f1f1f1;
 }
 
 #storeSelect { 
