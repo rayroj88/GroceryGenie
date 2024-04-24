@@ -436,6 +436,19 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Event listener for creating a new category
+document.getElementById('create-category-btn').addEventListener('click', function() {
+    const newCategoryName = document.getElementById('newCategoryName').value.trim();
+    if (newCategoryName) {
+        createCategory(newCategoryName);
+        // Optionally, clear the input field after adding
+        document.getElementById('newCategoryName').value = '';
+        alert(`Category "${newCategoryName}" created successfully`); // User feedback
+    } else {
+        alert('Please enter a valid category name'); // User feedback for empty input
+    }
+});
+
 function ensureCategoryExists(category) {
     let categoryId = category.replace(/\s+/g, '');
     let categoryContainer = document.getElementById("categoriesContainer");
@@ -716,7 +729,16 @@ function deleteCategory(categoryName) {
     }
 }
 
-
+// Function to create a new category
+function createCategory(categoryName) {
+    if (!categoryKeywords.hasOwnProperty(categoryName)) {
+        categoryKeywords[categoryName] = [];
+        refreshCategories(); // Update the UI to display the new category
+        saveCategoriesToStorage(); // Optionally, save the changes to local storage
+    } else {
+        alert(`Category "${categoryName}" already exists`);
+    }
+}
 
 
 function submitRecommendedRecipe(recommendedRecipe) {
