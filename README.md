@@ -113,6 +113,42 @@ Similarly to Dannys' case,
 - SCRUM-90 Create UI elements for creating a category ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-90 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/210f97e3fca4d580e42de1a5d8368e5207a8e794 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/4a1de2db780401280fd191f20506043e5c26e88e PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/51
 
 
+### Salem rqn3
+- SCRUM-132 Construct and enhance the homepage layout with a more refined and professional appearance, achieving a polished and cohesive look. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-132
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49 
+https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49 
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/1d804fe326c605d96a05fb9e96d918ca28ccaeac 
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e151b8ea529c041bd3216e5f4d42cbabc3ffd1fb
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49
+
+- SCRUM-130 Design an about page theme that exudes sophistication while delivering comprehensive information about the product. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-130?atlOrigin=eyJpIjoiZjE4MjkyNWYzNmYxNDk5Y2FkYWUyNDM4NmUwZmFiYzMiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/53891c579d4567d35d245ffb7ebc60e7f3d4b054
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/9dc05a59162073b8b5f89958f176901fdef69fb6
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/91fa32b51808d3d9afe3c8a7939d304f46b3b627
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/9aceb16cf12e93cdd1e2c6b3bfc76a3643a38427
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/45
+
+- SCRUM-129 Construct a detailed narrative on about page outlining our software product's mission and the primary objectives of our team. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-129?atlOrigin=eyJpIjoiMjJjZTY2NjgxZDlmNDRmNjgzN2Y4NTk5YmRiNmRmOWEiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/c08c2c984965e603fbc709e88957e3b76d3b68ab
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/53af906edac3587b6dd4e29a416c0b103eeecd5f
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a7296f4195fc8c20188df259c222daa1f2f10a23
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/92a353bc701136d16e5f5213c54f165ee465fc2e
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e151b8ea529c041bd3216e5f4d42cbabc3ffd1fb
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/41
+
+- SCRUM-128 Implement a fully operational contact form that automatically sends users a confirmation email upon submission. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-128?atlOrigin=eyJpIjoiYTc4OWQwOTlkOGQwNDIwMWFmZTE1NzUwMzkzMTBhYTEiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/5edfead8db5c455e530fce68a18ebae6d6411b81
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e03a42cf872106a639d4345e8ea0b74852910b7d
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/5c991e5815639fd9c93ffab1f7bc5dd04705b9e2
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/37e42632444449c4feb7434d757141f397d7337f
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/27
+
+- SCRUM-127 Create a visually captivating contact page that not only catches the user's eye but also engages them aesthetically. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-127?atlOrigin=eyJpIjoiNmIxYzBmZDViN2Q0NGU0Y2JhMGNlZjlmODMwYThmYzkiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/6e3abbfe53e66c36400b5572aed23cf3043bc106
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/3d7961c4fd36849b6df9079a23c1251eca9085bd
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a0f9fb7eb9e3362f077a9017f83e46cb91408027
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7ae3383fcd2c2a7113a5490744f5501d5b8fd30f
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/44
 
 
 # Sprint 2 contributions:
