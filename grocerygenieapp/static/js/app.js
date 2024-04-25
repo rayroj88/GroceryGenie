@@ -431,7 +431,54 @@ function categorizeItem(itemName) {
     return "Other"; // Default category if no match is found
 }
 
+console.log("DOM fully loaded and parsed");
+document.getElementById('categoriesBtn').addEventListener('click', function() {
+    console.log("Categories button clicked");
+    var categoriesList = document.getElementById('categoriesList');
+    categoriesList.classList.toggle('hidden'); // This will show or hide the categories list
+    console.log("Categories list visibility toggled");
+});
 
+// Dynamically populate the category list
+document.addEventListener('DOMContentLoaded', function() {
+    var categoryKeywords = [
+        "Dairy & Eggs", 
+        "Produce", 
+        "Meats & Seafood",
+        "Bakery",
+        "Frozen Foods",
+        "Pantry Staples",
+        "Snacks",
+        "Drinks",
+        "Household & Cleaning",
+        "Health & Beauty",
+        "Baby Products",
+        "Pet Supplies",
+        "Canned & Jarred Goods",
+        "International Foods",
+        "Deli & Prepared Foods",
+        "Baking Goods",
+        "Spices & Seasonings",
+        "Alcoholic Beverages",
+        "Pharmacy",
+        "Floral & Garden",
+        "Other"
+    ];
+
+    var table = document.getElementById('categoriesList').querySelector('table');
+    var cellsPerRow = 5; // Adjust as needed for your layout
+    var html = '';
+
+    for (let i = 0; i < categoryKeywords.length; i += cellsPerRow) {
+        html += '<tr>';
+        for (let j = i; j < i + cellsPerRow && j < categoryKeywords.length; j++) {
+            html += `<td>${categoryKeywords[j]}</td>`;
+        }
+        html += '</tr>';
+    }
+
+    table.innerHTML = html;
+});
 
 
 function clearList() {
