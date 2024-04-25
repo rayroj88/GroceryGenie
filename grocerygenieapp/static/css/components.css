@@ -19,6 +19,19 @@
     color: var(--primary-text-color); /* Improved contrast */
 }
 
+#addItemForm {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Adjust to exact center */
+    background-color: white; /* Background color */
+    padding: 20px; /* Padding around the form */
+    border: 1px solid #ccc; /* Border for the form */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow for a little depth */
+    z-index: 1050; /* Ensure it's above other content */
+}
+
 .btn, .form-button, #addItemButton, #downloadListButton, #processListButton, #saveListButton, #clearListButton, #toggleSideWindowBtn {
     display: flex;
     flex-direction: column;  /* Aligns the children (buttons) in a vertical column */
@@ -156,7 +169,7 @@
 .addItemForm button {
     padding: 12px 15px; /* Matching padding with the input for visual symmetry */
     background: linear-gradient(to right, #4caf50, #8bc34a); /* Gradient background */
-    color: white; /* Text color for readability */
+    color: black; /* Text color for readability */
     border: none; /* No border for a cleaner look */
     border-radius: 4px; /* Rounded corners to match the input */
     text-transform: uppercase; /* Makes text uppercase for a modern touch */

@@ -39,11 +39,13 @@
                     <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
                     <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
                 </div>
-                
                 <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
                 <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
                 <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
                 <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+                <button id="refreshCategoriesBtn" class="form-button">Refresh Categories</button>
+                
+
                         <!-- Category Button and Dropdown List -->
                 <button id="categoriesBtn" class="form-button">Categories</button>
                 <div id="categoriesList" class="categories-list hidden">
@@ -51,6 +53,29 @@
                 <!-- Categories will be dynamically inserted here -->
                 </table>
                 </div>
+                <!-- Add Item Form -->
+<!-- Somewhere in your HTML -->
+<div id="addItemForm" style="display:none;">
+    <input type="text" id="newItemName" placeholder="Add item">
+    <button onclick="submitNewItem()">Add</button>
+    <button onclick="closeForm()">Cancel</button>
+</div>
+
+<script>
+function submitNewItem() {
+    const newItemName = document.getElementById('newItemName').value.trim();
+    addItemToCategory(newItemName);
+    if (newItemName) {
+        addItemToCategory(newItemName);
+        // Optionally, clear the input field after adding
+        document.getElementById('newItemName').value = '';
+        alert('Item added successfully'); // User feedback
+    } else {
+        alert('Please enter a valid item name'); // User feedback for empty input
+    }
+    closeForm(); // Close the add item form
+}
+</script>
 
                 <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
                 <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
@@ -170,6 +195,7 @@ $(document).ready(function() {
     <script>
 window.processingList = false; // Global flag indicating if the list is being processed
 
+
 document.getElementById('processListButton').addEventListener('click', function() {
     document.getElementById('fileInput').click(); // Trigger file input click
 });
@@ -259,6 +285,8 @@ function processItems(items) {
     window.processNextItem(); // Start processing items
 }
 
+
+
 window.addEventListener('load', () => {
     window.processNextItem = () => {};
 });
@@ -327,6 +355,15 @@ window.addEventListener('load', () => {
     // Call the function to display list dates when the page loads
     displayListDates();
 </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        populateCategories();
+    });
+</script>
+
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>
