@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layouts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="css/dietary_labels.css">
+
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylestwo.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,11 +39,51 @@
                     <input type="text" id="itemInput" name="item_text" placeholder="Add new item...">
                     <button id="addItemButton" class="form-button" onclick="addItem()">Add Item</button>
                 </div>
-                
                 <button id="clearListButton" class="form-button" onclick="clearList()">Clear List</button>
                 <button id="saveListButton" class="form-button" onclick="saveList()">Save List</button>
                 <button id="downloadListButton" class="form-button" onclick="downloadList()">Download List</button>
                 <button id="toggleSideWindowBtn" class="form-button">Add Recipe</button>
+                <button id="refreshCategoriesBtn" class="form-button">Refresh Categories</button>
+                <button id="delete-category" class="form-button">Delete Category</button>
+
+                <!-- Add UI elements for creating a new category -->
+<div id="create-category-section">
+    <button id="create-category-btn" class="form-button">Create Category</button>
+    <input type="text" id="newCategoryName" placeholder="Enter new category name">
+</div>
+
+   
+                        <!-- Category Button and Dropdown List -->
+                <button id="categoriesBtn" class="form-button">Categories</button>
+                <div id="categoriesList" class="categories-list hidden">
+                    
+                <table>
+                <!-- Categories will be dynamically inserted here -->
+                </table>
+                </div>
+                <!-- Add Item Form -->
+<!-- Somewhere in your HTML -->
+<div id="addItemForm" style="display:none;">
+    <input type="text" id="newItemName" placeholder="Add item">
+    <button onclick="submitNewItem()">Add</button>
+    <button onclick="closeForm()">Cancel</button>
+</div>
+
+<script>
+function submitNewItem() {
+    const newItemName = document.getElementById('newItemName').value.trim();
+    addItemToCategory(newItemName);
+    if (newItemName) {
+        addItemToCategory(newItemName);
+        // Optionally, clear the input field after adding
+        document.getElementById('newItemName').value = '';
+        alert('Item added successfully'); // User feedback
+    } else {
+        alert('Please enter a valid item name'); // User feedback for empty input
+    }
+    closeForm(); // Close the add item form
+}
+</script>
 
                 <input type="file" id="fileInput" name="shopping_list" accept=".txt" style="display: none;" onchange="uploadAndProcessList()">
                 <button id="processListButton" class="form-button" style="background-color: red; color: white;">Process List</button>
@@ -55,16 +99,17 @@
                 <div id="dietaryFilterContainer" style="margin-top: 20px;">
                     <select id="dietaryFilter" class="form-button">
                         <option value="">Select a diet</option>
-                        <option value="Vegan">Vegan</option>
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Gluten-Free">Gluten-Free</option>
-                        <option value="Keto">Keto</option>
-                        <option value="Paleo">Paleo</option>
-                        <option value="Dairy-Free">Dairy-Free</option>
-                        <option value="Pescatarian">Pescatarian</option>
-                        <option value="Food Allergens">Food Allergens</option>
+                        <option value="Vegan"><i class="fa fa-leaf"></i> Vegan</option>
+                        <option value="Vegetarian"><i class="fa fa-carrot"></i> Vegetarian</option>
+                        <option value="Gluten-Free"><i class="fa fa-bread-slice"></i> Gluten-Free</option>
+                        <option value="Keto"><i class="fa fa-bacon"></i> Keto</option>
+                        <option value="Paleo"><i class="fa fa-drumstick-bite"></i> Paleo</option>
+                        <option value="Dairy-Free"><i class="fa fa-cheese"></i> Dairy-Free</option>
+                        <option value="Pescatarian"><i class="fa fa-fish"></i> Pescatarian</option>
+                        <option value="Food Allergens"><i class="fa fa-allergies"></i> Food Allergens</option>
                     </select>
                 </div>
+                
             </div>
         </div>
     
@@ -158,6 +203,7 @@ $(document).ready(function() {
     <script>
 window.processingList = false; // Global flag indicating if the list is being processed
 
+
 document.getElementById('processListButton').addEventListener('click', function() {
     document.getElementById('fileInput').click(); // Trigger file input click
 });
@@ -247,6 +293,8 @@ function processItems(items) {
     window.processNextItem(); // Start processing items
 }
 
+
+
 window.addEventListener('load', () => {
     window.processNextItem = () => {};
 });
@@ -315,6 +363,15 @@ window.addEventListener('load', () => {
     // Call the function to display list dates when the page loads
     displayListDates();
 </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        populateCategories();
+    });
+</script>
+
     
         <header class="header">
             <a href="#" class="logo">GroceryGenie</a>

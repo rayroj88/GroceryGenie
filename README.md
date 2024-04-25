@@ -81,6 +81,40 @@ Contact the team at: hmi12@txstate.edu
 - Finish dietary feature.
 - finish view saved lists to output to the actual list instead of the array.
 
+# Sprint 3 contributions: 
+
+### Danny hmi12
+- Some of my commits were not tracked by bitbucket (not sure why). If that was the case for one of my tasks, I linked the pull request which *does* show all the commits. Sorry about that and thanks!
+
+- SCRUM-136 Prepare codebase for deployment. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-136?atlOrigin=eyJpIjoiOTA3M2I1ZjMyYjU5NDc2ZTk4MjQyODc1Y2MzY2U1NjAiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/5a8296b522c086344578f1d5ce4ad73c914808f2. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/d727062256f97472737ee639733c5f8dcb79146d
+
+- SCRUM-134 Modify new and existing styling for enhanced usability and experience. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-134?atlOrigin=eyJpIjoiZDY1MTAyOGZmZWRkNDBkNzlkOTUxMmRjZWMxZmEzYzEiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/5774237d7d077d9ba023315226b477fdfd433615. 
+https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/545930c47f8be27bd33f038ebdbb65e9673b2d5e. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/30
+
+- SCRUM-133 Audit and clean the current UI. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-133?atlOrigin=eyJpIjoiMDI4NjIwZTVjYjYxNDM3OWJjZWIxMmM2MzAzZmU0ZTciLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/545930c47f8be27bd33f038ebdbb65e9673b2d5e. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/809b42d26cbee30ef789298ef94814604c840023
+
+- SCRUM-135 Deploy (set up bitbucket pipelines). ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-135?atlOrigin=eyJpIjoiNjM0YWJiMzRkMTgzNDUxZThjMThhYmRkOTE0ZDBhZDIiLCJwIjoiaiJ9. COMMITS https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/7b2a767c4f13298f745eb7e1e6fea6ae91578bb0. PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/32
+
+- SCRUM-139 Test deployment process using pipelines. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-139?atlOrigin=eyJpIjoiZjI1YmFkMmVkMmIwNGE0ZmJjNDIwNWVmZjQ1YTQwM2EiLCJwIjoiaiJ9. COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/a436d437abdff333fbb3306ba5346c14b31c04c7. https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/ea2b7fc2866f431c6ea9408251874b6ae36763e2.
+
+
+### Brandon bds156
+Similarly to Dannys' case,
+- Some of my commits were not tracked by bitbucket (not sure why). If that was the case for one of my tasks, I linked the pull request which does show all the commits. Sorry.
+
+- SCRUM-75 Develop the backend logic to allow users to assign items to categories when creating or editing a shopping list item. ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-75. COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/aad665b869ce6ccb68f114f01466a72909a258a5 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/1153e79d6815603c990f280e6e1cf976f3956b57 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/d2685c5f1327ef5b50eed90305de4dbe1ed78ac7 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/fa8d4e29ba5a5ba8701f1c4ed613632747980d7d PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/52
+
+- SCRUM-79 Implement functionality for users to delete categories through the UI>. Issue Link: https://cs3398s24changelings.atlassian.net/browse/SCRUM-79 COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/a5915fdbc99bb63b613cb7704d8840c53aedc87b PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/54
+
+-SCRUM-80 Develop backend logic to delete category and handle unassigned items from category deletion. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-80 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/60ead8d0388d4de4383512ee7548c12f6a0ff1b9 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/dd1c0d807f03438a5bf227bcfba7c87d4511bc9e PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/55
+
+- SCRUM-76 Ui changes to add items to a category ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-76 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/68500f5e8c934622bf12f43b76ad456a6f917f9c https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a567913852b5680c657afb5fd7edd3463353dc92 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/5bea074f4e3848f67cf976dafbb8cf4d13d1fe12 PULL REQUEST:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/53
+
+- SCRUM-90 Create UI elements for creating a category ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-90 COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/210f97e3fca4d580e42de1a5d8368e5207a8e794 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/4a1de2db780401280fd191f20506043e5c26e88e PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/51
+
+
+
+
 # Sprint 2 contributions:
 
 ### Danny hmi12

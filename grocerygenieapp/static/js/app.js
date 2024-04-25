@@ -1,7 +1,9 @@
 items = []
 // Hardcoded list of items for each diet
 const dietItems = {
-    'Vegan': ['Almond milk', 'Coconut yogurt', 'Tempeh', 'Chickpeas', 
+    'Vegan': {
+     
+    items:['Almond milk', 'Coconut yogurt', 'Tempeh', 'Chickpeas', 
     'Black beans', 'Lentils', 'Quinoa', 'Vegan cheese', 
     'Seitan', 'Jackfruit', 'Tofu', 'Soy milk', 
     'Nutritional yeast', 'Chia seeds', 'Flax seeds', 
@@ -11,8 +13,13 @@ const dietItems = {
     'Ratatouille', 'Vegan curry', 'Stuffed bell peppers', 'Marinated tofu stir-fry',
     'Vegan lasagna', 'Rice and bean burritos', 'Peanut butter', 'Tabbouleh',
     'Vegan pizza', 'Roasted chickpeas', 'Kale chips', 'Guacamole'],
+    favoriteItem: 'Almond milk',
+    tip: 'Vegan diets exclude all animal products, making them rich in plant-based nutrients.',
+    },
 
-    'Vegetarian': ['Eggs', 'Greek yogurt', 'Paneer', 'Halloumi', 
+    'Vegetarian': {
+    
+     items:['Eggs', 'Greek yogurt', 'Paneer', 'Halloumi', 
     'Feta cheese', 'Ricotta cheese', 'Cheddar cheese', 'Mozzarella', 
     'Butter', 'Milk', 'Ice cream', 'Whey protein', 
     'Cottage cheese', 'Sour cream', 'Pesto sauce', 
@@ -22,8 +29,13 @@ const dietItems = {
     'Brie and apple sandwich', 'Greek salad', 'Caprese salad', 'Eggplant parmesan',
     'Vegetable lasagna', 'Cheese fondue', 'Gnocchi', 'Mushroom stroganoff',
     'Spinach pie', 'Egg fried rice', 'Zucchini fritters', 'Arugula and goat cheese salad'],
+    favoriteItem: 'Paneer',
+    tip: 'Vegetarian diets include dairy and eggs but exclude meat, fish, and poultry.',
+    },
 
-    'Gluten-Free': ['Rice cakes', 'Gluten-free pasta', 'Quinoa', 'Buckwheat', 
+    'Gluten-Free':{
+
+     items:['Rice cakes', 'Gluten-free pasta', 'Quinoa', 'Buckwheat', 
     'Gluten-free bread', 'Corn tortillas', 'Gluten-free oats', 'Rice flour', 
     'Almond flour', 'Coconut flour', 'Corn chips', 'Popcorn', 
     'Rice crackers', 'Gluten-free cereal', 'Millet', 
@@ -33,9 +45,13 @@ const dietItems = {
     'Amaranth', 'Teff', 'Arrowroot', 'Sorghum',
     'Gluten-free croutons', 'Gluten-free tortilla chips', 'Gluten-free pita', 'Gluten-free beer',
     'Gluten-free pretzels', 'Gluten-free cookies', 'Gluten-free cake mix', 'Gluten-free mac and cheese'],
+    favoriteItem: 'Quinoa',
+    tip: 'Gluten-Free diets exclude wheat, barley, and rye, and are essential for those with celiac disease.',
+    },
     // Add more diets and items here
-    'Keto': [
-        'Avocado', 'Eggs', 'Bacon', 'Ground beef', 
+    'Keto': {
+
+     items:['Avocado', 'Eggs', 'Bacon', 'Ground beef', 
         'Salmon', 'Tuna', 'Butter', 'Heavy cream', 
         'Olive oil', 'Coconut oil', 'Almond flour', 'Macadamia nuts', 
         'Pecans', 'Cheddar cheese', 'Cream cheese', 
@@ -44,10 +60,13 @@ const dietItems = {
         'Chia seed pudding', 'Keto bread', 'Pork rinds', 'Keto brownies',
         'String cheese', 'Keto cookies', 'Egg muffins', 'Spinach and feta stuffed chicken',
         'Keto chocolate', 'Keto ice cream', 'Bone broth', 'Brussels sprouts with bacon',
-        'Cobb salad', 'Keto pizza', 'Almond butter', 'Keto smoothie'
-    ],
-    'Paleo': [
-        'Grass-fed meat', 'Fish', 'Nuts and seeds', 'Eggs', 
+        'Cobb salad', 'Keto pizza', 'Almond butter', 'Keto smoothie'],
+    favoriteItem: 'Avocado',
+    tip: 'Keto diets are high in fat, low in carbs, and help in potentially losing weight by achieving ketosis.',
+    },
+    'Paleo': {
+    
+        items:['Grass-fed meat', 'Fish', 'Nuts and seeds', 'Eggs', 
         'Fresh fruits', 'Fresh vegetables', 'Sweet potatoes', 'Coconut oil', 
         'Olive oil', 'Avocado', 'Almond butter', 'Squash', 
         'Zucchini', 'Beef jerky', 'Coconut milk', 
@@ -56,11 +75,15 @@ const dietItems = {
         'Roasted turkey', 'Baked sweet potato fries', 'Grain-free granola', 'Paleo protein bars',
         'Shakshuka', 'Tuna salad lettuce wraps', 'Paleo banana bread', 'Almond crusted chicken',
         'Coconut shrimp', 'Beef jerky', 'Fruit leather', 'Vegetable chips',
-        'Bison burgers', 'Chicken zoodle soup', 'Stuffed avocados', 'Paleo pancakes'
-      ],
+        'Bison burgers', 'Chicken zoodle soup', 'Stuffed avocados', 'Paleo pancakes'],
+        favoriteItem: 'Grass-fed Beef Jerky',
+        tip: 'Paleo diets focus on eating like our ancestors, emphasizing whole foods and avoiding processed items.',
+    },
     
-    'Dairy-Free': [
-        'Almond milk', 'Coconut milk', 'Oat milk', 'Rice milk', 
+    'Dairy-Free': {
+    
+
+        items:['Almond milk', 'Coconut milk', 'Oat milk', 'Rice milk', 
         'Soy milk', 'Dairy-free cheese', 'Coconut cream', 'Dairy-free yogurt', 
         'Sorbet', 'Dairy-free chocolate', 'Dairy-free ice cream', 'Dairy-free margarine', 
         'Dairy-free smoothies', 'Almond-based desserts', 'Cashew-based spreads', 
@@ -69,10 +92,12 @@ const dietItems = {
         'Dairy-free pesto', 'Dairy-free flatbread', 'Dairy-free biscuits', 'Dairy-free creamer',
         'Dairy-free custard', 'Dairy-free gravy', 'Dairy-free protein shake', 'Dairy-free Caesar salad',
         'Dairy-free garlic bread', 'Dairy-free Alfredo sauce', 'Dairy-free queso', 'Dairy-free enchiladas',
-        'Dairy-free pancakes', 'Dairy-free brownies', 'Dairy-free mozzarella sticks', 'Dairy-free ranch'
-    ],
-    'Pescatarian': [
-        'Salmon', 'Tuna', 'Trout', 'Cod', 
+        'Dairy-free pancakes', 'Dairy-free brownies', 'Dairy-free mozzarella sticks', 'Dairy-free ranch'],
+        favoriteItem: 'Almond Milk',
+        tip: 'Dairy-Free diets exclude all dairy products, often due to allergies or lactose intolerance.',
+    },
+    'Pescatarian': {
+        items:['Salmon', 'Tuna', 'Trout', 'Cod', 
         'Shrimp', 'Scallops', 'Lobster', 'Mussels', 
         'Oysters', 'Sushi', 'Crab', 'Clams', 
         'Sardines', 'Anchovies', 'Seaweed', 
@@ -81,10 +106,12 @@ const dietItems = {
         'Seafood risotto', 'Seared scallops', 'Grilled sea bass', 'Halibut steaks',
         'Spicy tuna rolls', 'Clam chowder', 'Fish ceviche', 'Seafood gumbo',
         'Smoked salmon', 'Calamari', 'Lobster bisque', 'Crab cakes',
-        'Grilled mackerel', 'Seared ahi tuna', 'Poke bowl', 'Shrimp scampi'
-    ],
-    'Food Allergens': [
-        'Gluten-free bread', 'Nut-free granola bars', 'Dairy-free milk', 'Soy-free sauces', 
+        'Grilled mackerel', 'Seared ahi tuna', 'Poke bowl', 'Shrimp scampi'],
+        favoriteItem: 'Grilled Salmon',
+        tip: 'Pescatarian diets include fish and seafood as sources of protein instead of meat from land animals.',
+    },
+    'Food Allergens': {
+        items:['Gluten-free bread', 'Nut-free granola bars', 'Dairy-free milk', 'Soy-free sauces', 
         'Egg-free mayo', 'Seed butters', 'Coconut yogurt', 'Allergen-free chocolates', 
         'Gluten-free pasta', 'Nut-free trail mix', 'Dairy-free cheeses', 'Soy-free veggie burgers', 
         'Egg-free cake mixes', 'Hypoallergenic cereals', 'Non-dairy ice cream', 
@@ -92,31 +119,212 @@ const dietItems = {
         'Soy-free chocolate', 'Soy-free ice cream', 'Nut-free peanut butter substitute', 'Nut-free chocolate',
         'Dairy-free protein bars', 'Egg-free protein bars', 'Wheat-free soy sauce', 'Gluten-free vegan pizza',
         'Dairy and egg-free pancake mix', 'Soy-free veggie chips', 'Nut-free energy balls', 'Dairy-free vegan cheese',
-        'Gluten and nut-free granola', 'Allergen-free snack bars', 'Corn and gluten-free tortillas', 'Gluten and dairy-free cupcakes'
-    ]
+        'Gluten and nut-free granola', 'Allergen-free snack bars', 'Corn and gluten-free tortillas', 'Gluten and dairy-free cupcakes'],
+        favoriteItem: 'Gluten-Free Vegan Pizza',
+        tip: 'Food Allergen-friendly diets avoid common allergens like nuts, dairy, gluten, etc., to prevent allergic reactions.',
+    },
 };
+
+ // Define a mapping of keywords to categories
+ const categoryKeywords = {
+
+    "Dairy & Eggs": [
+        "milk", "cheese", "yogurt", "butter", "eggs", 
+        "cream", "plant-based milk", "sour cream", "cottage cheese", 
+        "cream cheese", "mozzarella", "cheddar", "gouda", 
+        "brie", "camembert", "feta", "ricotta", "parmesan", 
+        "ghee", "kefir", "buttermilk", "half and half", 
+        "provolone", "swiss cheese", "blue cheese", "egg","Almond milk", "Soy milk", "Cashew cheese", "Coconut yogurt", "Vegan butter", 
+        "Vegan mayonnaise", "Vegan cream cheese", "Rice milk", "Vegan ice cream", "Nutritional yeast", "Cashew cream", "Hemp cheese", "Almond ricotta", 
+        "Coconut whipped cream", "Dairy-free condensed milk", "Oat cream", "Rice cheese", 
+        "Soy sour cream", "Dairy-free custard", "Flax milk", "Pea milk", "Sunflower cheese", 
+        "Lupin-based yogurt", "Vegan ghee", "Tofu cream", "Carrageenan-free milk"
+      ],
+    "Produce": [
+        "apples", "bananas", "carrots", "dates", "eggplant", 
+        "figs", "grapes", "honeydew melon", "iceberg lettuce", 
+        "jalapeno peppers", "kale", "lemons", "mangoes", 
+        "nectarines", "oranges", "peaches", "quinces", 
+        "raspberries", "strawberries", "tomatoes", "ugli fruit", 
+        "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup"
+        , "mustard","Wild berries", "Jerusalem artichoke", "Yucca root", "Jackfruit", "Spirulina"
+      ],
+    "Meats & Seafood": [
+        "beef", "chicken", "duck", "eggs", "fish", 
+        "goat", "ham", "italian sausage", "jerk chicken", 
+        "kangaroo", "lamb", "mussels", "nuggets", "octopus", 
+        "pork", "quail", "rabbit", "salmon", "turkey", 
+        "veal", "whale", "xiphias (swordfish)", "yellowtail", 
+        "zebra (not common)","Kelp", "Seaweed snacks", "Fish roe", "Octopus", "Squid", "Sea cucumber", "Abalone", 
+        "Sea urchin", "Monkfish liver", "Mackerel", "Eel", "Marinated herring", "Smoked salmon",
+        "Canned sardines", "Clam juice", "Prawn crackers", "Scallops", "Turbot", "Soft-shell crab",
+        "Anchovy paste"
+      ],
+    "Bakery": [
+        "bread", "roll", "bagel", "pastry", "cake", "pie", "whole wheat bread", 
+        "croissants", "bagels", "muffins", "sourdough loaf", "gluten-free bread",
+        "rye bread", "banana bread", "biscotti", "danish pastry",
+        "pita bread", "pizza dough", "pretzels", "scones", "ciabatta",
+        "panettone", "fruitcake", "pound cake", "challah", "donuts",
+        "garlic bread", "gingerbread", "baguette", "brioche", "cornbread"
+        ,"Gluten-free cookies", "Gluten-free cakes", "Gluten-free cereals", "Gluten-free pancakes"
+  ],
+    "Frozen Foods": [
+        "ice cream", "frozen vegetable", "frozen dinner", "pizza", "frozen fruit", "frozen dessert", 
+        "frozen vegetables", "ice cream", "frozen pizza", "frozen dinners", "frozen berries",
+        "frozen waffles", "frozen fish", "frozen shrimp", "frozen fries", "frozen chicken nuggets",
+        "frozen burgers", "frozen fruit bars", "frozen pie crusts", "frozen dumplings", "frozen bread dough",
+        "frozen bagels", "frozen cheesecake", "frozen meatballs", "frozen corn", "frozen spinach",
+        "frozen broccoli", "frozen breakfast sandwiches", "frozen edamame", "frozen mixed fruit", "frozen yogurt"
+        ,"Dairy-free ice cream", "Dairy-free smoothies"
+  ],
+    "Pantry Staples": [
+        "rice", "pasta", "canned tomatoes", "olive oil", "flour",
+        "sugar", "chicken broth", "canned beans", "peanut butter", "honey",
+        "vinegar", "cereal", "oatmeal", "lentils", "quinoa",
+        "spices", "soy sauce", "nuts", "dried fruit", "tea",
+        "coffee", "baking powder", "baking soda", "yeast", "chocolate chips"
+        ,"Almond flour", "Coconut flour", "MCT oil"
+  ],
+    "Snacks": [
+        "chips", "popcorn", "granola bars", "chocolate", "trail mix",
+        "pretzels", "fruit snacks", "nuts", "jerky", "rice cakes",
+        "cookies", "crackers", "candy", "dried fruit", "yogurt covered raisins",
+        "cheese snacks", "fruit cups", "pudding cups", "pop tarts", "gummies",
+        "energy bars", "protein bars", "sunflower seeds", "almonds", "cashews"
+        ,"Vegan chocolate", "Gluten-free cookies", "Nutritional bars"
+  ],
+    "Drinks": [
+        "water", "soda", "juice", "milk", "coffee",
+        "tea", "energy drinks", "sports drinks", "iced tea", "lemonade",
+        "sparkling water", "almond milk", "soy milk", "coconut water", "vegetable juice",
+        "fruit punch", "hot chocolate", "beer", "wine", "spirits",
+        "smoothies", "cider", "matcha", "kombucha", "milkshakes"
+  ],
+    "Household & Cleaning": [
+        "laundry detergent", "dish soap", "all-purpose cleaner", "paper towels", "trash bags",
+        "bleach", "fabric softener", "glass cleaner", "toilet paper", "sponges",
+        "disinfectant wipes", "floor cleaner", "furniture polish", "air freshener", "dishwasher detergent",
+        "hand soap", "stain remover", "window cleaner", "bathroom cleaner", "kitchen cleaner",
+        "duster", "mop", "broom", "vacuum bags", "light bulbs"
+  ],
+    "Health & Beauty": [
+        "shampoo", "conditioner", "toothpaste", "soap", "body wash",
+        "deodorant", "face wash", "moisturizer", "sunscreen", "makeup remover",
+        "razors", "shaving cream", "lip balm", "hand sanitizer", "first aid kit",
+        "pain relievers", "allergy medication", "cotton swabs", "nail clippers", "toothbrushes",
+        "floss", "hair gel", "perfume", "cologne", "makeup"
+  ],
+    "Baby Products": [
+        "diapers", "baby wipes", "baby formula", "baby food", "bottles",
+        "pacifiers", "teething rings", "baby lotion", "baby shampoo", "baby powder",
+        "diaper rash cream", "baby oil", "nursing pads", "bottle cleaner", "sippy cups",
+        "baby bibs", "strollers", "car seats", "baby monitors", "high chairs",
+        "crib sheets", "baby blankets", "changing tables", "baby gates", "teethers",
+        "nursery decor", "breast pumps", "infant toys", "baby carriers", "night lights"
+  ],
+    "Pet Supplies": [
+        "dog food", "cat food", "bird seed", "fish food", "flea and tick treatment",
+        "pet shampoo", "litter", "litter boxes", "pet toys", "pet beds",
+        "collars", "leashes", "pet treats", "aquarium supplies", "pet vitamins",
+        "grooming tools", "pet carriers", "water bowls", "feeders", "pet sweaters",
+        "pet gates", "nail clippers", "pet toothpaste", "pet brushes", "training pads"
+  ],
+    "Canned & Jarred Goods": [
+        "beans", "corn", "peas", "tomatoes", "soup",
+        "fruit cocktail", "tuna", "salmon", "chicken", "beef stew",
+        "olives", "pickles", "jam", "jelly", "peanut butter",
+        "honey", "salsa", "pasta sauce", "coconut milk", "artichoke hearts",
+        "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree" , "tomato sauce" , "tomato paste"
+  ],
+    "International Foods": [
+        "asian food", "hispanic food", "european food", "indian food", "international spice",
+        "african food", "middle eastern food", "caribbean food", "japanese snacks", "korean kimchi",
+        "italian pasta", "greek olives", "thai curry paste", "chinese sauces", "french cheeses",
+        "spanish chorizo", "russian pickles", "dutch stroopwafel", "turkish delight", "vietnamese pho spice",
+        "polish kielbasa", "british tea", "mexican tortillas", "ethiopian berbere", "australian vegemite"
+  ],
+    "Deli & Prepared Foods": [
+        "deli meat", "cheese", "prepared salad", "rotisserie chicken", "sandwich", "sushi",
+        "quiche", "pasta salad", "antipasto", "coleslaw", "taco kit",
+        "falafel", "hummus", "deviled eggs", "stuffed peppers", "egg salad",
+        "chicken salad", "tuna salad", "macaroni salad", "fruit salad", "potato salad",
+        "lasagna", "meatballs", "bbq ribs", "vegetable tray", "cheese platter"
+  ],
+    "Baking Goods": [
+        "flour", "sugar", "baking powder", "baking soda", "yeast", "chocolate chip",
+        "vanilla extract", "cocoa powder", "almond flour", "coconut flour", "cake mix",
+        "brown sugar", "powdered sugar", "cornstarch", "maple syrup", "honey",
+        "molasses", "agave nectar", "food coloring", "sprinkles", "pastry flour",
+        "wheat germ", "baking chocolate", "buttermilk powder", "pie crust"
+  ],
+    "Spices & Seasonings": [
+        "salt", "pepper", "garlic powder", "paprika", "cinnamon", "spice mix",
+        "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
+        "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
+        "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
+        "cardamom", "star anise", "italian seasoning"
+  ],
+    "Alcoholic Beverages": [
+        "beer", "wine", "spirit", "mixer",
+        "vodka", "whiskey", "rum", "tequila", "gin",
+        "brandy", "liqueur", "champagne", "cider", "sake",
+        "craft beer", "red wine", "white wine", "rose wine", "prosecco",
+        "margarita mix", "bloody mary mix", "mojito mix", "old fashioned mix", "martini mix"
+  ],
+    "Pharmacy": [
+        "prescription medication", "first aid supply", "vitamin", "supplement",
+        "pain reliever", "allergy medication", "cold and flu remedy", "antacid", "cough syrup",
+        "antibiotic ointment", "bandages", "thermometer", "blood pressure monitor", "glucose meter",
+        "sunscreen", "insect repellent", "hand sanitizer", "lip balm", "eye drops",
+        "contact solution", "nasal spray", "sleep aid", "digestive aid", "moisturizing lotion"
+  ],
+    "Floral & Garden": [
+        "fresh flower", "potted plant", "garden tool", "seed", "soil",
+        "mulch", "fertilizer", "watering can", "garden hose", "pruning shears",
+        "gloves", "plant food", "herb seeds", "vegetable seeds", "flower seeds",
+        "succulents", "orchids", "rose bush", "lawn mower", "leaf blower",
+        "garden decor", "outdoor lighting", "compost bin", "bird feeder", "insecticide"
+  ]
+};
+
+
 
 // Bind the change event to the dietaryFilter dropdown
 $('#dietaryFilter').change(function() {
     const selectedDiet = $(this).val();
-
+    
     // Clear the current items
     $('#groceryList').empty();
 
-    // Check if the selected diet has associated items
-    if (dietItems[selectedDiet]) {
+    // Check if the selected diet has associated items and it's in the correct format
+    if (dietItems[selectedDiet] && Array.isArray(dietItems[selectedDiet].items)) {
         // Add each hardcoded item to the grocery list
-        dietItems[selectedDiet].forEach(function(item) {
+        dietItems[selectedDiet].items.forEach(function(item) {
             $('#groceryList').append('<li>' + item + '</li>');
         });
+
+        // Check if there is a favorite item and tip for the diet
+        if (dietItems[selectedDiet].favoriteItem && dietItems[selectedDiet].tip) {
+            // Display the favorite item and tip
+            $('#groceryList').append('<li><strong>Favorite Item:</strong> ' + dietItems[selectedDiet].favoriteItem + '</li>');
+            $('#groceryList').append('<li><strong>Tip:</strong> ' + dietItems[selectedDiet].tip + '</li>');
+        }
     } else {
         // Handle diets with no items or a placeholder message
         $('#groceryList').append('<li>No items listed for this diet.</li>');
     }
 });
-
 // ... (the rest of your existing app.js code)
 
+
+// This function adds an item to a category and updates storage and UI
+
+function refreshCategories() {
+    const categoriesContainer = document.getElementById('categoriesContainer');
+    categoriesContainer.innerHTML = ''; // Clear current categories
+    populateCategories(); // Re-populate categories
+}
 
 // Function to gather items and their dietary restrictions from the form inputs
 function gatherItemsAndRestrictions() {
@@ -137,6 +345,22 @@ function gatherItemsAndRestrictions() {
         });
     });
     return items;
+}
+
+// Function to add the item to the category
+function addItemToCategory(itemName, selectedCategory) {
+    const category = selectedCategory || categorizeItem(itemName); // Use selectedCategory if provided, otherwise categorize the item
+    if (category !== "Other" && itemName) {
+        if (!categoryKeywords[category]) categoryKeywords[category] = [];
+        categoryKeywords[category].push(itemName);
+        console.log(`Added ${itemName} to ${category}`);
+        console.log('Before saving:', categoryKeywords); // Log data before saving
+        saveCategoriesToStorage(); // Save changes to local storage
+        console.log('After saving:', categoryKeywords); // Log data after saving
+        refreshCategories(); // Immediately update the UI
+    } else {
+        console.log('Item could not be categorized or is invalid');
+    }
 }
 
 // Function to send the collected item data and dietary restrictions to the backend
@@ -200,6 +424,30 @@ function addItemFromAPI(itemName) {
         }
 }
 
+// Event listener for delete category button
+document.addEventListener('click', function(event) {
+    if (event.target.id === 'delete-category') {
+        const categoryNameToDelete = prompt('Enter the name of the category to delete:');
+        if (categoryNameToDelete && categoryKeywords.hasOwnProperty(categoryNameToDelete)) {
+            deleteCategory(categoryNameToDelete);
+        } else {
+            alert('Invalid category name or category does not exist.');
+        }
+    }
+});
+
+// Event listener for creating a new category
+document.getElementById('create-category-btn').addEventListener('click', function() {
+    const newCategoryName = document.getElementById('newCategoryName').value.trim();
+    if (newCategoryName) {
+        createCategory(newCategoryName);
+        // Optionally, clear the input field after adding
+        document.getElementById('newCategoryName').value = '';
+        alert(`Category "${newCategoryName}" created successfully`); // User feedback
+    } else {
+        alert('Please enter a valid category name'); // User feedback for empty input
+    }
+});
 
 function ensureCategoryExists(category) {
     let categoryId = category.replace(/\s+/g, '');
@@ -219,172 +467,90 @@ function ensureCategoryExists(category) {
 }
 
 function categorizeItem(itemName) {
-    // Define a mapping of keywords to categories
-    const categoryKeywords = {
-        "Dairy & Eggs": [
-            "milk", "cheese", "yogurt", "butter", "eggs", 
-            "cream", "plant-based milk", "sour cream", "cottage cheese", 
-            "cream cheese", "mozzarella", "cheddar", "gouda", 
-            "brie", "camembert", "feta", "ricotta", "parmesan", 
-            "ghee", "kefir", "buttermilk", "half and half", 
-            "provolone", "swiss cheese", "blue cheese", "egg"
-          ],
-        "Produce": [
-            "apples", "bananas", "carrots", "dates", "eggplant", 
-            "figs", "grapes", "honeydew melon", "iceberg lettuce", 
-            "jalapeno peppers", "kale", "lemons", "mangoes", 
-            "nectarines", "oranges", "peaches", "quinces", 
-            "raspberries", "strawberries", "tomatoes", "ugli fruit", 
-            "vanilla beans", "watermelon", "xigua", "yams", "zucchini", "onion", "lettuce", "tomato", "ketchup", "mustard"
-          ],
-        "Meats & Seafood": [
-            "beef", "chicken", "duck", "eggs", "fish", 
-            "goat", "ham", "italian sausage", "jerk chicken", 
-            "kangaroo", "lamb", "mussels", "nuggets", "octopus", 
-            "pork", "quail", "rabbit", "salmon", "turkey", 
-            "veal", "whale", "xiphias (swordfish)", "yellowtail", 
-            "zebra (not common)"
-          ],
-        "Bakery": [
-            "bread", "roll", "bagel", "pastry", "cake", "pie", "whole wheat bread", 
-            "croissants", "bagels", "muffins", "sourdough loaf", "gluten-free bread",
-            "rye bread", "banana bread", "biscotti", "danish pastry",
-            "pita bread", "pizza dough", "pretzels", "scones", "ciabatta",
-            "panettone", "fruitcake", "pound cake", "challah", "donuts",
-            "garlic bread", "gingerbread", "baguette", "brioche", "cornbread"
-      ],
-        "Frozen Foods": [
-            "ice cream", "frozen vegetable", "frozen dinner", "pizza", "frozen fruit", "frozen dessert", 
-            "frozen vegetables", "ice cream", "frozen pizza", "frozen dinners", "frozen berries",
-            "frozen waffles", "frozen fish", "frozen shrimp", "frozen fries", "frozen chicken nuggets",
-            "frozen burgers", "frozen fruit bars", "frozen pie crusts", "frozen dumplings", "frozen bread dough",
-            "frozen bagels", "frozen cheesecake", "frozen meatballs", "frozen corn", "frozen spinach",
-            "frozen broccoli", "frozen breakfast sandwiches", "frozen edamame", "frozen mixed fruit", "frozen yogurt"
-      ],
-        "Pantry Staples": [
-            "rice", "pasta", "canned tomatoes", "olive oil", "flour",
-            "sugar", "chicken broth", "canned beans", "peanut butter", "honey",
-            "vinegar", "cereal", "oatmeal", "lentils", "quinoa",
-            "spices", "soy sauce", "nuts", "dried fruit", "tea",
-            "coffee", "baking powder", "baking soda", "yeast", "chocolate chips"
-      ],
-        "Snacks": [
-            "chips", "popcorn", "granola bars", "chocolate", "trail mix",
-            "pretzels", "fruit snacks", "nuts", "jerky", "rice cakes",
-            "cookies", "crackers", "candy", "dried fruit", "yogurt covered raisins",
-            "cheese snacks", "fruit cups", "pudding cups", "pop tarts", "gummies",
-            "energy bars", "protein bars", "sunflower seeds", "almonds", "cashews"
-      ],
-        "Drinks": [
-            "water", "soda", "juice", "milk", "coffee",
-            "tea", "energy drinks", "sports drinks", "iced tea", "lemonade",
-            "sparkling water", "almond milk", "soy milk", "coconut water", "vegetable juice",
-            "fruit punch", "hot chocolate", "beer", "wine", "spirits",
-            "smoothies", "cider", "matcha", "kombucha", "milkshakes"
-      ],
-        "Household & Cleaning": [
-            "laundry detergent", "dish soap", "all-purpose cleaner", "paper towels", "trash bags",
-            "bleach", "fabric softener", "glass cleaner", "toilet paper", "sponges",
-            "disinfectant wipes", "floor cleaner", "furniture polish", "air freshener", "dishwasher detergent",
-            "hand soap", "stain remover", "window cleaner", "bathroom cleaner", "kitchen cleaner",
-            "duster", "mop", "broom", "vacuum bags", "light bulbs"
-      ],
-        "Health & Beauty": [
-            "shampoo", "conditioner", "toothpaste", "soap", "body wash",
-            "deodorant", "face wash", "moisturizer", "sunscreen", "makeup remover",
-            "razors", "shaving cream", "lip balm", "hand sanitizer", "first aid kit",
-            "pain relievers", "allergy medication", "cotton swabs", "nail clippers", "toothbrushes",
-            "floss", "hair gel", "perfume", "cologne", "makeup"
-      ],
-        "Baby Products": [
-            "diapers", "baby wipes", "baby formula", "baby food", "bottles",
-            "pacifiers", "teething rings", "baby lotion", "baby shampoo", "baby powder",
-            "diaper rash cream", "baby oil", "nursing pads", "bottle cleaner", "sippy cups",
-            "baby bibs", "strollers", "car seats", "baby monitors", "high chairs",
-            "crib sheets", "baby blankets", "changing tables", "baby gates", "teethers",
-            "nursery decor", "breast pumps", "infant toys", "baby carriers", "night lights"
-      ],
-        "Pet Supplies": [
-            "dog food", "cat food", "bird seed", "fish food", "flea and tick treatment",
-            "pet shampoo", "litter", "litter boxes", "pet toys", "pet beds",
-            "collars", "leashes", "pet treats", "aquarium supplies", "pet vitamins",
-            "grooming tools", "pet carriers", "water bowls", "feeders", "pet sweaters",
-            "pet gates", "nail clippers", "pet toothpaste", "pet brushes", "training pads"
-      ],
-        "Canned & Jarred Goods": [
-            "beans", "corn", "peas", "tomatoes", "soup",
-            "fruit cocktail", "tuna", "salmon", "chicken", "beef stew",
-            "olives", "pickles", "jam", "jelly", "peanut butter",
-            "honey", "salsa", "pasta sauce", "coconut milk", "artichoke hearts",
-            "chili", "curry paste", "apple sauce", "condensed milk", "pumpkin puree" , "tomato sauce" , "tomato paste"
-      ],
-        "International Foods": [
-            "asian food", "hispanic food", "european food", "indian food", "international spice",
-            "african food", "middle eastern food", "caribbean food", "japanese snacks", "korean kimchi",
-            "italian pasta", "greek olives", "thai curry paste", "chinese sauces", "french cheeses",
-            "spanish chorizo", "russian pickles", "dutch stroopwafel", "turkish delight", "vietnamese pho spice",
-            "polish kielbasa", "british tea", "mexican tortillas", "ethiopian berbere", "australian vegemite"
-      ],
-        "Deli & Prepared Foods": [
-            "deli meat", "cheese", "prepared salad", "rotisserie chicken", "sandwich", "sushi",
-            "quiche", "pasta salad", "antipasto", "coleslaw", "taco kit",
-            "falafel", "hummus", "deviled eggs", "stuffed peppers", "egg salad",
-            "chicken salad", "tuna salad", "macaroni salad", "fruit salad", "potato salad",
-            "lasagna", "meatballs", "bbq ribs", "vegetable tray", "cheese platter"
-      ],
-        "Baking Goods": [
-            "flour", "sugar", "baking powder", "baking soda", "yeast", "chocolate chip",
-            "vanilla extract", "cocoa powder", "almond flour", "coconut flour", "cake mix",
-            "brown sugar", "powdered sugar", "cornstarch", "maple syrup", "honey",
-            "molasses", "agave nectar", "food coloring", "sprinkles", "pastry flour",
-            "wheat germ", "baking chocolate", "buttermilk powder", "pie crust"
-      ],
-        "Spices & Seasonings": [
-            "salt", "pepper", "garlic powder", "paprika", "cinnamon", "spice mix",
-            "cumin", "turmeric", "oregano", "basil", "rosemary", "thyme",
-            "chili powder", "curry powder", "bay leaves", "saffron", "nutmeg",
-            "coriander", "allspice", "cloves", "ginger", "mustard seeds", "fennel seeds",
-            "cardamom", "star anise", "italian seasoning"
-      ],
-        "Alcoholic Beverages": [
-            "beer", "wine", "spirit", "mixer",
-            "vodka", "whiskey", "rum", "tequila", "gin",
-            "brandy", "liqueur", "champagne", "cider", "sake",
-            "craft beer", "red wine", "white wine", "rose wine", "prosecco",
-            "margarita mix", "bloody mary mix", "mojito mix", "old fashioned mix", "martini mix"
-      ],
-        "Pharmacy": [
-            "prescription medication", "first aid supply", "vitamin", "supplement",
-            "pain reliever", "allergy medication", "cold and flu remedy", "antacid", "cough syrup",
-            "antibiotic ointment", "bandages", "thermometer", "blood pressure monitor", "glucose meter",
-            "sunscreen", "insect repellent", "hand sanitizer", "lip balm", "eye drops",
-            "contact solution", "nasal spray", "sleep aid", "digestive aid", "moisturizing lotion"
-      ],
-        "Floral & Garden": [
-            "fresh flower", "potted plant", "garden tool", "seed", "soil",
-            "mulch", "fertilizer", "watering can", "garden hose", "pruning shears",
-            "gloves", "plant food", "herb seeds", "vegetable seeds", "flower seeds",
-            "succulents", "orchids", "rose bush", "lawn mower", "leaf blower",
-            "garden decor", "outdoor lighting", "compost bin", "bird feeder", "insecticide"
-      ]
-    };
-
-    // Convert the item name to lowercase for case-insensitive comparison
     const lowerItemName = itemName.toLowerCase();
-
-    // Iterate over the categories to find a match
     for (const [category, keywords] of Object.entries(categoryKeywords)) {
-        for (const keyword of keywords) {
-            if (lowerItemName.includes(keyword)) {
-                return category; // Return the category if a keyword matches
-            }
+        // Check if any keyword is a substring of the itemName
+        if (keywords.some(keyword => lowerItemName.includes(keyword.toLowerCase()))) {
+            return category;
         }
     }
-    return "Other"; // Default category if no match is found
+    return "Other"; // Fallback category if no match is found
+}
+
+// Event listener for adding an item
+document.getElementById('addItemButton').addEventListener('click', function() {
+    const itemName = document.getElementById('newItemName').value.trim();
+    if (itemName) {
+        addItemToCategory(itemName);
+        document.getElementById('newItemName').value = ''; // Clear the input after adding
+    } else {
+        console.error("Please enter a valid item name.");
+    }
+})
+
+console.log("DOM fully loaded and parsed");
+
+
+document.getElementById('categoriesBtn').addEventListener('click', function() {
+    console.log("Categories button clicked");
+    var categoriesList = document.getElementById('categoriesList');
+    categoriesList.classList.toggle('hidden'); // This will show or hide the categories list
+    console.log("Categories list visibility toggled");
+});
+
+app.run(debug=True)
+
+// Function to populate categories with the '+' buttons
+function populateCategories() {
+    var table = document.getElementById('categoriesList').querySelector('table');
+    var html = '';
+    var categories = Object.keys(categoryKeywords);
+    var i = 0;
+
+    // Create rows with five categories each
+    while (i < categories.length) {
+        html += '<tr>';
+        for (let j = 0; j < 5 && i < categories.length; j++, i++) {
+            let category = categories[i];
+            html += `<td>${category}</td><td><button class="add-item-btn" data-category="${category}">+</button></td>`;
+            if (j < 4 && i < categories.length - 1) html += '</tr><tr>'; // Prepare the next row if not the last in line
+        }
+        html += '</tr>';
+    }
+
+    table.innerHTML = html;
+
+    // Attach event listener to the parent element of the add item buttons
+table.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-item-btn')) {
+        const category = event.target.dataset.category;
+        // Prompt the user to enter an item for the category
+        const newItemName = prompt(`Enter item for ${category}:`);
+        if (newItemName !== null) { // Check if the user clicked "OK"
+            addItemToCategory(newItemName, category); // Add the item to the category
+        }
+    }
+});
+}
+
+document.getElementById('refreshCategoriesBtn').addEventListener('click', refreshCategories);
+
+// Function to show the add item form and store the category
+function showAddItemForm(category) {
+    console.log("Attempting to show form for category:", category); // Check if this logs correctly
+    var form = document.getElementById('addItemForm');
+    form.style.display = 'block';  // Show the form
+    form.dataset.category = category;  // Store the current category in the form's data attribute for later use
 }
 
 
 
+// Function to close the form
+function closeForm() {
+    var form = document.getElementById('addItemForm');
+    form.style.display = 'none';  // Hide the form
+    document.getElementById('newItemName').value = '';  // Clear the input field just in case
+}
 
 function clearList() {
     var categoriesContainer = document.getElementById("categoriesContainer");
@@ -518,6 +684,62 @@ async function displaySavedHistory() {
         return [];
     }
 }
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-item-btn')) {
+        const category = event.target.dataset.category;
+        const newItemName = prompt(`Enter item for ${category}:`);
+        if (newItemName !== null) {
+            addItemToCategory(newItemName, category);
+        }
+    }
+});
+
+
+
+// Load from local storage
+function loadCategoriesFromStorage() {
+    const storedCategories = localStorage.getItem('categoryKeywords');
+    if (storedCategories) {
+        categoryKeywords = JSON.parse(storedCategories);
+        refreshCategories(); // Update the UI with loaded categories
+    }
+}
+
+// Save to local storage
+function saveCategoriesToStorage() {
+    localStorage.setItem('categoryKeywords', JSON.stringify(categoryKeywords));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadCategoriesFromStorage();
+});
+
+
+// Function to handle category deletion
+function deleteCategory(categoryName) {
+    console.log("deleteCategory function called");
+    if (confirm(`Are you sure you want to delete the category "${categoryName}"?`)) {
+        // Remove the category from the categoryKeywords object
+        delete categoryKeywords[categoryName];
+        // Update the UI
+        refreshCategories();
+        // Optionally, save the changes to local storage
+        saveCategoriesToStorage();
+    }
+}
+
+// Function to create a new category
+function createCategory(categoryName) {
+    if (!categoryKeywords.hasOwnProperty(categoryName)) {
+        categoryKeywords[categoryName] = [];
+        refreshCategories(); // Update the UI to display the new category
+        saveCategoriesToStorage(); // Optionally, save the changes to local storage
+    } else {
+        alert(`Category "${categoryName}" already exists`);
+    }
+}
+
 
 function submitRecommendedRecipe(recommendedRecipe) {
     const recipeName = document.getElementById("recipeName").value;
