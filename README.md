@@ -115,8 +115,8 @@ Similarly to Dannys' case,
 
 ### Salem rqn3
 - SCRUM-132 Construct and enhance the homepage layout with a more refined and professional appearance, achieving a polished and cohesive look. ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-132
-COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49 
-https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49 
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/6b1390c50bad07df991f42a25c3038809f61b34f 
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/f605b031ce1f8211c2a88a91e18b8682a2fdce9a
 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/1d804fe326c605d96a05fb9e96d918ca28ccaeac 
 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/e151b8ea529c041bd3216e5f4d42cbabc3ffd1fb
 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/49
