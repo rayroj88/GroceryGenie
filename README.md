@@ -150,6 +150,46 @@ https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/a0f9fb7eb9e3362f
 https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/7ae3383fcd2c2a7113a5490744f5501d5b8fd30f
 PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/44
 
+### Gerardo Cantu UBY1
+As well for me some commits werent coming out for me so you'll be able to see them with the pull requests(141,142). Also two of my jira tasks will show the pull requests as open but that is because when i waqs working on them my temam updated the UI so those branches werent useful anymore so they would cause a lot fo merge issues so it was easier to create new branches for the task with the updated UI so ill add those updated pull requests but Dr.lehr told me to put it on the readme so i wont get points off. SCRUM 111,141,142 Also when when i was waiting on pull requests but i wanted to work on the lastest main i would add my latest branch to the new branch that was from main so for some reasons in some of my tasks, the pull request shows two or in the ones that i had to do a new branch of the two task that were outdated also shows a pull request of a different task. Somehow or accidenlty i guess i deleted SCRUM 145 from jira because i cant find it, but i was able to find the commit and pull request on bitbucket.
+
+-SCRUM-72 Added new css labels for dietary dropdown ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-72?atlOrigin=eyJpIjoiMTEyMWFiMTY2YTVhNDMzMDhlY2Y3MzhhMzE4NzJmMGUiLCJwIjoiaiJ9 . 
+COMMITS : https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/9d8834ef30eb8e85cf3cbebe0360a02d0f6d7b45 . https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/572161afa8aee661a54073280ba7c3c54af620e0 .
+PULL REQUEST : https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/50
+
+-SCRUM-111 Once Dropdown is connected add more items according to diet ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-111?atlOrigin=eyJpIjoiZmFiNzllZmNjYzdhNGRiMjk0ZTkzNDliOGQ0OWYwOTEiLCJwIjoiaiJ9
+COMMITS : https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/37d22107429fbac6b0ea34802af0b25f3c110716 . https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/797a94a2af53b5b6c7753265e5d8c4ec89804218
+PULL REQUEST : https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/43 
+
+-SCRUM-112 Write Unit Tests for filtering Functionality ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-112?atlOrigin=eyJpIjoiOTBmN2RlY2JmNDJmNDE1M2FlNGZiYjkwNWY5MzJkZDYiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/986d6e76501f050f017c0a11adbb6cdd480f58dd . https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/797a94a2af53b5b6c7753265e5d8c4ec89804218
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/29
+
+-SCRUM-141 Dietary Filter Additions ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-141?atlOrigin=eyJpIjoiZTRlOWE0ZTliZDdhNDdmY2E4ZDgzYjc0MTRkOWMxZWQiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/572161afa8aee661a54073280ba7c3c54af620e0
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/85158bb89bd0f3087631ed3988fac648796297cc
+https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/ba4500d763e1f51c0ac0d852878d0cd0d0d341ca
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/40\
+
+-SCRUM-142 Implement favorite items and dietary information features ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-142?atlOrigin=eyJpIjoiMmIyYTI1MTg2YjJlNDgyMGEwNGUyYTdhNWI1NzA2MmQiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/9d8834ef30eb8e85cf3cbebe0360a02d0f6d7b45
+PULL REQUEST : https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/48
+
+-SCRUM-143 Add Dietary Stuff to the javascript so when you add item also the diet ones come out ISSUE LINK: https://cs3398s24changelings.atlassian.net/browse/SCRUM-143?atlOrigin=eyJpIjoiMmI5M2U1ZWY5NjhiNDdkNWJhMGY4MDcxMzNiYjY3MjYiLCJwIjoiaiJ9
+COMMITS: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/97acdca610ac832f07f623bd9565cbc8459b0a3d
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/47
+
+-SCRUM-144 Connect Dietary Dropdown to Output Products List according to diet ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-144?atlOrigin=eyJpIjoiOTJmNmY1NWZlZjEzNGNkMThiMGQzM2U2ZjhjODhiNjUiLCJwIjoiaiJ9
+COMMITS:https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/9a933ea06bf313d5089130af5db7c7ad12dd92e4
+https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/commits/8ceb0840f759ec30ce807d2a93b21b2c12539c60
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/%7B1755ff35-969e-4b4e-9d3c-f8c2bfa260f4%7D/pull-requests/42
+
+-SCRUM-145 Dietary Guide Enhancements/Additions to the Research ISSUE LINK:https://cs3398s24changelings.atlassian.net/browse/SCRUM-145?atlOrigin=eyJpIjoiMWUxZDgzMjUyZTA0NGJhMmEyMTBiMGRhMGRhNzczZGIiLCJwIjoiaiJ9
+COMMITS:https://bitbucket.org/cs3398s24changelings/grocerygenie/commits/d09197484aa0eb16797dd4da588d2a4cccd9c96d
+PULL REQUEST: https://bitbucket.org/cs3398s24changelings/grocerygenie/pull-requests/31
+
+
+
 
 # Sprint 2 contributions:
 
